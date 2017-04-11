@@ -2,10 +2,10 @@
 Simple and easy quick-note notification app (alpha).
 
 ### Features:
-- \* Custom title.
-- \* Custom text for notifications.
-- \* Putin theme to motivate you to do your task.
-- \* English and Russian languages are supported for now.
+- Custom title.
+- Custom text for notifications.
+- Putin theme to motivate you to do your task.
+- English and Russian languages are supported for now.
 
 ### Future plans:
 - [ ] Stick Putin to keyboard height.
