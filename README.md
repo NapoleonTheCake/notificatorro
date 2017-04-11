@@ -1,13 +1,13 @@
 # Notificatorro!
 Simple and easy quick-note notification app (alpha).
 
-### Features:
+#### Features:
 - Custom title.
 - Custom text for notifications.
 - Putin theme to motivate you to do your task.
 - English and Russian languages are supported for now.
 
-### Future plans:
+#### Future plans:
 - [ ] Stick Putin to keyboard height.
 - [ ] Add switcher to choose to start from title or text on open.
 - [ ] Compress notification big image to avoid lags with multiple notifications.
