@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         Notification.Builder builder = new Notification.Builder(context)
                 .setContentIntent(contentIntent)
                 .setSmallIcon(R.drawable.statusbaricon)
-                .setLargeIcon(BitmapFactory.decodeResource(res, R.drawable.yourtask))
+//                .setLargeIcon(BitmapFactory.decodeResource(res, R.drawable.yourtask))
                 .setTicker(getString(R.string.notification_Ticker))
                 .setWhen(System.currentTimeMillis())
                 .setAutoCancel(true)

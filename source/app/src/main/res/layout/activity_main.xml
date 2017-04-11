@@ -19,6 +19,19 @@
         android:text="@string/text_Header" />
 
     <EditText
+        android:id="@+id/editText_Title"
+
+        style="@style/text_Input_Style.Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView_Header"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:hint="@string/notification_Title"
+        android:inputType="textPersonName" />
+
+    <EditText
         android:layout_marginStart="20sp"
         style="@style/text_Input_Style"
         android:maxLines="9"
@@ -62,16 +75,4 @@
         android:layout_centerHorizontal="true"
         android:text="@string/text_Count_Default" />
 
-    <EditText
-        android:id="@+id/editText_Title"
-
-        style="@style/text_Input_Style.Title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView_Header"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:ems="10"
-        android:hint="@string/notification_Title"
-        android:inputType="textPersonName" />
 </RelativeLayout>
