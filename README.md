@@ -2,10 +2,10 @@
 Simple and easy quick-note notification app (alpha).
 
 ### Features:
-- [x] Custom title.
-- [x] Custom text for notifications.
-- [x] Putin theme to motivate you to do your task.
-- [x] English and Russian languages are supported for now.
+- \* Custom title.
+- \* Custom text for notifications.
+- \* Putin theme to motivate you to do your task.
+- \* English and Russian languages are supported for now.
 
 ### Future plans:
 - [ ] Stick Putin to keyboard height.
@@ -21,7 +21,7 @@ Simple and easy quick-note notification app (alpha).
 - [ ] Add feedback button.
 - [ ] Add sliding activity (menu).
 - [ ] Add toast notification when note is created.
-- [ ] Add persistent notification feature.
+- [ ] Add persistent notification feature:
 	- [ ] Add switcher to show/hide notification.
 
 Feel free to contact me via email: contactwithdmitry@gmail.com
