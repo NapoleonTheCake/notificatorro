@@ -23,6 +23,8 @@ Simple and easy quick-note notification app (alpha).
 - [ ] Add toast notification when note is created.
 - [ ] Add persistent notification feature:
 	- [ ] Add switcher to show/hide notification.
+- [ ] Combine notifications with same title except for default.
+- [ ] Lower sdkmin to 16.
 
 Feel free to contact me via email: contactwithdmitry@gmail.com
 
