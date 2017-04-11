@@ -1,9 +1,10 @@
 <resources>
-    <string name="app_name">Notificatorro!</string>
+    <string name="app_name" translatable="false">Notificatorro!</string>
     <string name="text_Header">What you have to do?</string>
     <string name="notification_Ticker">New task from Putin!</string>
     <string name="notification_Title">You battle task!</string>
-    <string name="text_Count">ID:</string>
-    <string name="text_Count_Default">Here will be ID.</string>
+    <string name="text_Count" translatable="false">ID:</string>
+    <string name="text_Count_Default">Create notification first.</string>
     <string name="text_Crab_Toast">Don\'t call me Mr. Crab!</string>
+    <string name="notification_Created">Done!</string>
 </resources>

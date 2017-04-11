@@ -32,18 +32,18 @@
         android:inputType="textPersonName" />
 
     <EditText
-        android:layout_marginStart="20sp"
-        style="@style/text_Input_Style"
-        android:maxLines="9"
-
         android:id="@+id/editText"
+        style="@style/text_Input_Style"
         android:layout_width="match_parent"
+
         android:layout_height="wrap_content"
         android:layout_below="@+id/editText_Title"
         android:layout_centerHorizontal="true"
+        android:layout_marginStart="20sp"
         android:layout_marginTop="10dp"
         android:ems="10"
-        android:inputType="textMultiLine" />
+        android:inputType="textMultiLine"
+        android:maxLines="9" />
 
     <ImageButton
         android:background="?android:selectableItemBackground"
@@ -73,6 +73,7 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/imageView_Crab"
         android:layout_centerHorizontal="true"
-        android:text="@string/text_Count_Default" />
+        android:text="@string/text_Count_Default"
+        android:visibility="invisible" />
 
 </RelativeLayout>

@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Нотификаторро!</string>
     <string name="text_Header">Что тебе сделать то?</string>
     <string name="notification_Ticker">Новая задача от Путина!</string>
     <string name="notification_Title">Твоя боевая задача!</string>
-    <string name="text_Count">ID:</string>
     <string name="text_Count_Default">Тут будет ID.</string>
     <string name="text_Crab_Toast">Не называй меня Мр. Краб!</string>
+    <string name="notification_Created">Сделано!</string>
 </resources>

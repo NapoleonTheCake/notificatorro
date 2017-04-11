@@ -86,12 +86,23 @@ public class MainActivity extends AppCompatActivity {
         //clear text field.
         text.setText("");
         textTitleEdit.setText("");
+
+        //echo done.
+        Toast toast = Toast.makeText(context, getString(R.string.notification_Created), Toast.LENGTH_SHORT);
+        toast.setGravity(Gravity.CENTER, 0, 100);
+        toast.show();
+
+        //back to title.
+        textTitleEdit.requestFocus();
     }
 
     public void onClick_Crab(View view) {
         Toast toast = Toast.makeText(getApplicationContext(), getString(R.string.text_Crab_Toast),
                 Toast.LENGTH_LONG);
-        toast.setGravity(Gravity.CENTER, 0, 0);
+        toast.setGravity(Gravity.BOTTOM, 0, 350);
         toast.show();
+
+        TextView textView = (TextView) findViewById(R.id.textView_Counter);
+        textView.setVisibility(View.VISIBLE);
     }
 }
