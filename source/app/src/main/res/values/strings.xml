@@ -12,8 +12,10 @@
     <string name="action_settings">Settings</string>
     <string name="history_everything" translatable="false"> </string>
     <string name="text_History_Cleared">History cleared</string>
-    <string name="title_activity_main2">Main2Activity</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="dev_Version" translatable="false">0.4 alpha</string>
+    <string name="dev_Version_Short" translatable="false">0.4a</string>
+    <string name="dev_Email" translatable="false">contactwithdmitry@gmail.com</string>
 </resources>
