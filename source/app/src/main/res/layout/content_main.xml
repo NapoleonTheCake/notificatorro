@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.cake.notificator.MainActivity">
+
+
+    <TextView
+        style="@style/text_Header_Style"
+
+        android:id="@+id/textView_Header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="14dp"
+        android:text="@string/text_Header" />
+
+    <EditText
+        android:id="@+id/editText_Title"
+
+        style="@style/text_Input_Style.Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView_Header"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:hint="@string/notification_Title"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/editText"
+        style="@style/text_Input_Style"
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editText_Title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="20sp"
+        android:layout_marginStart="20sp"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:inputType="textMultiLine"
+        android:maxLines="9" />
+
+    <ImageButton
+        android:background="?android:selectableItemBackground"
+        android:onClick="onClick_Notify"
+
+        android:id="@+id/imageButton_Putin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="250dp"
+        app:srcCompat="@drawable/doit" />
+
+    <ImageView
+        android:onClick="onClick_Crab"
+
+        android:id="@+id/imageView_Crab"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:srcCompat="@drawable/crab"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/textView_Counter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/imageView_Crab"
+        android:layout_centerHorizontal="true"
+        android:text="@string/text_Count_Default"
+        android:visibility="invisible" />
+
+    <Button
+        android:onClick="onClick_History"
+
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textView_Counter"
+        android:layout_centerHorizontal="true"
+        android:text="@string/button_History" />
+
+</RelativeLayout>
