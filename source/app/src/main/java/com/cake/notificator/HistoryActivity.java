@@ -19,14 +19,14 @@ public class HistoryActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Add clear history button.", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+//        fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Snackbar.make(view, "Add clear history button.", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
+//            }
+//        });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         //load history here.
@@ -36,5 +36,19 @@ public class HistoryActivity extends AppCompatActivity {
         //find view and set text.
         TextView textView = (TextView) findViewById(R.id.text_History_Everything);
         textView.setText(allHistory);
+    }
+
+    public void onClick_ClearHistory(View view) {
+        //delete all history.
+        SharedPreferences.Editor mHistoryEditor = getSharedPreferences("history", MODE_PRIVATE).edit();
+        mHistoryEditor.putString("allHistory", "").apply();
+
+        //show notification.
+        Snackbar.make(view, getString(R.string.text_History_Cleared), Snackbar.LENGTH_LONG)
+                .setAction("Action", null).show();
+
+        //empty textview.
+        TextView textView = (TextView) findViewById(R.id.text_History_Everything);
+        textView.setText("");
     }
 }

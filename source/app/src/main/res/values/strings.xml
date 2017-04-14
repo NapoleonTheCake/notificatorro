@@ -10,5 +10,6 @@
     <string name="button_History">History</string>
     <string name="title_activity_history">History</string>
     <string name="action_settings">Settings</string>
-    <string name="history_everything"> </string>
+    <string name="history_everything" translatable="false"> </string>
+    <string name="text_History_Cleared">History cleared</string>
 </resources>

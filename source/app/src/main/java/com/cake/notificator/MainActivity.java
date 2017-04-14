@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences mHistory = getSharedPreferences("history", MODE_PRIVATE);
         String allHistory = mHistory.getString("allHistory", "");
         SharedPreferences.Editor mHistoryEditor = getSharedPreferences("history", MODE_PRIVATE).edit();
-        allHistory = allHistory + titleText + "\n" + bigText + "\n";
+        allHistory = allHistory + titleText + "\n" + bigText + "\n\n";
         mHistoryEditor.putString("allHistory", allHistory).apply();
 
         //clear text field.
@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
 
         //echo done.
         Toast toast = Toast.makeText(context, getString(R.string.notification_Created), Toast.LENGTH_SHORT);
-        toast.setGravity(Gravity.CENTER, 0, 100);
+        toast.setGravity(Gravity.CENTER, 0, -100);
         toast.show();
 
         //back to title.
@@ -106,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
     public void onClick_Crab(View view) {
         Toast toast = Toast.makeText(getApplicationContext(), getString(R.string.text_Crab_Toast),
                 Toast.LENGTH_LONG);
-        toast.setGravity(Gravity.BOTTOM, 0, 350);
+        toast.setGravity(Gravity.CENTER, 0, -100);
         toast.show();
 
         TextView textView = (TextView) findViewById(R.id.textView_Counter);
