@@ -1,6 +1,8 @@
 # Notificatorro!
 Simple and easy quick-note notification app (alpha).
 
+Note that multiple screens support is not implemented yet!
+
 #### Features:
 - Custom title.
 - Custom text for notifications.
@@ -8,23 +10,21 @@ Simple and easy quick-note notification app (alpha).
 - English and Russian languages are supported for now.
 
 #### Future plans:
-~~- [ ] Stick Putin to keyboard height.~~
+- [ ] Stick Putin to keyboard height.
 ~~- [ ] Add switcher to choose to start from title or text on open.~~
-- [x] Compress notification big image to avoid lags with multiple notifications.
 - [ ] Add history track in separate activity.
 - [ ] Add delayed notifications feature.
 - [ ] Add clear field and notifications button.
 - [x] Make status bar brighter: from EE to DD alpha.
 - [ ] Add theme support (Putin will stay there).
 - [x] Show ID only on crab tap.
-~~- [ ] Add multiple screens support.~~
-~~- [ ] Add feedback button.~~
+- [ ] Add multiple screens support.
+- [ ] Add feedback button.
 - [ ] Add sliding activity (menu).
 - [x] Add toast notification when note is created.
 - [ ] Add persistent notification feature:
 	- [ ] Add switcher to show/hide notification.
 - [ ] Combine notifications with same title except for default.
-~~- [ ] Lower sdkmin to 16.~~
 
 Feel free to contact me via email: contactwithdmitry@gmail.com
 
