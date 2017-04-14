@@ -8,11 +8,13 @@ Note that multiple screens support is not implemented yet!
 - Custom text for notifications.
 - Putin theme to motivate you to do your task.
 - English and Russian languages are supported for now.
+- Track history of your notes and clear anytime!
+- This app will never track you in any way. It does what it does, nothing more.
 
 #### Future plans:
 - [ ] Stick Putin to keyboard height.
 ~~- [ ] Add switcher to choose to start from title or text on open.~~
-- [ ] Add history track in separate activity.
+- [x] Add history track in separate activity.
 - [ ] Add delayed notifications feature.
 - [ ] Add clear field and notifications button.
 - [x] Make status bar brighter: from EE to DD alpha.
