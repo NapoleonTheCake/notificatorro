@@ -6,4 +6,7 @@
     <string name="text_Count_Default">Тут будет ID.</string>
     <string name="text_Crab_Toast">Не называй меня Мр. Краб!</string>
     <string name="notification_Created">Сделано!</string>
+    <string name="button_History" >История</string>
+    <string name="action_settings">Настройки</string>
+    <string name="title_activity_history">История</string>
 </resources>

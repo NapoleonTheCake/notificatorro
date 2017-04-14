@@ -83,6 +83,13 @@ public class MainActivity extends AppCompatActivity {
 
         mPrefsEditor.putInt("id", NOTIFY_ID).apply();
 
+        //append history.
+        SharedPreferences mHistory = getSharedPreferences("history", MODE_PRIVATE);
+        String allHistory = mHistory.getString("allHistory", "");
+        SharedPreferences.Editor mHistoryEditor = getSharedPreferences("history", MODE_PRIVATE).edit();
+        allHistory = allHistory + titleText + "\n" + bigText + "\n";
+        mHistoryEditor.putString("allHistory", allHistory).apply();
+
         //clear text field.
         text.setText("");
         textTitleEdit.setText("");
@@ -104,5 +111,10 @@ public class MainActivity extends AppCompatActivity {
 
         TextView textView = (TextView) findViewById(R.id.textView_Counter);
         textView.setVisibility(View.VISIBLE);
+    }
+
+    public void onClick_History(View view) {
+        Intent intent = new Intent(MainActivity.this, HistoryActivity.class);
+        startActivity(intent);
     }
 }

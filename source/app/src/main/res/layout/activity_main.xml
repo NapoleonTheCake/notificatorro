@@ -76,4 +76,14 @@
         android:text="@string/text_Count_Default"
         android:visibility="invisible" />
 
+    <Button
+        android:onClick="onClick_History"
+
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textView_Counter"
+        android:layout_centerHorizontal="true"
+        android:text="@string/button_History" />
+
 </RelativeLayout>

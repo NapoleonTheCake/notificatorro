@@ -7,4 +7,8 @@
     <string name="text_Count_Default">Create notification first.</string>
     <string name="text_Crab_Toast">Don\'t call me Mr. Crab!</string>
     <string name="notification_Created">Done!</string>
+    <string name="button_History">History</string>
+    <string name="title_activity_history">History</string>
+    <string name="action_settings">Settings</string>
+    <string name="history_everything"> </string>
 </resources>
