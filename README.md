@@ -22,7 +22,7 @@ Note that multiple screens support is not implemented yet!
 - [x] Show ID only on crab tap.
 - [ ] Add multiple screens support.
 - [ ] Add feedback button.
-- [ ] Add sliding activity (menu).
+- [x] Add sliding activity (menu).
 - [x] Add toast notification when note is created.
 - [ ] Add persistent notification feature:
 	- [ ] Add switcher to show/hide notification.
