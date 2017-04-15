@@ -6,10 +6,12 @@
     <string name="text_Count_Default">Тут будет ID.</string>
     <string name="text_Crab_Toast">Не называй меня Мр. Краб!</string>
     <string name="notification_Created">Сделано!</string>
-    <string name="button_History" >История</string>
-    <string name="action_settings">Настройки</string>
     <string name="title_activity_history">История</string>
     <string name="text_History_Cleared">История очищенна</string>
     <string name="navigation_drawer_close">Закрыть панель навигации</string>
     <string name="navigation_drawer_open">Открыть панель навигации</string>
+    <string name="ui_AdditionalSettings" translatable="false">Больше</string>
+    <string name="action_New_Note">Создать заметку</string>
+    <string name="action_History">История</string>
+    <string name="action_Settings">Настройки</string>
 </resources>

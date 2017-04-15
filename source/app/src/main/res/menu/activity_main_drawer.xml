@@ -1,35 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <group android:checkableBehavior="single">
+    <group>
+        <!--<item-->
+            <!--android:id="@+id/nav_NewNote"-->
+            <!--android:icon="@drawable/plus"-->
+            <!--android:title="@string/action_New_Note" />-->
+
         <item
-            android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Import" />
-        <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
-        <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
-        <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
+            android:id="@+id/nav_History"
+            android:icon="@drawable/history"
+            android:title="@string/action_History" />
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="@string/ui_AdditionalSettings">
         <menu>
             <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
+                android:id="@+id/nav_Settings"
+                android:icon="@drawable/settings"
+                android:title="@string/action_Settings" />
+
             <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
+                android:id="@+id/nav_About"
+                android:icon="@drawable/about"
+                android:title="@string/action_About" />
         </menu>
     </item>
 

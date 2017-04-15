@@ -16,10 +16,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -81,18 +83,13 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        if (id == R.id.nav_Settings) {
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_About) {
 
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+        } else if (id == R.id.nav_History) {
+            Intent intent = new Intent(MainActivity.this, HistoryActivity.class);
+            startActivity(intent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -146,11 +143,6 @@ public class MainActivity extends AppCompatActivity
                 .getSystemService(NOTIFICATION_SERVICE);
         notificationManager.notify(NOTIFY_ID, notification);
 
-        //set counter text.
-        TextView textView_Count = (TextView) findViewById(R.id.textView_Counter);
-        String text_Count = getString(R.string.text_Count) + " " + NOTIFY_ID;
-        textView_Count.setText(text_Count);
-
         //handle id and write to storage.
         NOTIFY_ID++;
 
@@ -164,7 +156,7 @@ public class MainActivity extends AppCompatActivity
         SharedPreferences mHistory = getSharedPreferences("history", MODE_PRIVATE);
         String allHistory = mHistory.getString("allHistory", "");
         SharedPreferences.Editor mHistoryEditor = getSharedPreferences("history", MODE_PRIVATE).edit();
-        allHistory = allHistory + titleText + "\n" + bigText + "\n\n";
+        allHistory = titleText + "\n" + bigText + "\n\n" + allHistory;
         mHistoryEditor.putString("allHistory", allHistory).apply();
 
         //clear text field.
@@ -178,21 +170,6 @@ public class MainActivity extends AppCompatActivity
 
         //back to title.
         textTitleEdit.requestFocus();
-    }
-
-    public void onClick_Crab(View view) {
-        Toast toast = Toast.makeText(getApplicationContext(), getString(R.string.text_Crab_Toast),
-                Toast.LENGTH_LONG);
-        toast.setGravity(Gravity.CENTER, 0, -100);
-        toast.show();
-
-        TextView textView = (TextView) findViewById(R.id.textView_Counter);
-        textView.setVisibility(View.VISIBLE);
-    }
-
-    public void onClick_History(View view) {
-        Intent intent = new Intent(MainActivity.this, HistoryActivity.class);
-        startActivity(intent);
     }
 }
 
