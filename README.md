@@ -1,7 +1,5 @@
 # Notificatorro!
-Simple and easy quick-note notification app (alpha).
-
-Note that multiple screens support is not implemented yet!
+Simple and easy quick-note notification app (beta).
 
 #### Features:
 - Custom title.
@@ -14,8 +12,6 @@ Note that multiple screens support is not implemented yet!
 #### Future plans:
 - Add delayed notifications feature.
 - Add clear field and notifications button.
-- Add theme support (Putin will stay there).
-- Add multiple screens support.
 - Add feedback button.
 - Add persistent notification feature:
 	- Add switcher to show/hide notification.

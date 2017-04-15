@@ -10,7 +10,7 @@
     <string name="text_History_Cleared">История очищенна</string>
     <string name="navigation_drawer_close">Закрыть панель навигации</string>
     <string name="navigation_drawer_open">Открыть панель навигации</string>
-    <string name="ui_AdditionalSettings" translatable="false">Больше</string>
+    <string name="ui_AdditionalSettings">Больше</string>
     <string name="action_New_Note">Создать заметку</string>
     <string name="action_History">История</string>
     <string name="action_Settings">Настройки</string>
