@@ -45,13 +45,13 @@
         android:layout_marginTop="10dp"
         android:ems="10"
         android:inputType="textMultiLine"
-        android:maxLines="4" />
+        android:maxLines="3" />
 
     <ImageButton
         android:background="?android:selectableItemBackground"
         android:onClick="onClick_Notify"
         android:src="@drawable/doit"
-        android:maxHeight="250dp"
+        android:maxHeight="25mm"
         android:scaleType="fitCenter"
         android:adjustViewBounds="true"
 

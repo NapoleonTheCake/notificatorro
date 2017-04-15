@@ -177,7 +177,4 @@ public class MainActivity extends AppCompatActivity
         //back to title.
         textTitleEdit.requestFocus();
     }
-
-
 }
-
