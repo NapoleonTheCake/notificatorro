@@ -2,7 +2,7 @@
     <string name="app_name" translatable="false">Notificatorro!</string>
     <string name="text_Header">What you have to do?</string>
     <string name="notification_Ticker">New task from Putin!</string>
-    <string name="notification_Title">You battle task!</string>
+    <string name="notification_Title">Your battle task!</string>
     <string name="text_Count" translatable="false">ID:</string>
     <string name="text_Count_Default">Create notification first.</string>
     <string name="text_Crab_Toast">Don\'t call me Mr. Crab!</string>
@@ -21,4 +21,5 @@
     <string name="action_History">History</string>
     <string name="action_About" translatable="false">About</string>
     <string name="action_Settings">Settings</string>
+    <string name="notification_Text">Type your text here.</string>
 </resources>

@@ -14,4 +14,5 @@
     <string name="action_New_Note">Создать заметку</string>
     <string name="action_History">История</string>
     <string name="action_Settings">Настройки</string>
+    <string name="notification_Text">Напишите сюда вашу заметку.</string>
 </resources>

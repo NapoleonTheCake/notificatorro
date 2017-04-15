@@ -35,6 +35,7 @@
         android:id="@+id/editText"
         style="@style/text_Input_Style"
         android:layout_width="match_parent"
+        android:hint="@string/notification_Text"
 
         android:layout_height="wrap_content"
         android:layout_below="@+id/editText_Title"

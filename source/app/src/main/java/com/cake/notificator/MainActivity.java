@@ -110,6 +110,9 @@ public class MainActivity extends AppCompatActivity
         if (titleText.length() == 0) {
             titleText = getString(R.string.notification_Title);
         }
+        if (bigText.length() == 0) {
+            bigText = "Empty note.";
+        }
 
         //store id locally.
         SharedPreferences mPrefs = PreferenceManager.getDefaultSharedPreferences(context);
@@ -156,7 +159,7 @@ public class MainActivity extends AppCompatActivity
         SharedPreferences mHistory = getSharedPreferences("history", MODE_PRIVATE);
         String allHistory = mHistory.getString("allHistory", "");
         SharedPreferences.Editor mHistoryEditor = getSharedPreferences("history", MODE_PRIVATE).edit();
-        allHistory = titleText + "\n" + bigText + "\n\n" + allHistory;
+        allHistory = "*\n" + titleText + "\n" + bigText + "\n\n" + allHistory;
         mHistoryEditor.putString("allHistory", allHistory).apply();
 
         //clear text field.
