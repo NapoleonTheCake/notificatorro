@@ -15,7 +15,6 @@ Simple and easy quick-note notification app (beta).
 - Add feedback button.
 - Add persistent notification feature:
 	- Add switcher to show/hide notification.
-- Combine notifications with same title except for default.
 
 Feel free to contact me via email: contactwithdmitry@gmail.com
 
