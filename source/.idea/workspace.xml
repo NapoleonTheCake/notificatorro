@@ -42,8 +42,8 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
         <entry file="file:///media/cake/outside/development/android-zone/notificatorro/source/app/src/main/java/com/cake/notificator/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="161" column="25" selection-start-line="161" selection-start-column="25" selection-end-line="161" selection-end-column="25" />
+            <state relative-caret-position="288">
+              <caret line="156" column="0" selection-start-line="156" selection-start-column="0" selection-end-line="156" selection-end-column="0" />
               <folding>
                 <element signature="method#onCreate#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#onBackPressed#0;class#MainActivity#0" expanded="false" />
@@ -2984,8 +2984,8 @@
     </entry>
     <entry file="file:///media/cake/outside/development/android-zone/notificatorro/source/app/src/main/java/com/cake/notificator/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="161" column="25" selection-start-line="161" selection-start-column="25" selection-end-line="161" selection-end-column="25" />
+        <state relative-caret-position="288">
+          <caret line="156" column="0" selection-start-line="156" selection-start-column="0" selection-end-line="156" selection-end-column="0" />
           <folding>
             <element signature="method#onCreate#0;class#MainActivity#0" expanded="false" />
             <element signature="method#onBackPressed#0;class#MainActivity#0" expanded="false" />
