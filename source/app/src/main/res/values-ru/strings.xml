@@ -16,4 +16,5 @@
     <string name="action_Settings">Настройки</string>
     <string name="notification_Text">Напишите сюда вашу заметку.</string>
     <string name="template_Empty_Text">Без текста.</string>
+    <string name="title_activity_settings">Настройки</string>
 </resources>

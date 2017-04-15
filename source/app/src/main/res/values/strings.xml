@@ -23,4 +23,5 @@
     <string name="action_Settings">Settings</string>
     <string name="notification_Text">Type your text here.</string>
     <string name="template_Empty_Text">No text.</string>
+    <string name="title_activity_settings">Settings</string>
 </resources>
