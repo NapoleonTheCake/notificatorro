@@ -107,11 +107,11 @@ public class MainActivity extends AppCompatActivity
         //get big text.
         String bigText = text.getText().toString();
         String titleText = textTitleEdit.getText().toString();
-        if (titleText.length() == 0) {
-            titleText = getString(R.string.notification_Title);
-        }
+//        if (titleText.length() == 0) {
+//            titleText = getString(R.string.template_Empty_Title);
+//        }
         if (bigText.length() == 0) {
-            bigText = "Empty note.";
+            bigText = getString(R.string.template_Empty_Text);
         }
 
         //store id locally.
@@ -148,18 +148,19 @@ public class MainActivity extends AppCompatActivity
 
         //handle id and write to storage.
         NOTIFY_ID++;
-
-        if (NOTIFY_ID > 100) {
-            NOTIFY_ID = 0;
-        }
-
+        if (NOTIFY_ID > 100) { NOTIFY_ID = 0; }
         mPrefsEditor.putInt("id", NOTIFY_ID).apply();
 
         //append history.
         SharedPreferences mHistory = getSharedPreferences("history", MODE_PRIVATE);
         String allHistory = mHistory.getString("allHistory", "");
-        SharedPreferences.Editor mHistoryEditor = getSharedPreferences("history", MODE_PRIVATE).edit();
-        allHistory = "*\n" + titleText + "\n" + bigText + "\n\n" + allHistory;
+        SharedPreferences.Editor mHistoryEditor = getSharedPreferences("history", MODE_PRIVATE)
+                .edit();
+        String allHistoryWIP;
+        allHistoryWIP = "*\n";
+        if (titleText.length() != 0) { allHistoryWIP = allHistoryWIP + titleText + "\n"; }
+        allHistoryWIP = allHistoryWIP + bigText + "\n\n" + allHistory;
+        allHistory = allHistoryWIP;
         mHistoryEditor.putString("allHistory", allHistory).apply();
 
         //clear text field.

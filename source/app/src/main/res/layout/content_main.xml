@@ -45,17 +45,20 @@
         android:layout_marginTop="10dp"
         android:ems="10"
         android:inputType="textMultiLine"
-        android:maxLines="8" />
+        android:maxLines="4" />
 
     <ImageButton
         android:background="?android:selectableItemBackground"
         android:onClick="onClick_Notify"
+        android:src="@drawable/doit"
+        android:maxHeight="250dp"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
 
         android:id="@+id/imageButton_Putin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        app:srcCompat="@drawable/doit" />
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
