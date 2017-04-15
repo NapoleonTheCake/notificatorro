@@ -12,7 +12,7 @@ Note that multiple screens support is not implemented yet!
 - This app will never track you in any way. It does what it does, nothing more.
 
 #### Future plans:
-~~ - Add switcher to choose to start from title or text on open.~~
+~~ Add switcher to choose to start from title or text on open.~~
 - Add delayed notifications feature.
 - Add clear field and notifications button.
 - Add theme support (Putin will stay there).
