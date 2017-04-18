@@ -5,5 +5,5 @@
     <color name="colorAccent">#FF000000</color>
     <color name="text_Header_Color">#FF000000</color>
     <color name="text_Input_Color">#FF000000</color>
-    <color name="button_Pressed">#66000000</color>
+    <color name="button_Pressed">#9900FF00</color>
 </resources>

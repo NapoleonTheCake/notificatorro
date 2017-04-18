@@ -1,10 +1,14 @@
 package com.cake.notificator;
 
+import android.app.DialogFragment;
+import android.app.Fragment;
+import android.app.FragmentTransaction;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
-import android.support.v4.widget.TextViewCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -30,7 +34,35 @@ public class HistoryActivity extends AppCompatActivity {
         textView.setText(allHistory);
     }
 
-    public void onClick_ClearHistory(View view) {
+    //ask confirmation.
+    public void onClick_ClearHistory_Dialog(View view) {
+        final View passView = view; //has to be final to pass.
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(HistoryActivity.this);
+        builder.setMessage(getString(R.string.dialog_History_Clear_Message))
+                .setTitle(getString(R.string.dialog_History_Clear_Title))
+                .setCancelable(true)
+                .setNegativeButton(getString(R.string.dialog_Negative_No),
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                return;
+                            }
+                        })
+                .setPositiveButton(getString(R.string.dialog_Positive_Yes),
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                clear(passView);
+                            }
+                        });
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+
+    //clear history.
+    private void clear(View view) {
         //delete all history.
         SharedPreferences.Editor mHistoryEditor = getSharedPreferences("history", MODE_PRIVATE).edit();
         mHistoryEditor.putString("allHistory", "").apply();

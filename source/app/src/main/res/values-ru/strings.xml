@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="text_Header">Что тебе сделать то?</string>
-    <string name="notification_Ticker">Новая задача от Путина!</string>
     <string name="notification_Title">Заголовок.</string>
     <string name="text_Count_Default">Тут будет ID.</string>
     <string name="text_Crab_Toast">Не называй меня Мр. Краб!</string>
@@ -21,4 +20,10 @@
     <string name="action_SetSilent">Скрыть</string>
     <string name="silent_Disable">Будет записано в историю</string>
     <string name="silent_Enable">Не будет записано в историю</string>
+    <string name="dialog_History_Clear_Title">Подтверждение действия</string>
+    <string name="dialog_History_Clear_Message">Вы уверены, что хотите очистить вашу историю?</string>
+    <string name="history_everything">Истории нет.</string>
+    <string name="dialog_Positive_Yes">Да</string>
+    <string name="dialog_Negative_No">Нет</string>
+    <string name="notification_Title_Default">Заметка:</string>
 </resources>

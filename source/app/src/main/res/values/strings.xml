@@ -1,14 +1,13 @@
 <resources>
     <string name="app_name" translatable="false">Notificatorro!</string>
     <string name="text_Header">What you have to do?</string>
-    <string name="notification_Ticker">New task from Putin!</string>
     <string name="notification_Title">Type your title.</string>
     <string name="text_Count" translatable="false">ID:</string>
     <string name="text_Count_Default">Create notification first.</string>
     <string name="text_Crab_Toast">Don\'t call me Mr. Crab!</string>
     <string name="notification_Created">Done!</string>
     <string name="title_activity_history">History</string>
-    <string name="history_everything" translatable="false"> </string>
+    <string name="history_everything">Empty history.</string>
     <string name="text_History_Cleared">History cleared</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -28,4 +27,9 @@
     <string name="action_SetSilent">Silent</string>
     <string name="silent_Enable">Won\'t write to history</string>
     <string name="silent_Disable">Will write to history</string>
+    <string name="dialog_History_Clear_Title">Confirmation</string>
+    <string name="dialog_History_Clear_Message">Do you want to clear your history?</string>
+    <string name="dialog_Positive_Yes">Yes</string>
+    <string name="dialog_Negative_No">No</string>
+    <string name="notification_Title_Default">Note:</string>
 </resources>

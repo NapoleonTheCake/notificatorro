@@ -35,7 +35,7 @@
     <include layout="@layout/content_history" />
 
     <android.support.design.widget.FloatingActionButton
-        android:onClick="onClick_ClearHistory"
+        android:onClick="onClick_ClearHistory_Dialog"
 
         android:id="@+id/fab"
         android:layout_width="wrap_content"

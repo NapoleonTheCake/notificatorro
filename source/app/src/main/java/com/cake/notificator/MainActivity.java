@@ -58,6 +58,7 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
+    //right hamburger.
 //    @Override
 //    public boolean onCreateOptionsMenu(Menu menu) {
 //        // Inflate the menu; this adds items to the action bar if it is present.
@@ -80,10 +81,11 @@ public class MainActivity extends AppCompatActivity
 //        return super.onOptionsItemSelected(item);
 //    }
 
+    // Handle navigation view item clicks here.
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
+
         int id = item.getItemId();
 
         if (id == R.id.nav_Settings) {
@@ -103,6 +105,7 @@ public class MainActivity extends AppCompatActivity
 
     //==========================================
 
+    //creating notification.
     public void onClick_Notify(View view) {
         Context context = getApplicationContext(); //get app context.
         EditText text = (EditText) findViewById(R.id.editText);
@@ -135,12 +138,15 @@ public class MainActivity extends AppCompatActivity
         Notification.Builder builder = new Notification.Builder(context)
                 .setContentIntent(contentIntent)
                 .setSmallIcon(R.drawable.statusbaricon)
-//                .setLargeIcon(BitmapFactory.decodeResource(res, R.drawable.yourtask))
-                .setTicker(getString(R.string.notification_Ticker))
                 .setWhen(System.currentTimeMillis())
                 .setAutoCancel(true)
                 .setContentTitle(titleText)
                 .setContentText(bigText);
+
+        //create default title if empty.
+        if (titleText.length() == 0) {
+            builder.setContentTitle(getString(R.string.notification_Title_Default));
+        }
 
         Notification notification = new Notification.BigTextStyle(builder)
                 .bigText(bigText).build();
@@ -191,6 +197,7 @@ public class MainActivity extends AppCompatActivity
         textTitleEdit.requestFocus();
     }
 
+    //handling silent notifications here.
     public void onClick_Notify_Silent(View view) {
         Button button = (Button) findViewById(R.id.button_SetSilent);
 
