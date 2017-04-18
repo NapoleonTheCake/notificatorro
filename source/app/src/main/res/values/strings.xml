@@ -12,8 +12,8 @@
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="dev_Version" translatable="false">0.1 beta</string>
-    <string name="dev_Version_Short" translatable="false">0.1b</string>
+    <string name="dev_Version" translatable="false">0.7 beta</string>
+    <string name="dev_Version_Short" translatable="false">0.7b</string>
     <string name="dev_Email" translatable="false">contactwithdmitry@gmail.com</string>
     <string name="ui_AdditionalSettings">More</string>
     <string name="action_New_Note">Create note</string>
@@ -25,11 +25,12 @@
     <string name="title_activity_settings">Settings</string>
     <string name="action_SetDelay">Delayed</string>
     <string name="action_SetSilent">Silent</string>
-    <string name="silent_Enable">Won\'t write to history</string>
-    <string name="silent_Disable">Will write to history</string>
+    <string name="silent_Enable">History disabled.</string>
+    <string name="silent_Disable">History enabled.</string>
     <string name="dialog_History_Clear_Title">Confirmation</string>
     <string name="dialog_History_Clear_Message">Do you want to clear your history?</string>
     <string name="dialog_Positive_Yes">Yes</string>
     <string name="dialog_Negative_No">No</string>
     <string name="notification_Title_Default">Note:</string>
+    <string name="settings_Vibration">Enable vibration</string>
 </resources>

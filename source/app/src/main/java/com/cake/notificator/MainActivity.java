@@ -8,8 +8,10 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.graphics.Color;
+import android.os.Vibrator;
 import android.preference.PreferenceManager;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -25,6 +27,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -107,16 +110,14 @@ public class MainActivity extends AppCompatActivity
 
     //creating notification.
     public void onClick_Notify(View view) {
-        Context context = getApplicationContext(); //get app context.
+        Context context = getApplicationContext();
         EditText text = (EditText) findViewById(R.id.editText);
         EditText textTitleEdit = (EditText) findViewById(R.id.editText_Title);
 
         //get big text.
         String bigText = text.getText().toString();
         String titleText = textTitleEdit.getText().toString();
-//        if (titleText.length() == 0) {
-//            titleText = getString(R.string.template_Empty_Title);
-//        }
+
         if (bigText.length() == 0) {
             bigText = getString(R.string.template_Empty_Text);
         }
@@ -142,6 +143,12 @@ public class MainActivity extends AppCompatActivity
                 .setAutoCancel(true)
                 .setContentTitle(titleText)
                 .setContentText(bigText);
+
+
+        //check vibration.
+        if (mPrefs.getBoolean("vibration", false)) {
+            builder.setVibrate(new long[] { 0, 50 });
+        }
 
         //create default title if empty.
         if (titleText.length() == 0) {
@@ -178,10 +185,11 @@ public class MainActivity extends AppCompatActivity
             allHistory = allHistoryWIP;
             mHistoryEditor.putString("allHistory", allHistory).apply();
         } else {
-            mPrefsEditor.putBoolean("isSilent", false).apply();
-
-            Button button = (Button) findViewById(R.id.button_SetSilent);
-            button.setBackgroundColor(Color.TRANSPARENT);
+            //reset silence on create.
+//            mPrefsEditor.putBoolean("isSilent", false).apply();
+//
+//            Button button = (Button) findViewById(R.id.button_SetSilent);
+//            button.setBackgroundColor(Color.TRANSPARENT);
         }
 
         //clear text field.
@@ -189,9 +197,7 @@ public class MainActivity extends AppCompatActivity
         textTitleEdit.setText("");
 
         //echo done.
-        Toast toast = Toast.makeText(context, getString(R.string.notification_Created), Toast.LENGTH_SHORT);
-        toast.setGravity(Gravity.CENTER, 0, -100);
-        toast.show();
+        Snackbar.make(view, getString(R.string.notification_Created), Snackbar.LENGTH_SHORT).show();
 
         //back to title.
         textTitleEdit.requestFocus();
@@ -213,10 +219,7 @@ public class MainActivity extends AppCompatActivity
         if (isSilent) {
             mPrefsEditor.putBoolean("isSilent", false).apply();
 
-            Toast toast = Toast.makeText(context, getString(R.string.silent_Disable),
-                    Toast.LENGTH_SHORT);
-            toast.setGravity(Gravity.CENTER, 0, -100);
-            toast.show();
+            Snackbar.make(view, getString(R.string.silent_Disable), Snackbar.LENGTH_SHORT).show();
 
             //make button great again.
             button.setBackgroundColor(Color.TRANSPARENT);
@@ -224,13 +227,18 @@ public class MainActivity extends AppCompatActivity
         } else {
             mPrefsEditor.putBoolean("isSilent", true).apply();
 
-            Toast toast = Toast.makeText(context, getString(R.string.silent_Enable),
-                    Toast.LENGTH_SHORT);
-            toast.setGravity(Gravity.CENTER, 0, -100);
-            toast.show();
+            Snackbar.make(view, getString(R.string.silent_Enable), Snackbar.LENGTH_SHORT).show();
 
             //make button darker.
             button.setBackgroundColor(getResources().getColor(R.color.button_Pressed));
         }
+    }
+
+    //handle delayed notifications here.
+    public void onClick_SetDelay(View view) {
+//        Toast.makeText(getApplicationContext(), "Will be implemented soon.", Toast.LENGTH_LONG)
+//                .show();
+
+        Snackbar.make(view, "Will be implemented soon.", Snackbar.LENGTH_SHORT).show();
     }
 }

@@ -15,6 +15,16 @@ Simple and easy quick-note notification app (beta).
 - Add feedback button.
 - Add persistent notification feature:
 	- Add switcher to show/hide notification.
+- about page with light-blue bkg and coffee pot.
+- dark and light themes.
+- history go to top button?
+- timestamp in history.
+- handle text field height.
+- widget?
+- ask before clearing history.
+- add best experience warning.
+- new icons 512x.
+- add regular notes (serialisation).
 
 Feel free to contact me via email: contactwithdmitry@gmail.com
 

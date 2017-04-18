@@ -1,15 +1,11 @@
 package com.cake.notificator;
 
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
-import android.widget.Spinner;
+import android.widget.Switch;
 
 public class SettingsActivity extends AppCompatActivity {
 
@@ -21,5 +17,30 @@ public class SettingsActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        //read all settings here.
+        SharedPreferences mPrefAppSettings = PreferenceManager
+                .getDefaultSharedPreferences(getApplicationContext());
+
+        //set vibration.
+        Switch switch_Vibration = (Switch) findViewById(R.id.switch_Vibration);
+        switch_Vibration.setChecked(mPrefAppSettings.getBoolean("vibration", false));
+    }
+
+    @Override
+    public void onBackPressed() {
+        //set all settings here.
+        SharedPreferences.Editor mPrefAppSettingsEdit = PreferenceManager
+                .getDefaultSharedPreferences(getApplicationContext()).edit();
+
+        //set vibration.
+        Switch switch_Vibration = (Switch) findViewById(R.id.switch_Vibration);
+        if (switch_Vibration.isChecked()) {
+            mPrefAppSettingsEdit.putBoolean("vibration", true).apply();
+        } else {
+            mPrefAppSettingsEdit.putBoolean("vibration", false).apply();
+        }
+
+        super.onBackPressed();
     }
 }

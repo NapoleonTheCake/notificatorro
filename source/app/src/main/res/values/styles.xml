@@ -34,4 +34,8 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="text_Settings">
+        <item name="android:textSize">24sp</item>
+    </style>
+
 </resources>
