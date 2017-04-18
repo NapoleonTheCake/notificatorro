@@ -25,6 +25,7 @@ Simple and easy quick-note notification app (beta).
 - add best experience warning.
 - new icons 512x.
 - add regular notes (serialisation).
+- don't create empty notifications.
 
 Feel free to contact me via email: contactwithdmitry@gmail.com
 

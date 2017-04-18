@@ -28,7 +28,7 @@
     <string name="silent_Enable">History disabled.</string>
     <string name="silent_Disable">History enabled.</string>
     <string name="dialog_History_Clear_Title">Confirmation</string>
-    <string name="dialog_History_Clear_Message">Do you want to clear your history?</string>
+    <string name="dialog_History_Clear_Message">Are you sure want to clear your history?</string>
     <string name="dialog_Positive_Yes">Yes</string>
     <string name="dialog_Negative_No">No</string>
     <string name="notification_Title_Default">Note:</string>
