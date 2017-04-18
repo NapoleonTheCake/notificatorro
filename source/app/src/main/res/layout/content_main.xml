@@ -47,18 +47,51 @@
         android:inputType="textMultiLine"
         android:maxLines="3" />
 
-    <ImageButton
-        android:background="?android:selectableItemBackground"
+    <Button
         android:onClick="onClick_Notify"
-        android:src="@drawable/doit"
-        android:maxHeight="25mm"
-        android:scaleType="fitCenter"
-        android:adjustViewBounds="true"
 
-        android:id="@+id/imageButton_Putin"
-        android:layout_width="wrap_content"
+
+        android:id="@+id/button_Create"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:text="@string/action_New_Note" />
+
+    <Button
+        android:onClick="onClick_SetDelay"
+
+        android:id="@+id/button_SetDelay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/button_Create"
+        android:text="@string/action_SetDelay" />
+
+    <Button
+        android:onClick="onClick_Notify_Silent"
+
+        android:id="@+id/button_SetSilent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/button_Create"
+        android:text="@string/action_SetSilent" />
+
+    <!--<ImageButton-->
+        <!--android:background="?android:selectableItemBackground"-->
+        <!--android:onClick="onClick_Notify"-->
+        <!--android:src="@drawable/doit"-->
+        <!--android:maxHeight="25mm"-->
+        <!--android:scaleType="fitCenter"-->
+        <!--android:adjustViewBounds="true"-->
+
+        <!--android:id="@+id/imageButton_Putin"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_centerHorizontal="true" />-->
 
 </RelativeLayout>

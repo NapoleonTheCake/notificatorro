@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
+import android.graphics.Color;
 import android.preference.PreferenceManager;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -20,6 +21,7 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
@@ -154,16 +156,27 @@ public class MainActivity extends AppCompatActivity
         mPrefsEditor.putInt("id", NOTIFY_ID).apply();
 
         //append history.
-        SharedPreferences mHistory = getSharedPreferences("history", MODE_PRIVATE);
-        String allHistory = mHistory.getString("allHistory", "");
-        SharedPreferences.Editor mHistoryEditor = getSharedPreferences("history", MODE_PRIVATE)
-                .edit();
-        String allHistoryWIP;
-        allHistoryWIP = "*\n";
-        if (titleText.length() != 0) { allHistoryWIP = allHistoryWIP + titleText + "\n"; }
-        allHistoryWIP = allHistoryWIP + bigText + "\n\n" + allHistory;
-        allHistory = allHistoryWIP;
-        mHistoryEditor.putString("allHistory", allHistory).apply();
+        boolean isSilent = mPrefs.getBoolean("isSilent", false);
+
+        if (! isSilent) {
+            SharedPreferences mHistory = getSharedPreferences("history", MODE_PRIVATE);
+            String allHistory = mHistory.getString("allHistory", "");
+            SharedPreferences.Editor mHistoryEditor = getSharedPreferences("history", MODE_PRIVATE)
+                    .edit();
+            String allHistoryWIP;
+            allHistoryWIP = "*\n";
+            if (titleText.length() != 0) {
+                allHistoryWIP = allHistoryWIP + titleText + "\n";
+            }
+            allHistoryWIP = allHistoryWIP + bigText + "\n\n" + allHistory;
+            allHistory = allHistoryWIP;
+            mHistoryEditor.putString("allHistory", allHistory).apply();
+        } else {
+            mPrefsEditor.putBoolean("isSilent", false).apply();
+
+            Button button = (Button) findViewById(R.id.button_SetSilent);
+            button.setBackgroundColor(Color.TRANSPARENT);
+        }
 
         //clear text field.
         text.setText("");
@@ -176,5 +189,41 @@ public class MainActivity extends AppCompatActivity
 
         //back to title.
         textTitleEdit.requestFocus();
+    }
+
+    public void onClick_Notify_Silent(View view) {
+        Button button = (Button) findViewById(R.id.button_SetSilent);
+
+        Context context = getApplicationContext();
+
+        SharedPreferences mPrefs = PreferenceManager
+                .getDefaultSharedPreferences(context);
+
+        SharedPreferences.Editor mPrefsEditor = mPrefs.edit();
+
+        boolean isSilent = mPrefs.getBoolean("isSilent", false);
+
+        if (isSilent) {
+            mPrefsEditor.putBoolean("isSilent", false).apply();
+
+            Toast toast = Toast.makeText(context, getString(R.string.silent_Disable),
+                    Toast.LENGTH_SHORT);
+            toast.setGravity(Gravity.CENTER, 0, -100);
+            toast.show();
+
+            //make button great again.
+            button.setBackgroundColor(Color.TRANSPARENT);
+
+        } else {
+            mPrefsEditor.putBoolean("isSilent", true).apply();
+
+            Toast toast = Toast.makeText(context, getString(R.string.silent_Enable),
+                    Toast.LENGTH_SHORT);
+            toast.setGravity(Gravity.CENTER, 0, -100);
+            toast.show();
+
+            //make button darker.
+            button.setBackgroundColor(getResources().getColor(R.color.button_Pressed));
+        }
     }
 }

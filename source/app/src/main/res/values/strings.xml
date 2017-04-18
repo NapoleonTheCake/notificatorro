@@ -24,4 +24,8 @@
     <string name="notification_Text">Type your text here.</string>
     <string name="template_Empty_Text">No text.</string>
     <string name="title_activity_settings">Settings</string>
+    <string name="action_SetDelay">Delayed</string>
+    <string name="action_SetSilent">Silent</string>
+    <string name="silent_Enable">Won\'t write to history</string>
+    <string name="silent_Disable">Will write to history</string>
 </resources>
