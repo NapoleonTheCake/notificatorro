@@ -26,6 +26,11 @@ Simple and easy quick-note notification app (beta).
 - new icons 512x.
 - add regular notes (serialisation).
 - don't create empty notifications.
+- color notification title + setting.
+- set vibration by default.
+- add setting to reset silent or not.
+- change title to smt like "Remind me..."
+- add help page.
 
 Feel free to contact me via email: contactwithdmitry@gmail.com
 
