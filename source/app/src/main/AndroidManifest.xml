@@ -3,6 +3,8 @@
     package="com.cake.notificator">
 
     <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
 
     <application
         android:allowBackup="true"
@@ -11,6 +13,9 @@
         android:roundIcon="@drawable/crab"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <receiver android:process=":remote" android:name=".Schedule" />
+
         <activity
             android:name=".MainActivity"
             android:windowSoftInputMode="stateVisible|adjustResize">

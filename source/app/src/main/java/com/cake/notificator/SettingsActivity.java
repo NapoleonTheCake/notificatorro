@@ -24,7 +24,7 @@ public class SettingsActivity extends AppCompatActivity {
 
         //set vibration.
         Switch switch_Vibration = (Switch) findViewById(R.id.switch_Vibration);
-        switch_Vibration.setChecked(mPrefAppSettings.getBoolean("vibration", false));
+        switch_Vibration.setChecked(mPrefAppSettings.getBoolean("vibration", true));
     }
 
     @Override

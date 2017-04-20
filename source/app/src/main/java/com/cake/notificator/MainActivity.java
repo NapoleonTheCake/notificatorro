@@ -34,6 +34,9 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity
     implements NavigationView.OnNavigationItemSelectedListener {
 
+    //maximum amount of notifications at the same time set here.
+    final short NOTIFY_LIMIT = 20;
+
     @Override
     protected void onCreate (Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -146,7 +149,7 @@ public class MainActivity extends AppCompatActivity
 
 
         //check vibration.
-        if (mPrefs.getBoolean("vibration", false)) {
+        if (mPrefs.getBoolean("vibration", true)) {
             builder.setVibrate(new long[] { 0, 50 });
         }
 
@@ -165,7 +168,7 @@ public class MainActivity extends AppCompatActivity
 
         //handle id and write to storage.
         NOTIFY_ID++;
-        if (NOTIFY_ID > 100) { NOTIFY_ID = 0; }
+        if (NOTIFY_ID > NOTIFY_LIMIT) { NOTIFY_ID = 0; }
         mPrefsEditor.putInt("id", NOTIFY_ID).apply();
 
         //append history.
@@ -209,8 +212,7 @@ public class MainActivity extends AppCompatActivity
 
         Context context = getApplicationContext();
 
-        SharedPreferences mPrefs = PreferenceManager
-                .getDefaultSharedPreferences(context);
+        SharedPreferences mPrefs = PreferenceManager.getDefaultSharedPreferences(context);
 
         SharedPreferences.Editor mPrefsEditor = mPrefs.edit();
 
@@ -236,9 +238,33 @@ public class MainActivity extends AppCompatActivity
 
     //handle delayed notifications here.
     public void onClick_SetDelay(View view) {
-//        Toast.makeText(getApplicationContext(), "Will be implemented soon.", Toast.LENGTH_LONG)
-//                .show();
+        Button button = (Button) findViewById(R.id.button_SetDelay);
 
-        Snackbar.make(view, "Will be implemented soon.", Snackbar.LENGTH_SHORT).show();
+        Context context = getApplicationContext();
+
+        SharedPreferences mPrefs = PreferenceManager.getDefaultSharedPreferences(context);
+
+        SharedPreferences.Editor mPrefsEditor = mPrefs.edit();
+
+        boolean isDelayed = mPrefs.getBoolean("isDelayed", false);
+
+        if (isDelayed) {
+            mPrefsEditor.putBoolean("isDelayed", true).apply();
+
+            Snackbar.make(view, getString(R.string.dialog_Delay_Disable), Snackbar.LENGTH_SHORT).show();
+
+            //make button darker.
+            button.setBackgroundColor(Color.TRANSPARENT);
+
+        } else {
+            mPrefsEditor.putBoolean("isDelayed", true).apply();
+
+            //start action to show dialog.
+            
+
+            //make button darker.
+            button.setBackgroundColor(getResources().getColor(R.color.button_Pressed));
+        }
+
     }
 }

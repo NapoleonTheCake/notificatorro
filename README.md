@@ -4,7 +4,6 @@ Simple and easy quick-note notification app (beta).
 #### Features:
 - Custom title.
 - Custom text for notifications.
-- Putin theme to motivate you to do your task.
 - English and Russian languages are supported for now.
 - Track history of your notes and clear anytime!
 - This app will never track you in any way. It does what it does, nothing more.
@@ -31,6 +30,10 @@ Simple and easy quick-note notification app (beta).
 - add setting to reset silent or not.
 - change title to smt like "Remind me..."
 - add help page.
+	- tell about custom roms that cuts big notifications (like MIUI).
+- search in history.
+- add welcome page.
+
 
 Feel free to contact me via email: contactwithdmitry@gmail.com
 
