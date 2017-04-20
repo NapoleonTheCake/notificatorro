@@ -167,10 +167,9 @@ public class MainActivity extends AppCompatActivity
         if (isDelayed) {
             int delay = mPrefs.getInt("delay", 0);
 
+            Schedule schedule = new Schedule(builder, delay, bigText, NOTIFY_ID);
 
-            //todo:
-
-            Schedule schedule = new Schedule(builder, delay);
+            schedule.setAlarm(this);
 
         } else {
             builder.setWhen(System.currentTimeMillis());
@@ -311,8 +310,6 @@ public class MainActivity extends AppCompatActivity
 
             AlertDialog alertDialog = alertDialogBuilder.create();
             alertDialog.show();
-
-
         }
 
     }
