@@ -1,9 +1,12 @@
 package com.cake.notificator;
 
+import android.app.Fragment;
+import android.app.FragmentTransaction;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
@@ -15,6 +18,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -142,7 +146,6 @@ public class MainActivity extends AppCompatActivity
         Notification.Builder builder = new Notification.Builder(context)
                 .setContentIntent(contentIntent)
                 .setSmallIcon(R.drawable.statusbaricon)
-                .setWhen(System.currentTimeMillis())
                 .setAutoCancel(true)
                 .setContentTitle(titleText)
                 .setContentText(bigText);
@@ -158,17 +161,34 @@ public class MainActivity extends AppCompatActivity
             builder.setContentTitle(getString(R.string.notification_Title_Default));
         }
 
-        Notification notification = new Notification.BigTextStyle(builder)
-                .bigText(bigText).build();
+        //show notification. check for delay.
+        boolean isDelayed = mPrefs.getBoolean("isDelayed", false);
 
-        //show notification.
-        NotificationManager notificationManager = (NotificationManager) context
-                .getSystemService(NOTIFICATION_SERVICE);
-        notificationManager.notify(NOTIFY_ID, notification);
+        if (isDelayed) {
+            int delay = mPrefs.getInt("delay", 0);
+
+
+            //todo:
+
+            Schedule schedule = new Schedule(builder, delay);
+
+        } else {
+            builder.setWhen(System.currentTimeMillis());
+
+            Notification notification = new Notification.BigTextStyle(builder)
+                    .bigText(bigText).build();
+
+            NotificationManager notificationManager = (NotificationManager) context
+                    .getSystemService(NOTIFICATION_SERVICE);
+            notificationManager.notify(NOTIFY_ID, notification);
+        }
 
         //handle id and write to storage.
         NOTIFY_ID++;
-        if (NOTIFY_ID > NOTIFY_LIMIT) { NOTIFY_ID = 0; }
+        if (NOTIFY_ID > NOTIFY_LIMIT) {
+            NOTIFY_ID = 0;
+        }
+
         mPrefsEditor.putInt("id", NOTIFY_ID).apply();
 
         //append history.
@@ -244,12 +264,12 @@ public class MainActivity extends AppCompatActivity
 
         SharedPreferences mPrefs = PreferenceManager.getDefaultSharedPreferences(context);
 
-        SharedPreferences.Editor mPrefsEditor = mPrefs.edit();
+        final SharedPreferences.Editor mPrefsEditor = mPrefs.edit();
 
         boolean isDelayed = mPrefs.getBoolean("isDelayed", false);
 
         if (isDelayed) {
-            mPrefsEditor.putBoolean("isDelayed", true).apply();
+            mPrefsEditor.putBoolean("isDelayed", false).apply();
 
             Snackbar.make(view, getString(R.string.dialog_Delay_Disable), Snackbar.LENGTH_SHORT).show();
 
@@ -257,10 +277,28 @@ public class MainActivity extends AppCompatActivity
             button.setBackgroundColor(Color.TRANSPARENT);
 
         } else {
-            mPrefsEditor.putBoolean("isDelayed", true).apply();
-
             //start action to show dialog.
-            
+            LayoutInflater layoutInflater = LayoutInflater.from(context);
+            View promptDelay = layoutInflater.inflate(R.layout.prompt_delay, null);
+            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+
+            alertDialogBuilder.setView(promptDelay);
+
+            final EditText userInput = (EditText) promptDelay
+                    .findViewById(R.id.editText_Delay);
+
+            alertDialogBuilder
+                    .setCancelable(true)
+                    .setNeutralButton("OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            mPrefsEditor.putInt("delay", Integer.parseInt(userInput.getText().toString()));
+                            mPrefsEditor.putBoolean("isDelayed", true).apply();
+                        }
+                    });
+
+            AlertDialog alertDialog = alertDialogBuilder.create();
+            alertDialog.show();
 
             //make button darker.
             button.setBackgroundColor(getResources().getColor(R.color.button_Pressed));
@@ -268,3 +306,4 @@ public class MainActivity extends AppCompatActivity
 
     }
 }
+

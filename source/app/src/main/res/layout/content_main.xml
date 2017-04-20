@@ -99,4 +99,11 @@
         <!--android:layout_alignParentBottom="true"-->
         <!--android:layout_centerHorizontal="true" />-->
 
+    <FrameLayout
+        android:layout_centerInParent="true"
+        android:id="@+id/fragment_Delay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </FrameLayout>
+
 </RelativeLayout>

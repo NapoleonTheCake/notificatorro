@@ -1,6 +1,7 @@
 package com.cake.notificator;
 
 import android.app.AlarmManager;
+import android.app.Notification;
 import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -12,6 +13,14 @@ import android.os.PowerManager;
  */
 
 public class Schedule extends BroadcastReceiver {
+
+    Notification.Builder notificationBuilder;
+    int delayMinutes;
+
+    public Schedule(Notification.Builder notificationBuilderIn, int delayMinutesIn) {
+        notificationBuilder = notificationBuilderIn;
+        delayMinutes = delayMinutesIn;
+    }
 
     @Override
     public void onReceive(Context context, Intent intent) {
