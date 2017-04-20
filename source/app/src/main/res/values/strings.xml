@@ -34,4 +34,5 @@
     <string name="notification_Title_Default">Note:</string>
     <string name="settings_Vibration">Enable vibration</string>
     <string name="dialog_Delay_Disable">Delay disabled.</string>
+    <string name="action_SetDelay_Success">Notification delayed for</string>
 </resources>

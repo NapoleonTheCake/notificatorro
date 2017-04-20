@@ -257,8 +257,8 @@ public class MainActivity extends AppCompatActivity
     }
 
     //handle delayed notifications here.
-    public void onClick_SetDelay(View view) {
-        Button button = (Button) findViewById(R.id.button_SetDelay);
+    public void onClick_SetDelay(final View view) {
+        final Button button = (Button) findViewById(R.id.button_SetDelay);
 
         Context context = getApplicationContext();
 
@@ -292,16 +292,27 @@ public class MainActivity extends AppCompatActivity
                     .setNeutralButton("OK", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                            mPrefsEditor.putInt("delay", Integer.parseInt(userInput.getText().toString()));
+                            //check for empty field.
+                            if (userInput.getText().toString().length() == 0) {
+                                return;
+                            }
+                            //put delay.
+                            int delay = Integer.parseInt(userInput.getText().toString());
+                            mPrefsEditor.putInt("delay", delay);
+                            //put delayed.
                             mPrefsEditor.putBoolean("isDelayed", true).apply();
+                            //make button darker.
+                            button.setBackgroundColor(getResources().getColor(R.color.button_Pressed));
+                            //make snack.
+                            Snackbar.make(view, getString(R.string.action_SetDelay_Success) + " " + delay
+                                    + " minutes.", Snackbar.LENGTH_SHORT).show();
                         }
                     });
 
             AlertDialog alertDialog = alertDialogBuilder.create();
             alertDialog.show();
 
-            //make button darker.
-            button.setBackgroundColor(getResources().getColor(R.color.button_Pressed));
+
         }
 
     }

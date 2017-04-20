@@ -28,4 +28,5 @@
     <string name="notification_Title_Default">Заметка:</string>
     <string name="settings_Vibration">Включить вибрацию</string>
     <string name="dialog_Delay_Disable">Без задержки.</string>
+    <string name="action_SetDelay_Success">Уведомление отложено на</string>
 </resources>
