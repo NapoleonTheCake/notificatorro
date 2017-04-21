@@ -33,6 +33,10 @@ Simple and easy quick-note notification app (beta).
 	- tell about custom roms that cuts big notifications (like MIUI).
 - search in history.
 - add welcome page.
+- alternative in-app notifications.
+- try to implement everything as fragments, that will allow you to see drawer everywhere.
+- close keyboard when open drawer and re-open after close.
+- themes.
 
 
 Feel free to contact me via email: contactwithdmitry@gmail.com

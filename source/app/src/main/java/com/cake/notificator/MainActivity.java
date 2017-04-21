@@ -120,6 +120,8 @@ public class MainActivity extends AppCompatActivity
         Context context = getApplicationContext();
         EditText text = (EditText) findViewById(R.id.editText);
         EditText textTitleEdit = (EditText) findViewById(R.id.editText_Title);
+        SharedPreferences mPrefs = PreferenceManager.getDefaultSharedPreferences(context);
+        SharedPreferences.Editor mPrefsEditor = mPrefs.edit();
 
         //get big text.
         String bigText = text.getText().toString();
@@ -130,48 +132,45 @@ public class MainActivity extends AppCompatActivity
         }
 
         //store id locally.
-        SharedPreferences mPrefs = PreferenceManager.getDefaultSharedPreferences(context);
-        SharedPreferences.Editor mPrefsEditor = mPrefs.edit();
         int NOTIFY_ID = mPrefs.getInt("id", 0);
 
-        //create intent.
-        Intent notificationIntent = new Intent(context, MainActivity.class);
-        PendingIntent contentIntent = PendingIntent.getActivity(context,
-                0, notificationIntent, PendingIntent.FLAG_CANCEL_CURRENT);
+        //check if delayed.
+        if (mPrefs.getBoolean("isDelayed", false)) {
+            //store stuff to revoce in Schedule.
+            mPrefsEditor.putString("bigText", bigText).apply();
+            mPrefsEditor.putString("titleText", titleText).apply();
 
-        //get res.
-        Resources res = context.getResources();
-
-        //build notification.
-        Notification.Builder builder = new Notification.Builder(context)
-                .setContentIntent(contentIntent)
-                .setSmallIcon(R.drawable.statusbaricon)
-                .setAutoCancel(true)
-                .setContentTitle(titleText)
-                .setContentText(bigText);
-
-
-        //check vibration.
-        if (mPrefs.getBoolean("vibration", true)) {
-            builder.setVibrate(new long[] { 0, 50 });
-        }
-
-        //create default title if empty.
-        if (titleText.length() == 0) {
-            builder.setContentTitle(getString(R.string.notification_Title_Default));
-        }
-
-        //show notification. check for delay.
-        boolean isDelayed = mPrefs.getBoolean("isDelayed", false);
-
-        if (isDelayed) {
-            int delay = mPrefs.getInt("delay", 0);
-
-            Schedule schedule = new Schedule(builder, delay, bigText, NOTIFY_ID);
-
+            Schedule schedule = new Schedule();
             schedule.setAlarm(this);
-
         } else {
+            //create intent.
+            Intent notificationIntent = new Intent(context, MainActivity.class);
+            PendingIntent contentIntent = PendingIntent.getActivity(context,
+                    0, notificationIntent, PendingIntent.FLAG_CANCEL_CURRENT);
+
+            //get res.
+            Resources res = context.getResources();
+
+            //build notification.
+            Notification.Builder builder = new Notification.Builder(context)
+                    .setContentIntent(contentIntent)
+                    .setSmallIcon(R.drawable.statusbaricon)
+                    .setAutoCancel(true)
+                    .setContentTitle(titleText)
+                    .setContentText(bigText);
+
+
+            //check vibration.
+            if (mPrefs.getBoolean("vibration", true)) {
+                builder.setVibrate(new long[]{0, 50});
+            }
+
+            //create default title if empty.
+            if (titleText.length() == 0) {
+                builder.setContentTitle(getString(R.string.notification_Title_Default));
+            }
+
+            //show notification. check for delay.
             builder.setWhen(System.currentTimeMillis());
 
             Notification notification = new Notification.BigTextStyle(builder)
@@ -182,6 +181,9 @@ public class MainActivity extends AppCompatActivity
             notificationManager.notify(NOTIFY_ID, notification);
         }
 
+        //append history.
+        history_Append(titleText, bigText);
+
         //handle id and write to storage.
         NOTIFY_ID++;
         if (NOTIFY_ID > NOTIFY_LIMIT) {
@@ -189,30 +191,6 @@ public class MainActivity extends AppCompatActivity
         }
 
         mPrefsEditor.putInt("id", NOTIFY_ID).apply();
-
-        //append history.
-        boolean isSilent = mPrefs.getBoolean("isSilent", false);
-
-        if (! isSilent) {
-            SharedPreferences mHistory = getSharedPreferences("history", MODE_PRIVATE);
-            String allHistory = mHistory.getString("allHistory", "");
-            SharedPreferences.Editor mHistoryEditor = getSharedPreferences("history", MODE_PRIVATE)
-                    .edit();
-            String allHistoryWIP;
-            allHistoryWIP = "*\n";
-            if (titleText.length() != 0) {
-                allHistoryWIP = allHistoryWIP + titleText + "\n";
-            }
-            allHistoryWIP = allHistoryWIP + bigText + "\n\n" + allHistory;
-            allHistory = allHistoryWIP;
-            mHistoryEditor.putString("allHistory", allHistory).apply();
-        } else {
-            //reset silence on create.
-//            mPrefsEditor.putBoolean("isSilent", false).apply();
-//
-//            Button button = (Button) findViewById(R.id.button_SetSilent);
-//            button.setBackgroundColor(Color.TRANSPARENT);
-        }
 
         //clear text field.
         text.setText("");
@@ -312,6 +290,34 @@ public class MainActivity extends AppCompatActivity
             alertDialog.show();
         }
 
+    }
+
+    private void history_Append(String titleIn, String textIn) {
+        SharedPreferences mPrefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+
+        //append history.
+        boolean isSilent = mPrefs.getBoolean("isSilent", false);
+
+        if (! isSilent) {
+            SharedPreferences mHistory = getSharedPreferences("history", MODE_PRIVATE);
+            String allHistory = mHistory.getString("allHistory", "");
+            SharedPreferences.Editor mHistoryEditor = getSharedPreferences("history", MODE_PRIVATE)
+                    .edit();
+            String allHistoryWIP;
+            allHistoryWIP = "*\n";
+            if (titleIn.length() != 0) {
+                allHistoryWIP = allHistoryWIP + titleIn + "\n";
+            }
+            allHistoryWIP = allHistoryWIP + textIn + "\n\n" + allHistory;
+            allHistory = allHistoryWIP;
+            mHistoryEditor.putString("allHistory", allHistory).apply();
+        } else {
+            //reset silence on create.
+//            mPrefsEditor.putBoolean("isSilent", false).apply();
+//
+//            Button button = (Button) findViewById(R.id.button_SetSilent);
+//            button.setBackgroundColor(Color.TRANSPARENT);
+        }
     }
 }
 
