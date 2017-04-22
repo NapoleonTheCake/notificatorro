@@ -38,4 +38,14 @@
         <item name="android:textSize">24sp</item>
     </style>
 
+    <style name="text_About">
+        <item name="android:textColor">#FFEEEEFF</item>
+    </style>
+    <style name="text_About.Header">
+        <item name="android:textSize">24sp</item>
+    </style>
+    <style name="text_About.Text">
+        <item name="android:textSize">18sp</item>
+    </style>
+
 </resources>

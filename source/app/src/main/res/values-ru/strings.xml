@@ -31,4 +31,6 @@
     <string name="action_SetDelay_Success">Уведомление отложено на</string>
     <string name="prompt_Delay_Title">Задержка в минутах:</string>
     <string name="action_New_Note_Empty">Пустые заметки не создаю.</string>
+    <string name="title_activity_about"></string>
+    <string name="text_About_Title">Спасибо!</string>
 </resources>

@@ -1,6 +1,8 @@
 package com.cake.notificator;
 
 import android.app.Activity;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -138,7 +140,10 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_Settings) {
             Intent intent = new Intent(MainActivity.this, SettingsActivity.class);
             startActivity(intent);
+
         } else if (id == R.id.nav_About) {
+            Intent intent = new Intent(MainActivity.this, AboutActivity.class);
+            startActivity(intent);
 
         } else if (id == R.id.nav_History) {
             Intent intent = new Intent(MainActivity.this, HistoryActivity.class);

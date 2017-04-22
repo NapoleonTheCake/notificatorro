@@ -4,7 +4,7 @@
 
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <uses-permission android:name="com.android.alarm.permission.SET_ALARM"/>
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
 
     <application
         android:allowBackup="true"
@@ -13,8 +13,10 @@
         android:roundIcon="@drawable/crab"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <receiver android:process=":remote" android:name=".Schedule" android:enabled="true" />
+        <receiver
+            android:name=".Schedule"
+            android:enabled="true"
+            android:process=":remote" />
 
         <activity
             android:name=".MainActivity"
@@ -43,5 +45,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.cake.notificator.MainActivity" />
         </activity>
+        <activity
+            android:parentActivityName=".MainActivity"
+            android:name=".AboutActivity"
+            android:label="@string/title_activity_about"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.cake.notificator.MainActivity" />
+        </activity>
     </application>
+
 </manifest>
