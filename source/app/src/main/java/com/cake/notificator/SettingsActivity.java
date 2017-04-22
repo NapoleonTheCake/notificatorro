@@ -23,8 +23,13 @@ public class SettingsActivity extends AppCompatActivity {
                 .getDefaultSharedPreferences(getApplicationContext());
 
         //set vibration.
-        Switch switch_Vibration = (Switch) findViewById(R.id.switch_Vibration);
-        switch_Vibration.setChecked(mPrefAppSettings.getBoolean("vibration", true));
+        ((Switch) findViewById(R.id.switch_Vibration))
+                .setChecked(mPrefAppSettings.getBoolean("vibration", true));
+
+        //set reset.
+        ((Switch) findViewById(R.id.switch_Reset_Silent))
+                .setChecked(mPrefAppSettings.getBoolean("reset_silent", false));
+
     }
 
     @Override
@@ -34,12 +39,19 @@ public class SettingsActivity extends AppCompatActivity {
                 .getDefaultSharedPreferences(getApplicationContext()).edit();
 
         //set vibration.
-        Switch switch_Vibration = (Switch) findViewById(R.id.switch_Vibration);
-        if (switch_Vibration.isChecked()) {
+        if (((Switch) findViewById(R.id.switch_Vibration)).isChecked()) {
             mPrefAppSettingsEdit.putBoolean("vibration", true).apply();
         } else {
             mPrefAppSettingsEdit.putBoolean("vibration", false).apply();
         }
+
+        //set reset silent.
+        if (((Switch) findViewById(R.id.switch_Reset_Silent)).isChecked()) {
+            mPrefAppSettingsEdit.putBoolean("reset_silent", true).apply();
+        } else {
+            mPrefAppSettingsEdit.putBoolean("reset_silent", false).apply();
+        }
+
 
         super.onBackPressed();
     }

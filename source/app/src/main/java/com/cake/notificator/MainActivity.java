@@ -241,6 +241,13 @@ public class MainActivity extends AppCompatActivity
 
         mPrefsEditor.putInt("id", NOTIFY_ID).apply();
 
+        //reset silent if it is checked in settings.
+        if (mPrefs.getBoolean("isSilent", false)) {
+            if (mPrefs.getBoolean("reset_silent", false)) {
+                onClick_Notify_Silent(view);
+            }
+        }
+
         //clear text field.
         text.setText("");
         textTitleEdit.setText("");
@@ -272,8 +279,11 @@ public class MainActivity extends AppCompatActivity
         if (isSilent) {
             mPrefsEditor.putBoolean("isSilent", false).apply();
 
-            Snackbar.make(view, getString(R.string.silent_Disable), Snackbar.LENGTH_SHORT).show();
-
+            if (mPrefs.getBoolean("reset_silent", false)) {
+                Snackbar.make(view, getString(R.string.silent_Disable_Once), Snackbar.LENGTH_SHORT).show();
+            } else {
+                Snackbar.make(view, getString(R.string.silent_Disable), Snackbar.LENGTH_SHORT).show();
+            }
             //make button great again.
             button.setBackgroundColor(Color.TRANSPARENT);
 

@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name" translatable="false">Notificatorro!</string>
-    <string name="text_Header">What you have to do?</string>
-    <string name="notification_Title">Type your title.</string>
+    <string name="text_Header">Remind me about...</string>
+    <string name="notification_Title">Title</string>
     <string name="text_Count" translatable="false">ID:</string>
     <string name="text_Count_Default">Create notification first.</string>
     <string name="text_Crab_Toast">Don\'t call me Mr. Crab!</string>
@@ -12,15 +12,15 @@
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="dev_Version" translatable="false">0.7 beta</string>
-    <string name="dev_Version_Short" translatable="false">0.7b</string>
+    <string name="dev_Version" translatable="false">0.9 beta</string>
+    <string name="dev_Version_Short" translatable="false">0.9b</string>
     <string name="dev_Email" translatable="false">contactwithdmitry@gmail.com</string>
     <string name="ui_AdditionalSettings">More</string>
     <string name="action_New_Note">Create note</string>
     <string name="action_History">History</string>
     <string name="action_About" translatable="false">About</string>
     <string name="action_Settings">Settings</string>
-    <string name="notification_Text">Type your text here.</string>
+    <string name="notification_Text">Note text</string>
     <string name="template_Empty_Text">No text.</string>
     <string name="title_activity_settings">Settings</string>
     <string name="action_SetDelay">Delayed</string>
@@ -44,4 +44,6 @@
     <string name="text_About_Coffee_Mailme">Mail to me</string>
     <string name="ui_SendEmail">Send mail with</string>
     <string name="ui_OpenPage">Open page with</string>
+    <string name="settings_Reset_Silent">Silent only one note</string>
+    <string name="silent_Disable_Once">This one will be listed in history.</string>
 </resources>

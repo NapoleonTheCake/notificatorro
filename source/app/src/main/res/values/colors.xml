@@ -6,6 +6,6 @@
     <color name="text_Header_Color">#FF000000</color>
     <color name="text_Input_Color">#FF000000</color>
     <color name="button_Pressed">#FFD6D8D7</color>
-    <color name="color_About_TitleBar">#FF13858E</color>
+    <color name="color_About_TitleBar">#FF19AFBB</color>
     <color name="color_About_Background">#FF1CC4D1</color>
 </resources>

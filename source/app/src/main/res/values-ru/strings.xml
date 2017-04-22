@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="text_Header">Что тебе сделать то?</string>
-    <string name="notification_Title">Заголовок.</string>
+    <string name="text_Header">Напомни мне...</string>
+    <string name="notification_Title">Заголовок</string>
     <string name="text_Count_Default">Тут будет ID.</string>
     <string name="text_Crab_Toast">Не называй меня Мр. Краб!</string>
     <string name="notification_Created">Сделано!</string>
@@ -13,7 +13,7 @@
     <string name="action_New_Note">Создать заметку</string>
     <string name="action_History">История</string>
     <string name="action_Settings">Настройки</string>
-    <string name="notification_Text">Напишите сюда вашу заметку.</string>
+    <string name="notification_Text">Текст заметки</string>
     <string name="template_Empty_Text">Без текста.</string>
     <string name="title_activity_settings">Настройки</string>
     <string name="action_SetDelay">Отложить</string>
@@ -37,4 +37,6 @@
     <string name="text_About_Coffee_Mailme">Письмо автору</string>
     <string name="ui_SendEmail">Отправить письмо через</string>
     <string name="ui_OpenPage">Открыть страницу в</string>
+    <string name="settings_Reset_Silent">Скрывать по одной заметке</string>
+    <string name="silent_Disable_Once">Эта заметка войдет в историю.</string>
 </resources>
