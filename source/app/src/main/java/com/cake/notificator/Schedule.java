@@ -22,10 +22,6 @@ import android.widget.Toast;
 
 public class Schedule extends BroadcastReceiver {
 
-    public Schedule() {
-        return;
-    }
-
     @Override
     public void onReceive(Context context, Intent intent) {
         PowerManager powerManager = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
@@ -84,13 +80,12 @@ public class Schedule extends BroadcastReceiver {
 
     public void setAlarm(Context context) {
         SharedPreferences mPrefs = PreferenceManager.getDefaultSharedPreferences(context);
-        int delay = mPrefs.getInt("delay", 1);
-        Toast.makeText(context, Integer.toString(delay), Toast.LENGTH_LONG);
+        int delay = mPrefs.getInt("delay", 0);
+        int id = mPrefs.getInt("id", 0);
 
         AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
         Intent intent = new Intent(context, Schedule.class);
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(context, 0, intent, 0);
-//        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis(), 1000 * 60 * delay, pendingIntent);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(context, id, intent, 0);
         alarmManager.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + 1000 * 60 * delay, pendingIntent);
     }
 }

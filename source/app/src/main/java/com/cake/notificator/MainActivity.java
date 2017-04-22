@@ -56,6 +56,17 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        //handle buttons colors.
+        SharedPreferences mPrefs = PreferenceManager.getDefaultSharedPreferences(this);
+        if (mPrefs.getBoolean("isDelayed", false)) {
+            ((Button) findViewById(R.id.button_SetDelay))
+                    .setBackgroundColor(getResources().getColor(R.color.button_Pressed));
+        }
+        if (mPrefs.getBoolean("isSilent", false)) {
+            ((Button) findViewById(R.id.button_SetSilent))
+                    .setBackgroundColor(getResources().getColor(R.color.button_Pressed));
+        }
     }
 
     @Override
@@ -136,12 +147,12 @@ public class MainActivity extends AppCompatActivity
 
         //check if delayed.
         if (mPrefs.getBoolean("isDelayed", false)) {
-            //store stuff to revoce in Schedule.
+            //store stuff to revoke in Schedule.
             mPrefsEditor.putString("bigText", bigText).apply();
             mPrefsEditor.putString("titleText", titleText).apply();
 
             Schedule schedule = new Schedule();
-            schedule.setAlarm(this);
+            schedule.setAlarm(context);
         } else {
             //create intent.
             Intent notificationIntent = new Intent(context, MainActivity.class);
@@ -201,6 +212,9 @@ public class MainActivity extends AppCompatActivity
 
         //back to title.
         textTitleEdit.requestFocus();
+
+        //DEBUG disable delay as it is broken.
+        onClick_SetDelay(view);
     }
 
     //handling silent notifications here.
@@ -254,6 +268,12 @@ public class MainActivity extends AppCompatActivity
             button.setBackgroundColor(Color.TRANSPARENT);
 
         } else {
+            //disable delay as it broken.
+            if (mPrefs.getInt("delay", 0) != 0) {
+                Snackbar.make(view, "Sorry, broken. Works only once.", Snackbar.LENGTH_LONG).show();
+                return;
+            }
+
             //start action to show dialog.
             LayoutInflater layoutInflater = LayoutInflater.from(context);
             View promptDelay = layoutInflater.inflate(R.layout.prompt_delay, null);

@@ -29,4 +29,5 @@
     <string name="settings_Vibration">Включить вибрацию</string>
     <string name="dialog_Delay_Disable">Без задержки.</string>
     <string name="action_SetDelay_Success">Уведомление отложено на</string>
+    <string name="prompt_Delay_Title">Задержка в минутах:</string>
 </resources>

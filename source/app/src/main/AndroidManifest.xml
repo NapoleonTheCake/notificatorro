@@ -4,7 +4,7 @@
 
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
-
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM"/>
 
     <application
         android:allowBackup="true"
@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <receiver android:process=":remote" android:name=".Schedule" />
+        <receiver android:process=":remote" android:name=".Schedule" android:enabled="true" />
 
         <activity
             android:name=".MainActivity"

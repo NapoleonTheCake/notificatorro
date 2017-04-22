@@ -20,6 +20,7 @@
 
     <EditText
         android:id="@+id/editText_Title"
+        android:maxLength="18"
 
         style="@style/text_Input_Style.Title"
         android:layout_width="wrap_content"
