@@ -31,7 +31,6 @@
     <string name="action_SetDelay_Success">Уведомление отложено на</string>
     <string name="prompt_Delay_Title">Задержка в минутах:</string>
     <string name="action_New_Note_Empty">Пустые заметки не создаю.</string>
-    <string name="title_activity_about"></string>
     <string name="text_About_Title">Спасибо!</string>
     <string name="text_About_Coffee_GitHubPage">Страница GitHub</string>
     <string name="text_About_Coffee_Mailme">Письмо автору</string>
@@ -39,4 +38,5 @@
     <string name="ui_OpenPage">Открыть страницу в</string>
     <string name="settings_Reset_Silent">Скрывать по одной заметке</string>
     <string name="silent_Disable_Once">Эта заметка войдет в историю.</string>
+    <string name="text_About_Text">Приложение сделано с любовью.\nЭто моё первое приложение\nдля Андроид. Это означает,\nчто я обучаюсь на этом приложении.\n\nЕсли Вы хотите пожертвовать проекту,\nВы можете найти данные для\nпожертвований на главной странице\nпроекта, нажав на кружку кофе наверху.\n\nТак же вы можете там найти список планов\nи исходный код приложения. Приложение\nраспространяется под лицензией GNU GPLv3,\nа это означает, что Вы можете изменять и\nраспространять Вашу версию приложения\nвместе с её исходным кодом. Так же Вы\nдолжны указывать автора приложения (меня),\nприложив ссылку на сайт моего проекта.\nЧтобы узнать больше, пожалуйста, прочтите\nфайл LICENSE на странице проекта.\n\nУдачи!</string>
 </resources>
