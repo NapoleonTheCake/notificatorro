@@ -1,7 +1,6 @@
 package com.cake.notificator;
 
-import android.app.Fragment;
-import android.app.FragmentTransaction;
+import android.app.Activity;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -11,7 +10,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.graphics.Color;
-import android.os.Vibrator;
 import android.preference.PreferenceManager;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
@@ -22,24 +20,20 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.view.Gravity;
 import android.view.LayoutInflater;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
-import android.widget.LinearLayout;
-import android.widget.SeekBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
     implements NavigationView.OnNavigationItemSelectedListener {
 
     //maximum amount of notifications at the same time set here.
-    final short NOTIFY_LIMIT = 20;
+    private final short NOTIFY_LIMIT = 20;
 
     @Override
     protected void onCreate (Bundle savedInstanceState){
@@ -50,7 +44,21 @@ public class MainActivity extends AppCompatActivity
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close) {
+
+                @Override
+                public void onDrawerOpened(View drawerView) {
+                    InputMethodManager inputMethodManager = (InputMethodManager)  getSystemService(Activity.INPUT_METHOD_SERVICE);
+                    inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+                }
+
+                @Override
+                public void onDrawerClosed(View drawerView) {
+                    (findViewById(R.id.editText_Title)).requestFocus();
+                    InputMethodManager inputMethodManager = (InputMethodManager)  getSystemService(Activity.INPUT_METHOD_SERVICE);
+                    inputMethodManager.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
+                }
+        };
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
@@ -134,9 +142,16 @@ public class MainActivity extends AppCompatActivity
         SharedPreferences mPrefs = PreferenceManager.getDefaultSharedPreferences(context);
         SharedPreferences.Editor mPrefsEditor = mPrefs.edit();
 
-        //get big text.
+        //get text.
         String bigText = text.getText().toString();
         String titleText = textTitleEdit.getText().toString();
+
+        //abort creating empty notification.
+        if (bigText.length() == 0 && titleText.length() == 0) {
+            Snackbar.make(view, getString(R.string.action_New_Note_Empty), Snackbar.LENGTH_SHORT)
+                    .show();
+            return;
+        }
 
         if (bigText.length() == 0) {
             bigText = getString(R.string.template_Empty_Text);
@@ -214,7 +229,9 @@ public class MainActivity extends AppCompatActivity
         textTitleEdit.requestFocus();
 
         //DEBUG disable delay as it is broken.
-        onClick_SetDelay(view);
+        if (mPrefs.getBoolean("isDelayed", false)) {
+            onClick_SetDelay(view);
+        }
     }
 
     //handling silent notifications here.
@@ -312,6 +329,7 @@ public class MainActivity extends AppCompatActivity
 
     }
 
+    //write history method.
     private void history_Append(String titleIn, String textIn) {
         SharedPreferences mPrefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
 

@@ -30,4 +30,5 @@
     <string name="dialog_Delay_Disable">Без задержки.</string>
     <string name="action_SetDelay_Success">Уведомление отложено на</string>
     <string name="prompt_Delay_Title">Задержка в минутах:</string>
+    <string name="action_New_Note_Empty">Пустые заметки не создаю.</string>
 </resources>
