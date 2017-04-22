@@ -21,11 +21,14 @@
         android:layout_gravity="center_horizontal"
         android:background="?android:attr/selectableItemBackground"
         android:layout_marginTop="10dp"
+        android:onClick="onClick_CoffeeCup"
 
         android:id="@+id/imageButton_About_Coffee"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/coffeecup" />
+        app:srcCompat="@drawable/coffeecup"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         style="@style/text_About.Header"
@@ -43,6 +46,7 @@
         style="@style/text_About.Text"
         android:text="@string/text_About_Text"
         android:layout_centerHorizontal="true"
+        android:textAlignment="center"
 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

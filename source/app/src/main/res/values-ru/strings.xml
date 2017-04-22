@@ -33,4 +33,8 @@
     <string name="action_New_Note_Empty">Пустые заметки не создаю.</string>
     <string name="title_activity_about"></string>
     <string name="text_About_Title">Спасибо!</string>
+    <string name="text_About_Coffee_GitHubPage">Страница GitHub</string>
+    <string name="text_About_Coffee_Mailme">Письмо автору</string>
+    <string name="ui_SendEmail">Отправить письмо через</string>
+    <string name="ui_OpenPage">Открыть страницу в</string>
 </resources>
