@@ -1,11 +1,10 @@
 # Notificatorro!
-Simple and easy quick-note notification app (beta).
+Simple and easy quick-note notification app.
 
 #### Features:
-- Custom title.
-- Custom text for notifications.
-- English and Russian languages are supported for now.
+- Create notifications with your own text!
 - Track history of your notes and clear anytime!
+- English and Russian languages are supported for now.
 - This app will never track you in any way. It does what it does, nothing more.
 
 #### Future plans:
@@ -21,13 +20,12 @@ Simple and easy quick-note notification app (beta).
 - new icons 512x.
 - add regular notes (serialisation).
 - color notification title + setting.
-- change title to smt like "Remind me..."
 - add help page.
 	- tell about custom roms that cuts big notifications (like MIUI).
 - search in history.
 - add welcome page.
 - alternative in-app notifications.
-- try to implement everything as fragments, that will allow you to see drawer everywhere.st
+- try to implement everything as fragments, that will allow you to see drawer everywhere.
 - themes.
 
 

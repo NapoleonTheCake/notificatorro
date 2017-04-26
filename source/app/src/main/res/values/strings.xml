@@ -45,5 +45,5 @@
     <string name="ui_SendEmail">Send mail with</string>
     <string name="ui_OpenPage">Open page with</string>
     <string name="settings_Reset_Silent">Silent only one note</string>
-    <string name="silent_Disable_Once">This one will be listed in history.</string>
+    <string name="silent_Enable_Once">This one won\'t be listed in history.</string>
 </resources>

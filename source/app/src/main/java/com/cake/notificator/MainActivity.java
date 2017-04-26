@@ -228,6 +228,9 @@ public class MainActivity extends AppCompatActivity
             NotificationManager notificationManager = (NotificationManager) context
                     .getSystemService(NOTIFICATION_SERVICE);
             notificationManager.notify(NOTIFY_ID, notification);
+
+            //reset delay.
+            onClick_SetDelay(view);
         }
 
         //append history.
@@ -257,11 +260,6 @@ public class MainActivity extends AppCompatActivity
 
         //back to title.
         textTitleEdit.requestFocus();
-
-        //DEBUG disable delay as it is broken.
-        if (mPrefs.getBoolean("isDelayed", false)) {
-            onClick_SetDelay(view);
-        }
     }
 
     //handling silent notifications here.
@@ -279,18 +277,19 @@ public class MainActivity extends AppCompatActivity
         if (isSilent) {
             mPrefsEditor.putBoolean("isSilent", false).apply();
 
-            if (mPrefs.getBoolean("reset_silent", false)) {
-                Snackbar.make(view, getString(R.string.silent_Disable_Once), Snackbar.LENGTH_SHORT).show();
-            } else {
-                Snackbar.make(view, getString(R.string.silent_Disable), Snackbar.LENGTH_SHORT).show();
-            }
+            Snackbar.make(view, getString(R.string.silent_Disable), Snackbar.LENGTH_SHORT).show();
+
             //make button great again.
             button.setBackgroundColor(Color.TRANSPARENT);
 
         } else {
             mPrefsEditor.putBoolean("isSilent", true).apply();
 
-            Snackbar.make(view, getString(R.string.silent_Enable), Snackbar.LENGTH_SHORT).show();
+            if (mPrefs.getBoolean("reset_silent", false)) {
+                Snackbar.make(view, getString(R.string.silent_Enable_Once), Snackbar.LENGTH_SHORT).show();
+            } else {
+                Snackbar.make(view, getString(R.string.silent_Enable), Snackbar.LENGTH_SHORT).show();
+            }
 
             //make button darker.
             button.setBackgroundColor(getResources().getColor(R.color.button_Pressed));
@@ -319,9 +318,9 @@ public class MainActivity extends AppCompatActivity
 
         } else {
             //disable delay as it broken.
-            if (mPrefs.getInt("delay", 0) != 0) {
-                Snackbar.make(view, "Sorry, broken. Works only once.", Snackbar.LENGTH_LONG).show();
-                return;
+            if (mPrefs.getInt("delay", 0) == 0) {
+                Snackbar.make(view, "Delay is still WIP, probably won't work with your device.",
+                        Snackbar.LENGTH_LONG).show();
             }
 
             //start action to show dialog.
@@ -358,6 +357,8 @@ public class MainActivity extends AppCompatActivity
 
             AlertDialog alertDialog = alertDialogBuilder.create();
             alertDialog.show();
+
+//            ((EditText) findViewById(R.id.editText_Delay)).requestFocus();
         }
 
     }
