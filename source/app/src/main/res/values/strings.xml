@@ -12,8 +12,7 @@
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="dev_Version" translatable="false">0.9 beta</string>
-    <string name="dev_Version_Short" translatable="false">0.9b</string>
+    <string name="dev_Version" translatable="false">1.0 release</string>
     <string name="dev_Email" translatable="false">contactwithdmitry@gmail.com</string>
     <string name="ui_AdditionalSettings">More</string>
     <string name="action_New_Note">Create note</string>

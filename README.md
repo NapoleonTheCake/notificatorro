@@ -8,7 +8,8 @@ Simple and easy quick-note notification app.
 - This app will never track you in any way. It does what it does, nothing more.
 
 #### Future plans:
-- fix delayed notifications feature.
+- !!! find out why SharedPreferences are not working with some devices.
+- !!! fix delayed notifications feature.
 - Add clear field and notifications button.
 - Add persistent notification feature:
 	- Add switcher to show/hide notification.
@@ -28,6 +29,7 @@ Simple and easy quick-note notification app.
 - try to implement everything as fragments, that will allow you to see drawer everywhere.
 - themes.
 
+Source code: https://github.com/NapoleonTheCake/notificatorro
 
 Feel free to contact me via email: contactwithdmitry@gmail.com
 
