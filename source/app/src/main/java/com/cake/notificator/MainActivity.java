@@ -230,7 +230,9 @@ public class MainActivity extends AppCompatActivity
             notificationManager.notify(NOTIFY_ID, notification);
 
             //reset delay.
-            onClick_SetDelay(view);
+            if (mPrefs.getBoolean("isDelayed", false)) {
+                onClick_SetDelay(view);
+            }
         }
 
         //append history.
@@ -380,7 +382,11 @@ public class MainActivity extends AppCompatActivity
             if (titleIn.length() != 0) {
                 allHistoryWIP = allHistoryWIP + titleIn + "\n";
             }
-            allHistoryWIP = allHistoryWIP + textIn + "\n\n" + allHistory;
+            if (textIn.equals(getString(R.string.template_Empty_Text))) {
+                allHistoryWIP = allHistoryWIP + "\n\n" + allHistory;
+            } else {
+                allHistoryWIP = allHistoryWIP + textIn + "\n\n" + allHistory;
+            }
             allHistory = allHistoryWIP;
             mHistoryEditor.putString("allHistory", allHistory).apply();
         } else {
