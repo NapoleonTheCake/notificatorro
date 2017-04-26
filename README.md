@@ -34,3 +34,6 @@ Source code: https://github.com/NapoleonTheCake/notificatorro
 Feel free to contact me via email: contactwithdmitry@gmail.com
 
 Translations are welcomed.
+
+I accept donations to my student's debit card: 4061492051715222
+* Thank you for any support!
