@@ -27,7 +27,7 @@ Simple and easy quick-note notification app.
 - add welcome page.
 - alternative in-app notifications.
 - try to implement everything as fragments, that will allow you to see drawer everywhere.
-- themes.
+
 
 Source code: https://github.com/NapoleonTheCake/notificatorro
 
@@ -35,5 +35,5 @@ Feel free to contact me via email: contactwithdmitry@gmail.com
 
 Translations are welcomed.
 
-I accept donations to my student's debit card: 4061492051715222
+I accept donations to my student's debit card: 4061492051715222  
 **Thank you for any support!**
