@@ -38,7 +38,7 @@
     <string name="action_New_Note_Empty">Won\'t create empty note.</string>
     <string name="title_activity_about" translatable="false">About</string>
     <string name="text_About_Title">Thank you!</string>
-    <string name="text_About_Text">I made this app with love.\nThis is my first app I\'ve ever\ncreated for Android.\nThis means I learn on this app.\n\nIf you want to donate, please check\ncredentials on project\'s GitHub main page\nby tapping on coffee cup above.\n\nYou can also find todo list and\nsource code for this app. App\nis shared under GNU GPLv3 license,\nwhich means that you can\nmodify and share your version\nof app with your sources attached.\nAlso you have to reffer to an\nauthor (me) by including link\nto project\'s GitHub page.\nTo find out more please read\nLICENSE file inside project\'s page.\n\nStay awesome!</string>
+    <string name="text_About_Text">I made this app with love. This is my first app I\'ve ever created for Android. This means I learn on this app. If you want to donate, please check credentials on project\'s GitHub main page by tapping on coffee cup above. You can also find todo list and source code for this app. App is shared under GNU GPLv3 license, which means that you can modify and share your version of app with your sources attached. Also you have to reffer to an author (me) by including link to project\'s GitHub page. To find out more please read LICENSE file inside project\'s page.\n\nStay awesome!\n</string>
     <string name="text_About_Coffee_GitHubPage">GitHub page</string>
     <string name="text_About_Coffee_Mailme">Mail to me</string>
     <string name="ui_SendEmail">Send mail with</string>
