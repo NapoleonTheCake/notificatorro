@@ -9,6 +9,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
+import android.media.RingtoneManager;
 import android.os.PowerManager;
 import android.os.StrictMode;
 import android.preference.PreferenceManager;
@@ -51,6 +52,7 @@ public class Schedule extends BroadcastReceiver {
                 .setSmallIcon(R.drawable.statusbaricon)
                 .setAutoCancel(true)
                 .setContentTitle(titleText)
+                .setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION))
                 .setContentText(bigText);
 
 

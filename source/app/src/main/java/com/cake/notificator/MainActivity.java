@@ -185,6 +185,7 @@ public class MainActivity extends AppCompatActivity
 
         //check if delayed.
         if (mPrefs.getBoolean("isDelayed", false)) {
+
             //store stuff to revoke in Schedule.
             mPrefsEditor.putString("bigText", bigText).apply();
             mPrefsEditor.putString("titleText", titleText).apply();
@@ -192,6 +193,7 @@ public class MainActivity extends AppCompatActivity
             Schedule schedule = new Schedule();
             schedule.setAlarm(context);
         } else {
+
             //create intent.
             Intent notificationIntent = new Intent(context, MainActivity.class);
             PendingIntent contentIntent = PendingIntent.getActivity(context,
@@ -373,6 +375,7 @@ public class MainActivity extends AppCompatActivity
         boolean isSilent = mPrefs.getBoolean("isSilent", false);
 
         if (! isSilent) {
+
             SharedPreferences mHistory = getSharedPreferences("history", MODE_PRIVATE);
             String allHistory = mHistory.getString("allHistory", "");
             SharedPreferences.Editor mHistoryEditor = getSharedPreferences("history", MODE_PRIVATE)
@@ -383,12 +386,13 @@ public class MainActivity extends AppCompatActivity
                 allHistoryWIP = allHistoryWIP + titleIn + "\n";
             }
             if (textIn.equals(getString(R.string.template_Empty_Text))) {
-                allHistoryWIP = allHistoryWIP + "\n\n" + allHistory;
+                allHistoryWIP = allHistoryWIP + "\n" + allHistory;
             } else {
                 allHistoryWIP = allHistoryWIP + textIn + "\n\n" + allHistory;
             }
             allHistory = allHistoryWIP;
             mHistoryEditor.putString("allHistory", allHistory).apply();
+
         } else {
 
             //utilize strings from prefs.
@@ -396,11 +400,6 @@ public class MainActivity extends AppCompatActivity
             mPrefsEdit.putString("bigText", "").apply();
             mPrefsEdit.putString("titleText", "").apply();
 
-            //reset silence on create.
-//            mPrefsEditor.putBoolean("isSilent", false).apply();
-//
-//            Button button = (Button) findViewById(R.id.button_SetSilent);
-//            button.setBackgroundColor(Color.TRANSPARENT);
         }
     }
 }
