@@ -80,10 +80,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
         <entry file="file:///media/cake/outside/development/android-zone/notificatorro/source/app/src/main/java/com/cake/notificator/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-418">
+            <state relative-caret-position="422">
               <caret line="160" column="42" selection-start-line="160" selection-start-column="42" selection-end-line="160" selection-end-column="42" />
               <folding>
                 <element signature="method#onCreate#0;class#MainActivity#0" expanded="false" />
@@ -97,19 +97,26 @@
                 <element signature="e#5223#5266#0" expanded="false" />
                 <element signature="e#5223#5266#0" expanded="false" />
                 <element signature="method#onNavigationItemSelected#0;class#MainActivity#0" expanded="false" />
+                <element signature="method#onClick_Notify#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#onClick_Notify_Silent#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#onClick_SetDelay#0;class#MainActivity#0" expanded="false" />
+                <element signature="method#history_Append#0;class#MainActivity#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Schedule.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Schedule.java" pinned="false" current-in-tab="false">
         <entry file="file:///media/cake/outside/development/android-zone/notificatorro/source/app/src/main/java/com/cake/notificator/Schedule.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="356">
-              <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="135">
+              <caret line="26" column="58" selection-start-line="26" selection-start-column="58" selection-end-line="26" selection-end-column="58" />
+              <folding>
+                <element signature="docComment;class#Schedule#0" expanded="false" />
+                <element signature="method#onReceive#0;class#Schedule#0" expanded="false" />
+                <element signature="e#1018#1049#0" expanded="false" />
+                <element signature="method#setAlarm#0;class#Schedule#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -2996,11 +3003,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="android-dummy:///home/cake/outside/development/android-zone/notificatorro/source/app/Translations Editor">
-      <provider selected="true" editor-type-id="string-resource-editor">
-        <state />
-      </provider>
-    </entry>
     <entry file="file:///media/cake/outside/development/android-zone/notificatorro/source/app/src/main/res/layout/content_about.xml">
       <provider editor-type-id="android-designer2">
         <state />
@@ -3023,9 +3025,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="android-dummy:///home/cake/outside/development/android-zone/notificatorro/source/app/Translations Editor">
+      <provider selected="true" editor-type-id="string-resource-editor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file:///media/cake/outside/development/android-zone/notificatorro/source/app/src/main/java/com/cake/notificator/Schedule.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="26" column="58" selection-start-line="26" selection-start-column="58" selection-end-line="26" selection-end-column="58" />
+          <folding>
+            <element signature="docComment;class#Schedule#0" expanded="false" />
+            <element signature="method#onReceive#0;class#Schedule#0" expanded="false" />
+            <element signature="e#1018#1049#0" expanded="false" />
+            <element signature="method#setAlarm#0;class#Schedule#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file:///media/cake/outside/development/android-zone/notificatorro/source/app/src/main/java/com/cake/notificator/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-418">
+        <state relative-caret-position="422">
           <caret line="160" column="42" selection-start-line="160" selection-start-column="42" selection-end-line="160" selection-end-column="42" />
           <folding>
             <element signature="method#onCreate#0;class#MainActivity#0" expanded="false" />
@@ -3039,17 +3059,11 @@
             <element signature="e#5223#5266#0" expanded="false" />
             <element signature="e#5223#5266#0" expanded="false" />
             <element signature="method#onNavigationItemSelected#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onClick_Notify#0;class#MainActivity#0" expanded="false" />
             <element signature="method#onClick_Notify_Silent#0;class#MainActivity#0" expanded="false" />
             <element signature="method#onClick_SetDelay#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#history_Append#0;class#MainActivity#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///media/cake/outside/development/android-zone/notificatorro/source/app/src/main/java/com/cake/notificator/Schedule.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
