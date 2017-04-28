@@ -29,7 +29,7 @@ Simple and easy quick-note notification app.
 - try to implement everything as fragments, that will allow you to see drawer everywhere.
 
 
-Source code: https://github.com/NapoleonTheCake/notificatorro
+ Source code: https://github.com/NapoleonTheCake/notificatorro
 
 Feel free to contact me via email: contactwithdmitry@gmail.com
 
