@@ -390,6 +390,12 @@ public class MainActivity extends AppCompatActivity
             allHistory = allHistoryWIP;
             mHistoryEditor.putString("allHistory", allHistory).apply();
         } else {
+
+            //utilize strings from prefs.
+            SharedPreferences.Editor mPrefsEdit = mPrefs.edit();
+            mPrefsEdit.putString("bigText", "").apply();
+            mPrefsEdit.putString("titleText", "").apply();
+
             //reset silence on create.
 //            mPrefsEditor.putBoolean("isSilent", false).apply();
 //
