@@ -164,6 +164,7 @@ public class MainActivity extends AppCompatActivity
         EditText text = (EditText) findViewById(R.id.editText);
         EditText textTitleEdit = (EditText) findViewById(R.id.editText_Title);
         SharedPreferences mPrefs = getSharedPreferences("appsettings", 0);
+        SharedPreferences.Editor mPrefsTextsEditor = getSharedPreferences("notifications", 0).edit();
         SharedPreferences.Editor mPrefsEditor = mPrefs.edit();
 
         //get text.
@@ -188,8 +189,8 @@ public class MainActivity extends AppCompatActivity
         if (mPrefs.getBoolean("isDelayed", false)) {
 
             //store stuff to revoke in Schedule.
-            mPrefsEditor.putString("bigText", bigText).apply();
-            mPrefsEditor.putString("titleText", titleText).apply();
+            mPrefsTextsEditor.putString("bigText", bigText).apply();
+            mPrefsTextsEditor.putString("titleText", titleText).apply();
 
             Schedule schedule = new Schedule();
             schedule.setAlarm(context);
@@ -364,7 +365,7 @@ public class MainActivity extends AppCompatActivity
                             button.setBackgroundColor(getResources().getColor(R.color.button_Pressed));
                             //make snack.
                             Snackbar.make(view, getString(R.string.action_SetDelay_Success) + " " + delay
-                                    + " minutes.", Snackbar.LENGTH_SHORT).show();
+                                    + " " + getString(R.string.action_SetDelay_Success_Postfix), Snackbar.LENGTH_SHORT).show();
                         }
                     });
 

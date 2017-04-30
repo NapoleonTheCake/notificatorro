@@ -11,7 +11,7 @@
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="dev_Version" translatable="false">1.1</string>
+    <string name="dev_Version" translatable="false">1.2</string>
     <string name="dev_Email" translatable="false">contactwithdmitry@gmail.com</string>
     <string name="ui_AdditionalSettings">More</string>
     <string name="action_New_Note">Create note</string>
@@ -45,4 +45,5 @@
     <string name="settings_Reset_Silent">Silent only one note</string>
     <string name="silent_Enable_Once">This one won\'t be listed in history.</string>
     <string name="settings_Reset_Delay">Delay only one note</string>
+    <string name="action_SetDelay_Success_Postfix">minutes.</string>
 </resources>

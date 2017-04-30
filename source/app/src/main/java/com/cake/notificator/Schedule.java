@@ -28,7 +28,7 @@ public class Schedule extends BroadcastReceiver {
         //next is notification code. //
 
         //get res.
-        SharedPreferences mPrefs = PreferenceManager.getDefaultSharedPreferences(context);
+        SharedPreferences mPrefs = context.getSharedPreferences("notifications", 0);
 
         String titleText = mPrefs.getString("titleText", "");
         String bigText = mPrefs.getString("bigText", "");
@@ -77,13 +77,14 @@ public class Schedule extends BroadcastReceiver {
     }
 
     public void setAlarm(Context context) {
+
         SharedPreferences mPrefs = PreferenceManager.getDefaultSharedPreferences(context);
         int delay = mPrefs.getInt("delay", 0);
         int id = mPrefs.getInt("id", 0);
 
         AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
         Intent intent = new Intent(context, Schedule.class);
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(context, id, intent, 0);
-        alarmManager.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + 1000 * 60 * delay, pendingIntent);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(context, id, intent, PendingIntent.FLAG_ONE_SHOT);
+        alarmManager.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() /* + 1000 * 60 * delay */, pendingIntent);
     }
 }
