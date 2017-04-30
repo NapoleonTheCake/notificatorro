@@ -19,8 +19,7 @@ public class SettingsActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         //read all settings here.
-        SharedPreferences mPrefAppSettings = PreferenceManager
-                .getDefaultSharedPreferences(this);
+        SharedPreferences mPrefAppSettings = getSharedPreferences("appsettings", 0);
 
         //set vibration.
         ((Switch) findViewById(R.id.switch_Vibration))
@@ -38,8 +37,8 @@ public class SettingsActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         //set all settings here.
-        SharedPreferences.Editor mPrefAppSettingsEdit = PreferenceManager
-                .getDefaultSharedPreferences(this).edit();
+        SharedPreferences.Editor mPrefAppSettingsEdit = getSharedPreferences("appsettings",
+                0).edit();
 
         //set vibration.
         if (((Switch) findViewById(R.id.switch_Vibration)).isChecked()) {
@@ -57,11 +56,10 @@ public class SettingsActivity extends AppCompatActivity {
 
         //set reset delay.
         if (((Switch) findViewById(R.id.switch_Reset_Delay)).isChecked()) {
-            mPrefAppSettingsEdit.putBoolean("reset_delay", true);
+            mPrefAppSettingsEdit.putBoolean("reset_delay", true).apply();
         } else {
-            mPrefAppSettingsEdit.putBoolean("reset_delay", false);
+            mPrefAppSettingsEdit.putBoolean("reset_delay", false).apply();
         }
-
 
         super.onBackPressed();
     }

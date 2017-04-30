@@ -26,7 +26,7 @@ public class HistoryActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         //load history here.
-        SharedPreferences mHistory = getSharedPreferences("history", MODE_PRIVATE);
+        SharedPreferences mHistory = getSharedPreferences("history", 0);
         String allHistory = mHistory.getString("allHistory", "");
 
         //find view and set text.
@@ -64,7 +64,7 @@ public class HistoryActivity extends AppCompatActivity {
     //clear history.
     private void clear(View view) {
         //delete all history.
-        SharedPreferences.Editor mHistoryEditor = getSharedPreferences("history", MODE_PRIVATE).edit();
+        SharedPreferences.Editor mHistoryEditor = getSharedPreferences("history", 0).edit();
         mHistoryEditor.putString("allHistory", "").apply();
 
         //show notification.

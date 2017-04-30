@@ -68,7 +68,8 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         //handle buttons colors.
-        SharedPreferences mPrefs = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences mPrefs = getApplicationContext()
+                .getSharedPreferences("appsettings", 0);
         if (mPrefs.getBoolean("isDelayed", false)) {
             ((Button) findViewById(R.id.button_SetDelay))
                     .setBackgroundColor(getResources().getColor(R.color.button_Pressed));
@@ -162,7 +163,7 @@ public class MainActivity extends AppCompatActivity
         Context context = getApplicationContext();
         EditText text = (EditText) findViewById(R.id.editText);
         EditText textTitleEdit = (EditText) findViewById(R.id.editText_Title);
-        SharedPreferences mPrefs = PreferenceManager.getDefaultSharedPreferences(context);
+        SharedPreferences mPrefs = getSharedPreferences("appsettings", 0);
         SharedPreferences.Editor mPrefsEditor = mPrefs.edit();
 
         //get text.
@@ -279,8 +280,7 @@ public class MainActivity extends AppCompatActivity
 
         Context context = getApplicationContext();
 
-        SharedPreferences mPrefs = PreferenceManager.getDefaultSharedPreferences(context);
-
+        SharedPreferences mPrefs = getSharedPreferences("appsettings", 0);
         SharedPreferences.Editor mPrefsEditor = mPrefs.edit();
 
         boolean isSilent = mPrefs.getBoolean("isSilent", false);
@@ -315,7 +315,7 @@ public class MainActivity extends AppCompatActivity
 
         Context context = getApplicationContext();
 
-        SharedPreferences mPrefs = PreferenceManager.getDefaultSharedPreferences(context);
+        SharedPreferences mPrefs = getSharedPreferences("appsettings", 0);
 
         final SharedPreferences.Editor mPrefsEditor = mPrefs.edit();
 
@@ -378,16 +378,16 @@ public class MainActivity extends AppCompatActivity
 
     //write history method.
     private void history_Append(String titleIn, String textIn) {
-        SharedPreferences mPrefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        SharedPreferences mPrefs = getSharedPreferences("appsettings", 0);
 
         //append history.
         boolean isSilent = mPrefs.getBoolean("isSilent", false);
 
         if (! isSilent) {
 
-            SharedPreferences mHistory = getSharedPreferences("history", MODE_PRIVATE);
+            SharedPreferences mHistory = getSharedPreferences("history", 0);
             String allHistory = mHistory.getString("allHistory", "");
-            SharedPreferences.Editor mHistoryEditor = getSharedPreferences("history", MODE_PRIVATE)
+            SharedPreferences.Editor mHistoryEditor = getSharedPreferences("history", 0)
                     .edit();
             String allHistoryWIP;
             allHistoryWIP = "*\n";

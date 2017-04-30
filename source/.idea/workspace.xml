@@ -41,11 +41,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="SettingsActivity.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SettingsActivity.java" pinned="false" current-in-tab="true">
         <entry file="file:///media/cake/outside/development/android-zone/notificatorro/source/app/src/main/java/com/cake/notificator/SettingsActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="41" column="49" selection-start-line="41" selection-start-column="49" selection-end-line="41" selection-end-column="49" />
+            <state relative-caret-position="450">
+              <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="colors.xml" pinned="false" current-in-tab="false">
+        <entry file="file:///media/cake/outside/development/android-zone/notificatorro/source/app/src/main/res/values/colors.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -79,11 +89,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
         <entry file="file:///media/cake/outside/development/android-zone/notificatorro/source/app/src/main/java/com/cake/notificator/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="68" column="0" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
+            <state relative-caret-position="218">
+              <caret line="165" column="72" selection-start-line="165" selection-start-column="72" selection-end-line="165" selection-end-column="72" />
               <folding>
                 <element signature="class#1797:2679" expanded="false" />
                 <element signature="method#onDrawerOpened#0;class#1797:2679" expanded="false" />
@@ -91,12 +101,22 @@
                 <element signature="method#onPause#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#onStop#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#onBackPressed#0;class#MainActivity#0" expanded="false" />
-                <element signature="e#4388#4406#0" expanded="false" />
-                <element signature="e#5223#5266#0" expanded="false" />
-                <element signature="e#5223#5266#0" expanded="false" />
+                <element signature="e#4416#4434#0" expanded="false" />
+                <element signature="e#5251#5294#0" expanded="false" />
+                <element signature="e#5251#5294#0" expanded="false" />
                 <element signature="method#onNavigationItemSelected#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#history_Append#0;class#MainActivity#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HistoryActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file:///media/cake/outside/development/android-zone/notificatorro/source/app/src/main/java/com/cake/notificator/HistoryActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="28" column="70" selection-start-line="28" selection-start-column="70" selection-end-line="28" selection-end-column="70" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -137,29 +157,6 @@
         <entry file="android-dummy:///home/cake/outside/development/android-zone/notificatorro/source/app/Translations Editor">
           <provider selected="true" editor-type-id="string-resource-editor">
             <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
-        <entry file="file:///media/cake/outside/development/android-zone/notificatorro/source/app/build.gradle">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="24" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="content_about.xml" pinned="false" current-in-tab="false">
-        <entry file="file:///media/cake/outside/development/android-zone/notificatorro/source/app/src/main/res/layout/content_about.xml">
-          <provider editor-type-id="android-designer2">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="585">
-              <caret line="39" column="44" selection-start-line="39" selection-start-column="44" selection-end-line="39" selection-end-column="44" />
-              <folding />
-            </state>
           </provider>
         </entry>
       </file>
@@ -2009,7 +2006,6 @@
         <option value="/media/cake/outside/development/android-zone/notificatorro/source/app/src/main/res/values-ru/strings.xml" />
         <option value="/media/cake/outside/development/android-zone/notificatorro/source/app/src/main/res/layout/activity_history.xml" />
         <option value="/media/cake/outside/development/android-zone/notificatorro/source/app/src/main/java/com/cake/notificator/DialogHistoryConfirmClear.java" />
-        <option value="/media/cake/outside/development/android-zone/notificatorro/source/app/src/main/java/com/cake/notificator/HistoryActivity.java" />
         <option value="/media/cake/outside/development/android-zone/notificatorro/source/app/src/main/res/layout/nav_header_main.xml" />
         <option value="/media/cake/outside/development/android-zone/notificatorro/source/app/src/main/res/layout/activity_main.xml" />
         <option value="/media/cake/outside/development/android-zone/notificatorro/source/app/src/main/java/com/cake/notificator/DelayFragment.java" />
@@ -2022,15 +2018,16 @@
         <option value="/media/cake/outside/development/android-zone/notificatorro/source/app/src/main/res/values/styles.xml" />
         <option value="/media/cake/outside/development/android-zone/notificatorro/source/app/src/main/res/layout/prompt_about_coffee.xml" />
         <option value="/media/cake/outside/development/android-zone/notificatorro/source/app/src/main/java/com/cake/notificator/AboutActivity.java" />
-        <option value="/media/cake/outside/development/android-zone/notificatorro/source/app/src/main/res/values/colors.xml" />
         <option value="/media/cake/outside/development/android-zone/notificatorro/source/app/src/main/AndroidManifest.xml" />
         <option value="/media/cake/outside/development/android-zone/notificatorro/source/app/src/main/res/layout/content_about.xml" />
         <option value="/media/cake/outside/development/android-zone/notificatorro/source/app/build.gradle" />
         <option value="/media/cake/outside/development/android-zone/notificatorro/source/app/src/main/java/com/cake/notificator/Schedule.java" />
         <option value="/media/cake/outside/development/android-zone/notificatorro/source/app/src/main/res/layout/content_settings.xml" />
         <option value="/media/cake/outside/development/android-zone/notificatorro/source/app/src/main/res/values/appsettings.xml" />
-        <option value="/media/cake/outside/development/android-zone/notificatorro/source/app/src/main/java/com/cake/notificator/SettingsActivity.java" />
+        <option value="/media/cake/outside/development/android-zone/notificatorro/source/app/src/main/res/values/colors.xml" />
         <option value="/media/cake/outside/development/android-zone/notificatorro/source/app/src/main/java/com/cake/notificator/MainActivity.java" />
+        <option value="/media/cake/outside/development/android-zone/notificatorro/source/app/src/main/java/com/cake/notificator/HistoryActivity.java" />
+        <option value="/media/cake/outside/development/android-zone/notificatorro/source/app/src/main/java/com/cake/notificator/SettingsActivity.java" />
       </list>
     </option>
   </component>
@@ -2115,6 +2112,42 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="source" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="notificator" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="source" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="manifests" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidManifestsGroupNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -2768,13 +2801,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///media/cake/outside/development/android-zone/notificatorro/source/app/src/main/java/com/cake/notificator/HistoryActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///media/cake/outside/development/android-zone/notificatorro/source/app/src/main/res/layout/activity_about.xml">
       <provider editor-type-id="android-designer2">
         <state />
@@ -2830,14 +2856,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="495">
           <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///media/cake/outside/development/android-zone/notificatorro/source/app/src/main/res/values/colors.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2910,10 +2928,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///media/cake/outside/development/android-zone/notificatorro/source/app/src/main/res/layout/content_main.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
+    <entry file="file:///media/cake/outside/development/android-zone/notificatorro/source/app/src/main/res/values/appsettings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
       </provider>
+    </entry>
+    <entry file="file:///media/cake/outside/development/android-zone/notificatorro/source/app/src/main/res/values/colors.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
@@ -2921,18 +2944,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///media/cake/outside/development/android-zone/notificatorro/source/app/src/main/java/com/cake/notificator/SettingsActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="41" column="49" selection-start-line="41" selection-start-column="49" selection-end-line="41" selection-end-column="49" />
-          <folding />
-        </state>
+    <entry file="file:///media/cake/outside/development/android-zone/notificatorro/source/app/src/main/res/layout/content_main.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
       </provider>
-    </entry>
-    <entry file="file:///media/cake/outside/development/android-zone/notificatorro/source/app/src/main/res/values/appsettings.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+        <state relative-caret-position="165">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -2952,8 +2970,8 @@
     </entry>
     <entry file="file:///media/cake/outside/development/android-zone/notificatorro/source/app/src/main/java/com/cake/notificator/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="68" column="0" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
+        <state relative-caret-position="218">
+          <caret line="165" column="72" selection-start-line="165" selection-start-column="72" selection-end-line="165" selection-end-column="72" />
           <folding>
             <element signature="class#1797:2679" expanded="false" />
             <element signature="method#onDrawerOpened#0;class#1797:2679" expanded="false" />
@@ -2961,12 +2979,28 @@
             <element signature="method#onPause#0;class#MainActivity#0" expanded="false" />
             <element signature="method#onStop#0;class#MainActivity#0" expanded="false" />
             <element signature="method#onBackPressed#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#4388#4406#0" expanded="false" />
-            <element signature="e#5223#5266#0" expanded="false" />
-            <element signature="e#5223#5266#0" expanded="false" />
+            <element signature="e#4416#4434#0" expanded="false" />
+            <element signature="e#5251#5294#0" expanded="false" />
+            <element signature="e#5251#5294#0" expanded="false" />
             <element signature="method#onNavigationItemSelected#0;class#MainActivity#0" expanded="false" />
             <element signature="method#history_Append#0;class#MainActivity#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///media/cake/outside/development/android-zone/notificatorro/source/app/src/main/java/com/cake/notificator/HistoryActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="28" column="70" selection-start-line="28" selection-start-column="70" selection-end-line="28" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///media/cake/outside/development/android-zone/notificatorro/source/app/src/main/java/com/cake/notificator/SettingsActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
