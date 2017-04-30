@@ -3,7 +3,6 @@
     <string name="text_Header">Напомни мне...</string>
     <string name="notification_Title">Заголовок</string>
     <string name="text_Count_Default">Тут будет ID.</string>
-    <string name="text_Crab_Toast">Не называй меня Мр. Краб!</string>
     <string name="notification_Created">Сделано!</string>
     <string name="title_activity_history">История</string>
     <string name="text_History_Cleared">История очищенна</string>
@@ -39,4 +38,5 @@
     <string name="settings_Reset_Silent">Скрывать по одной заметке</string>
     <string name="text_About_Text">Приложение сделано с любовью. Это моё первое приложение для Андроид. Это означает, что я обучаюсь на этом приложении. Если Вы хотите поддержать проект, Вы можете найти данные для пожертвований на главной странице проекта, нажав на кружку кофе наверху. Так же вы можете там найти список планов и исходный код приложения. Приложение распространяется под лицензией GNU GPLv3, а это означает, что Вы можете изменять и распространять Вашу версию приложения вместе с её исходным кодом. Так же Вы должны указывать автора приложения (меня), приложив ссылку на сайт моего проекта. Чтобы узнать больше, пожалуйста, прочтите файл LICENSE на странице проекта.\n\nУдачи!\n</string>
     <string name="silent_Enable_Once">Эта заметка не войдет в историю.</string>
+    <string name="settings_Reset_Delay">Откладывать по одной заметке</string>
 </resources>

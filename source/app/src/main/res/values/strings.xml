@@ -4,7 +4,6 @@
     <string name="notification_Title">Title</string>
     <string name="text_Count" translatable="false">ID:</string>
     <string name="text_Count_Default">Create notification first.</string>
-    <string name="text_Crab_Toast">Don\'t call me Mr. Crab!</string>
     <string name="notification_Created">Done!</string>
     <string name="title_activity_history">History</string>
     <string name="history_everything">Empty history.</string>
@@ -12,7 +11,7 @@
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="dev_Version" translatable="false">1.0 release</string>
+    <string name="dev_Version" translatable="false">1.1</string>
     <string name="dev_Email" translatable="false">contactwithdmitry@gmail.com</string>
     <string name="ui_AdditionalSettings">More</string>
     <string name="action_New_Note">Create note</string>
@@ -45,4 +44,5 @@
     <string name="ui_OpenPage">Open page with</string>
     <string name="settings_Reset_Silent">Silent only one note</string>
     <string name="silent_Enable_Once">This one won\'t be listed in history.</string>
+    <string name="settings_Reset_Delay">Delay only one note</string>
 </resources>

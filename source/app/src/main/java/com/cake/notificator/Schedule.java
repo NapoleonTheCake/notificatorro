@@ -11,11 +11,7 @@ import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.media.RingtoneManager;
 import android.os.PowerManager;
-import android.os.StrictMode;
 import android.preference.PreferenceManager;
-import android.provider.Settings;
-import android.support.design.widget.Snackbar;
-import android.widget.Toast;
 
 /**
  * Created by cake on 20.04.17.

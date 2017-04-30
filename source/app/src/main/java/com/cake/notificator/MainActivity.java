@@ -259,6 +259,13 @@ public class MainActivity extends AppCompatActivity
         text.setText("");
         textTitleEdit.setText("");
 
+        //reset silent.
+        if (mPrefs.getBoolean("reset_delay", false)) {
+            if (mPrefs.getBoolean("isDelayed", false)) {
+                onClick_SetDelay(view);
+            }
+        }
+
         //echo done.
         Snackbar.make(view, getString(R.string.notification_Created), Snackbar.LENGTH_SHORT).show();
 
@@ -279,6 +286,7 @@ public class MainActivity extends AppCompatActivity
         boolean isSilent = mPrefs.getBoolean("isSilent", false);
 
         if (isSilent) {
+
             mPrefsEditor.putBoolean("isSilent", false).apply();
 
             Snackbar.make(view, getString(R.string.silent_Disable), Snackbar.LENGTH_SHORT).show();
@@ -287,6 +295,7 @@ public class MainActivity extends AppCompatActivity
             button.setBackgroundColor(Color.TRANSPARENT);
 
         } else {
+
             mPrefsEditor.putBoolean("isSilent", true).apply();
 
             if (mPrefs.getBoolean("reset_silent", false)) {
@@ -313,6 +322,7 @@ public class MainActivity extends AppCompatActivity
         boolean isDelayed = mPrefs.getBoolean("isDelayed", false);
 
         if (isDelayed) {
+
             mPrefsEditor.putBoolean("isDelayed", false).apply();
 
             Snackbar.make(view, getString(R.string.dialog_Delay_Disable), Snackbar.LENGTH_SHORT).show();
@@ -321,11 +331,10 @@ public class MainActivity extends AppCompatActivity
             button.setBackgroundColor(Color.TRANSPARENT);
 
         } else {
-            //disable delay as it broken.
-            if (mPrefs.getInt("delay", 0) == 0) {
-                Snackbar.make(view, "Delay is still WIP, probably won't work with your device.",
+
+            //show delay warning.
+            Snackbar.make(view, "Delay is still WIP, probably won't work with your device.",
                         Snackbar.LENGTH_LONG).show();
-            }
 
             //start action to show dialog.
             LayoutInflater layoutInflater = LayoutInflater.from(context);

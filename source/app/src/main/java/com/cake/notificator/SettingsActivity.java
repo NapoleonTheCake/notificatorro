@@ -20,23 +20,26 @@ public class SettingsActivity extends AppCompatActivity {
 
         //read all settings here.
         SharedPreferences mPrefAppSettings = PreferenceManager
-                .getDefaultSharedPreferences(getApplicationContext());
+                .getDefaultSharedPreferences(this);
 
         //set vibration.
         ((Switch) findViewById(R.id.switch_Vibration))
                 .setChecked(mPrefAppSettings.getBoolean("vibration", true));
 
-        //set reset.
+        //set reset silent.
         ((Switch) findViewById(R.id.switch_Reset_Silent))
                 .setChecked(mPrefAppSettings.getBoolean("reset_silent", false));
 
+        //set reset delay.
+        ((Switch) findViewById(R.id.switch_Reset_Delay))
+                .setChecked(mPrefAppSettings.getBoolean("reset_delay", false));
     }
 
     @Override
     public void onBackPressed() {
         //set all settings here.
         SharedPreferences.Editor mPrefAppSettingsEdit = PreferenceManager
-                .getDefaultSharedPreferences(getApplicationContext()).edit();
+                .getDefaultSharedPreferences(this).edit();
 
         //set vibration.
         if (((Switch) findViewById(R.id.switch_Vibration)).isChecked()) {
@@ -50,6 +53,13 @@ public class SettingsActivity extends AppCompatActivity {
             mPrefAppSettingsEdit.putBoolean("reset_silent", true).apply();
         } else {
             mPrefAppSettingsEdit.putBoolean("reset_silent", false).apply();
+        }
+
+        //set reset delay.
+        if (((Switch) findViewById(R.id.switch_Reset_Delay)).isChecked()) {
+            mPrefAppSettingsEdit.putBoolean("reset_delay", true);
+        } else {
+            mPrefAppSettingsEdit.putBoolean("reset_delay", false);
         }
 
 

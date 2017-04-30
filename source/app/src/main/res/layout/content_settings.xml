@@ -37,6 +37,18 @@
         android:layout_alignParentStart="true"
         android:text="@string/settings_Reset_Silent"/>
 
+    <Switch
+        android:minHeight="50dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+
+        android:id="@+id/switch_Reset_Delay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/settings_Reset_Delay"
+        android:layout_below="@+id/switch_Reset_Silent" />
+
+
     </RelativeLayout>
 
 </ScrollView>
