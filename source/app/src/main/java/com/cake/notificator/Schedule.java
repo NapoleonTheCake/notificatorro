@@ -48,14 +48,9 @@ public class Schedule extends BroadcastReceiver {
                 .setSmallIcon(R.drawable.statusbaricon)
                 .setAutoCancel(true)
                 .setContentTitle(titleText)
+                .setVibrate(new long[] { 0, 50 })
                 .setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION))
                 .setContentText(bigText);
-
-
-        //check vibration.
-        if (mPrefs.getBoolean("vibration", true)) {
-            builder.setVibrate(new long[] { 0, 50 });
-        }
 
         //create default title if empty.
         if (titleText.length() == 0) {
