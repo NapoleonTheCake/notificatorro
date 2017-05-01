@@ -5,17 +5,15 @@ Simple and easy quick-note notification app.
 - Create notifications with your own text!
 - Track history of your notes and clear anytime!
 - English and Russian languages are supported for now.
-- This app will never track you in any way. It does what it does, nothing more.
+- This app is minimalistic. It does what it does, nothing more like sending stats in background.
 
 #### Future plans:
-- !!! find out why SharedPreferences are not working with some devices.
 - !!! fix delayed notifications feature.
 - Add clear field and notifications button.
 - Add persistent notification feature:
 	- Add switcher to show/hide notification.
 - dark and light themes.
 - history go to top button?
-- timestamp in history.
 - widget?
 - add best experience warning.
 - new icons 512x.
@@ -25,11 +23,11 @@ Simple and easy quick-note notification app.
 	- tell about custom roms that cuts big notifications (like MIUI).
 - search in history.
 - add welcome page.
-- alternative in-app notifications.
 - try to implement everything as fragments, that will allow you to see drawer everywhere.
+- timestaps according to user's locale.
 
 
- Source code: https://github.com/NapoleonTheCake/notificatorro
+Source code: https://github.com/NapoleonTheCake/notificatorro
 
 Feel free to contact me via email: contactwithdmitry@gmail.com
 

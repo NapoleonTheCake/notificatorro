@@ -1,8 +1,6 @@
 package com.cake.notificator;
 
 import android.app.Activity;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -12,7 +10,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.graphics.Color;
-import android.preference.PreferenceManager;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
@@ -25,12 +22,15 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.Calendar;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity
     implements NavigationView.OnNavigationItemSelectedListener {
@@ -425,6 +425,11 @@ public class MainActivity extends AppCompatActivity
     private void history_Append(String titleIn, String textIn) {
         SharedPreferences mPrefs = getSharedPreferences("appsettings", 0);
 
+        //get timestamp. //so ugly.
+        DateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy HH:mm");
+        Calendar calendar = Calendar.getInstance();
+        String strDate = dateFormat.format(calendar.getTime());
+
         //append history.
         boolean isSilent = mPrefs.getBoolean("isSilent", false);
 
@@ -435,7 +440,7 @@ public class MainActivity extends AppCompatActivity
             SharedPreferences.Editor mHistoryEditor = getSharedPreferences("history", 0)
                     .edit();
             String allHistoryWIP;
-            allHistoryWIP = "*\n";
+            allHistoryWIP = "* [ " + strDate + " ]\n";
             if (titleIn.length() != 0) {
                 allHistoryWIP = allHistoryWIP + titleIn + "\n";
             }
