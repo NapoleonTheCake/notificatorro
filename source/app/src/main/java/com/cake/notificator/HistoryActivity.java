@@ -1,9 +1,5 @@
 package com.cake.notificator;
 
-import android.app.DialogFragment;
-import android.app.Fragment;
-import android.app.FragmentTransaction;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -34,6 +30,8 @@ public class HistoryActivity extends AppCompatActivity {
         TextView textView = (TextView) findViewById(R.id.text_History_Everything);
         textView.setText(allHistory);
     }
+
+    //================================
 
     //ask confirmation.
     public void onClick_ClearHistory_Dialog(View view) {

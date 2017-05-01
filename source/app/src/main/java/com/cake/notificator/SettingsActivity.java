@@ -2,11 +2,8 @@ package com.cake.notificator;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.widget.Switch;
 import android.widget.Toast;
@@ -40,7 +37,13 @@ public class SettingsActivity extends AppCompatActivity {
         //set alt notifications.
         ((Switch) findViewById(R.id.switch_Alt_Notifications))
                 .setChecked(mPrefAppSettings.getBoolean("alt_notifications", false));
+
+        //set ignore title.
+        ((Switch) findViewById(R.id.switch_Ignore_Title))
+                .setChecked(mPrefAppSettings.getBoolean("ignore_title", false));
     }
+
+    //====================================
 
     @Override
     public void onBackPressed() {
@@ -76,7 +79,12 @@ public class SettingsActivity extends AppCompatActivity {
             mPrefAppSettingsEdit.putBoolean("alt_notifications", false).apply();
         }
 
-
+        //set ignore title.
+        if (((Switch) findViewById(R.id.switch_Ignore_Title)).isChecked()) {
+            mPrefAppSettingsEdit.putBoolean("ignore_title", true).apply();
+        } else {
+            mPrefAppSettingsEdit.putBoolean("ignore_title", false).apply();
+        }
 
         //echo done.
         Toast.makeText(this, getString(R.string.settings_Apply_Success), Toast.LENGTH_SHORT).show();

@@ -59,16 +59,16 @@
         android:text="@string/settings_Alt_Notifications"
         android:layout_below="@+id/switch_Reset_Delay" />
 
-    <!--<Switch-->
-        <!--android:minHeight="50dp"-->
-        <!--android:layout_marginLeft="10dp"-->
-        <!--android:layout_marginRight="10dp"-->
+    <Switch
+        android:minHeight="50dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
 
-        <!--android:id="@+id/switch_"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text=""-->
-        <!--android:layout_below="@+id/switch_Alt_Notifications" />-->
+        android:id="@+id/switch_Ignore_Title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/settings_Ignore_Title"
+        android:layout_below="@+id/switch_Alt_Notifications" />
 
 
     </RelativeLayout>

@@ -11,7 +11,7 @@
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="dev_Version" translatable="false">1.3</string>
+    <string name="dev_Version" translatable="false">1.4</string>
     <string name="dev_Email" translatable="false">contactwithdmitry@gmail.com</string>
     <string name="ui_AdditionalSettings">More</string>
     <string name="action_New_Note">Create note</string>
@@ -48,4 +48,5 @@
     <string name="action_SetDelay_Success_Postfix">minutes.</string>
     <string name="settings_Alt_Notifications">Use alternative in-app notifications</string>
     <string name="settings_Apply_Success">Settings saved.</string>
+    <string name="settings_Ignore_Title">Create new note directly from text</string>
 </resources>

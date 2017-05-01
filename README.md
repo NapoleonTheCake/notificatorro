@@ -26,6 +26,7 @@ Simple and easy quick-note notification app.
 - try to implement everything as fragments, that will allow you to see drawer everywhere.
 - timestaps according to user's locale.
 - alt notifications: ?? change gravity ??
+- add shortcuts for: persistent activity(disable/enable), history(view/clear?).
 
 
 Source code: https://github.com/NapoleonTheCake/notificatorro
@@ -36,3 +37,5 @@ Translations are welcomed.
 
 I accept donations to my student's debit card: 4061492051715222  
 **Thank you for any support!**
+
++ setting to start from text.

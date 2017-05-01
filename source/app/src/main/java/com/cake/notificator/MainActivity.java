@@ -74,11 +74,34 @@ public class MainActivity extends AppCompatActivity
             ((Button) findViewById(R.id.button_SetDelay))
                     .setBackgroundColor(getResources().getColor(R.color.button_Pressed));
         }
+
         if (mPrefs.getBoolean("isSilent", false)) {
             ((Button) findViewById(R.id.button_SetSilent))
                     .setBackgroundColor(getResources().getColor(R.color.button_Pressed));
         }
+
+        //handle ignore title.
+        if (mPrefs.getBoolean("ignore_title", false)) {
+            ((EditText) findViewById(R.id.editText)).requestFocus();
+        }
     }
+
+    ////
+
+    @Override
+    protected void onRestart() {
+        SharedPreferences mPrefs = getSharedPreferences("appsettings", 0);
+
+        //handle ignore title.
+        if (mPrefs.getBoolean("ignore_title", false)) {
+            ((EditText) findViewById(R.id.editText)).requestFocus();
+        }
+
+        super.onRestart();
+    }
+
+
+    ////
 
     @Override
     protected void onPause() {
@@ -283,7 +306,11 @@ public class MainActivity extends AppCompatActivity
         }
 
         //back to title.
-        textTitleEdit.requestFocus();
+        if (mPrefs.getBoolean("ignore_title", false)) {
+            ((EditText) findViewById(R.id.editText)).requestFocus();
+        } else {
+            textTitleEdit.requestFocus();
+        }
     }
 
     //handling silent notifications here.
@@ -435,20 +462,24 @@ public class MainActivity extends AppCompatActivity
         if (! isSilent) {
 
             SharedPreferences mHistory = getSharedPreferences("history", 0);
-            String allHistory = mHistory.getString("allHistory", "");
             SharedPreferences.Editor mHistoryEditor = getSharedPreferences("history", 0)
                     .edit();
-            String allHistoryWIP;
-            allHistoryWIP = "* [ " + strDate + " ]\n";
+
+            String allHistory = mHistory.getString("allHistory", "");
+            String allHistoryWIP = "* [ " + strDate + " ]\n";
+
             if (titleIn.length() != 0) {
                 allHistoryWIP = allHistoryWIP + titleIn + "\n";
             }
+
             if (textIn.equals(getString(R.string.template_Empty_Text))) {
                 allHistoryWIP = allHistoryWIP + "\n" + allHistory;
             } else {
                 allHistoryWIP = allHistoryWIP + textIn + "\n\n" + allHistory;
             }
+
             allHistory = allHistoryWIP;
+
             mHistoryEditor.putString("allHistory", allHistory).apply();
 
         } else {
@@ -457,7 +488,6 @@ public class MainActivity extends AppCompatActivity
             SharedPreferences.Editor mPrefsEdit = mPrefs.edit();
             mPrefsEdit.putString("bigText", "").apply();
             mPrefsEdit.putString("titleText", "").apply();
-
         }
     }
 }
