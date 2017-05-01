@@ -49,4 +49,6 @@
     <string name="settings_Alt_Notifications">Use alternative in-app notifications</string>
     <string name="settings_Apply_Success">Settings saved.</string>
     <string name="settings_Ignore_Title">Create new note directly from text</string>
+    <string name="ui_Toggle_Persistent">Toggle persistent</string>
+    <string name="ui_Toggle_Persistent_Disabled">Persistent disabled</string>
 </resources>

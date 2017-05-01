@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut
+        android:shortcutId="history"
+        android:enabled="true"
+        android:icon="@drawable/history"
+        android:shortcutShortLabel="@string/action_History"
+        android:shortcutLongLabel="@string/action_History"
+        android:shortcutDisabledMessage="@string/action_History">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="com.cake.notificator"
+            android:targetClass="com.cake.notificator.HistoryActivity" />
+        <categories android:name="android.shortcut.conversation" />
+    </shortcut>
+
+    <shortcut
+        android:shortcutId="persist"
+        android:enabled="false"
+        android:icon="@drawable/about"
+        android:shortcutShortLabel="@string/ui_Toggle_Persistent"
+        android:shortcutLongLabel="@string/ui_Toggle_Persistent"
+        android:shortcutDisabledMessage="@string/ui_Toggle_Persistent_Disabled">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="com.cake.notificator"
+            android:targetClass="com.cake.notificator.MainActivity" />
+        <categories android:name="android.shortcut.conversation" />
+    </shortcut>
+
+</shortcuts>

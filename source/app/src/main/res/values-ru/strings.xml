@@ -43,4 +43,6 @@
     <string name="settings_Alt_Notifications">Альтернативные уведомления в приложении</string>
     <string name="settings_Apply_Success">Настройки сохранены.</string>
     <string name="settings_Ignore_Title">Создание новых заметок сразу с текста</string>
+    <string name="ui_Toggle_Persistent">Вкл/выкл закреп</string>
+    <string name="ui_Toggle_Persistent_Disabled">Закреп. выключен</string>
 </resources>

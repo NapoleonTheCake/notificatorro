@@ -12,11 +12,12 @@ Simple and easy quick-note notification app.
 - Add clear field and notifications button.
 - Add persistent notification feature:
 	- Add switcher to show/hide notification.
+	- Configure shortcut to toggle it.
 - dark and light themes.
 - history go to top button?
 - widget?
 - add best experience warning.
-- new icons 512x.
+- new icons (how they are so smooth in other apps?).
 - add regular notes (serialisation).
 - color notification title + setting.
 - add help page.
@@ -37,5 +38,3 @@ Translations are welcomed.
 
 I accept donations to my student's debit card: 4061492051715222  
 **Thank you for any support!**
-
-+ setting to start from text.
