@@ -56,7 +56,13 @@ public class MainActivity extends AppCompatActivity
 
                 @Override
                 public void onDrawerClosed(View drawerView) {
-                    (findViewById(R.id.editText_Title)).requestFocus();
+                    SharedPreferences mPrefs = getSharedPreferences("appsettings", 0);
+
+                    if (mPrefs.getBoolean("ignore_title", false)) {
+                        (findViewById(R.id.editText)).requestFocus();
+                    } else {
+                        (findViewById(R.id.editText_Title)).requestFocus();
+                    }
                     InputMethodManager inputMethodManager = (InputMethodManager)  getSystemService(Activity.INPUT_METHOD_SERVICE);
                     inputMethodManager.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
                 }
@@ -71,34 +77,36 @@ public class MainActivity extends AppCompatActivity
         SharedPreferences mPrefs = getApplicationContext()
                 .getSharedPreferences("appsettings", 0);
         if (mPrefs.getBoolean("isDelayed", false)) {
-            ((Button) findViewById(R.id.button_SetDelay))
+            (findViewById(R.id.button_SetDelay))
                     .setBackgroundColor(getResources().getColor(R.color.button_Pressed));
         }
 
         if (mPrefs.getBoolean("isSilent", false)) {
-            ((Button) findViewById(R.id.button_SetSilent))
+            (findViewById(R.id.button_SetSilent))
                     .setBackgroundColor(getResources().getColor(R.color.button_Pressed));
         }
 
         //handle ignore title.
         if (mPrefs.getBoolean("ignore_title", false)) {
-            ((EditText) findViewById(R.id.editText)).requestFocus();
+            (findViewById(R.id.editText)).requestFocus();
+        } else {
+            (findViewById(R.id.editText_Title)).requestFocus();
         }
     }
 
     ////
 
-    @Override
-    protected void onRestart() {
-        SharedPreferences mPrefs = getSharedPreferences("appsettings", 0);
-
-        //handle ignore title.
-        if (mPrefs.getBoolean("ignore_title", false)) {
-            ((EditText) findViewById(R.id.editText)).requestFocus();
-        }
-
-        super.onRestart();
-    }
+//    @Override
+//    protected void onRestart() {
+//        SharedPreferences mPrefs = getSharedPreferences("appsettings", 0);
+//
+//        //handle ignore title.
+//        if (mPrefs.getBoolean("ignore_title", false)) {
+//            ((EditText) findViewById(R.id.editText)).requestFocus();
+//        }
+//
+//        super.onRestart();
+//    }
 
 
     ////
