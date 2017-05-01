@@ -46,4 +46,6 @@
     <string name="silent_Enable_Once">This one won\'t be listed in history.</string>
     <string name="settings_Reset_Delay">Delay only one note</string>
     <string name="action_SetDelay_Success_Postfix">minutes.</string>
+    <string name="settings_Alt_Notifications">Use alternative in-app notifications</string>
+    <string name="settings_Apply_Success">Settings saved.</string>
 </resources>

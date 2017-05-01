@@ -36,6 +36,10 @@ public class SettingsActivity extends AppCompatActivity {
         //set reset delay.
         ((Switch) findViewById(R.id.switch_Reset_Delay))
                 .setChecked(mPrefAppSettings.getBoolean("reset_delay", false));
+
+        //set alt notifications.
+        ((Switch) findViewById(R.id.switch_Alt_Notifications))
+                .setChecked(mPrefAppSettings.getBoolean("alt_notifications", false));
     }
 
     @Override
@@ -64,6 +68,18 @@ public class SettingsActivity extends AppCompatActivity {
         } else {
             mPrefAppSettingsEdit.putBoolean("reset_delay", false).apply();
         }
+
+        //set alt notifications.
+        if (((Switch) findViewById(R.id.switch_Alt_Notifications)).isChecked()) {
+            mPrefAppSettingsEdit.putBoolean("alt_notifications", true).apply();
+        } else {
+            mPrefAppSettingsEdit.putBoolean("alt_notifications", false).apply();
+        }
+
+
+
+        //echo done.
+        Toast.makeText(this, getString(R.string.settings_Apply_Success), Toast.LENGTH_SHORT).show();
 
         super.onBackPressed();
     }

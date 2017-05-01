@@ -13,6 +13,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class HistoryActivity extends AppCompatActivity {
 
@@ -64,12 +65,17 @@ public class HistoryActivity extends AppCompatActivity {
     //clear history.
     private void clear(View view) {
         //delete all history.
+        SharedPreferences mPrefs = getSharedPreferences("appsettings", 0);
         SharedPreferences.Editor mHistoryEditor = getSharedPreferences("history", 0).edit();
         mHistoryEditor.putString("allHistory", "").apply();
 
         //show notification.
-        Snackbar.make(view, getString(R.string.text_History_Cleared), Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show();
+        if (mPrefs.getBoolean("alt_notifications", false)) {
+            Toast.makeText(this, getString(R.string.text_History_Cleared), Toast.LENGTH_LONG).show();
+        } else {
+            Snackbar.make(view, getString(R.string.text_History_Cleared), Snackbar.LENGTH_LONG)
+                    .setAction("Action", null).show();
+        }
 
         //empty textview.
         TextView textView = (TextView) findViewById(R.id.text_History_Everything);

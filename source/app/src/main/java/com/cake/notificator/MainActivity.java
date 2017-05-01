@@ -30,6 +30,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
     implements NavigationView.OnNavigationItemSelectedListener {
@@ -173,9 +174,15 @@ public class MainActivity extends AppCompatActivity
 
         //abort creating empty notification.
         if (bigText.length() == 0 && titleText.length() == 0) {
-            Snackbar.make(view, getString(R.string.action_New_Note_Empty), Snackbar.LENGTH_SHORT)
-                    .show();
-            return;
+            if (mPrefs.getBoolean("alt_notifications", false)){
+                Toast.makeText(this, getString(R.string.action_New_Note_Empty), Toast.LENGTH_SHORT)
+                        .show();
+                return;
+            } else {
+                Snackbar.make(view, getString(R.string.action_New_Note_Empty), Snackbar.LENGTH_SHORT)
+                        .show();
+                return;
+            }
         }
 
         if (bigText.length() == 0) {
@@ -269,7 +276,12 @@ public class MainActivity extends AppCompatActivity
         }
 
         //echo done.
-        Snackbar.make(view, getString(R.string.notification_Created), Snackbar.LENGTH_SHORT).show();
+        if (mPrefs.getBoolean("alt_notifications", false)) {
+            Toast.makeText(this, getString(R.string.notification_Created), Toast.LENGTH_SHORT)
+                    .show();
+        } else {
+            Snackbar.make(view, getString(R.string.notification_Created), Snackbar.LENGTH_SHORT).show();
+        }
 
         //back to title.
         textTitleEdit.requestFocus();
@@ -290,7 +302,11 @@ public class MainActivity extends AppCompatActivity
 
             mPrefsEditor.putBoolean("isSilent", false).apply();
 
-            Snackbar.make(view, getString(R.string.silent_Disable), Snackbar.LENGTH_SHORT).show();
+            if (mPrefs.getBoolean("alt_notifications", false)) {
+                Toast.makeText(this, getString(R.string.silent_Disable), Toast.LENGTH_SHORT).show();
+            } else {
+                Snackbar.make(view, getString(R.string.silent_Disable), Snackbar.LENGTH_SHORT).show();
+            }
 
             //make button great again.
             button.setBackgroundColor(Color.TRANSPARENT);
@@ -300,9 +316,20 @@ public class MainActivity extends AppCompatActivity
             mPrefsEditor.putBoolean("isSilent", true).apply();
 
             if (mPrefs.getBoolean("reset_silent", false)) {
-                Snackbar.make(view, getString(R.string.silent_Enable_Once), Snackbar.LENGTH_SHORT).show();
+                if (mPrefs.getBoolean("alt_notifications", false)) {
+                    Toast.makeText(this, getString(R.string.silent_Enable_Once), Toast.LENGTH_SHORT)
+                            .show();
+                } else {
+                    Snackbar.make(view, getString(R.string.silent_Enable_Once),
+                            Snackbar.LENGTH_SHORT).show();
+                }
             } else {
-                Snackbar.make(view, getString(R.string.silent_Enable), Snackbar.LENGTH_SHORT).show();
+                if (mPrefs.getBoolean("alt_notifications", false)) {
+                    Toast.makeText(this, getString(R.string.silent_Enable), Toast.LENGTH_SHORT)
+                            .show();
+                } else {
+                    Snackbar.make(view, getString(R.string.silent_Enable), Snackbar.LENGTH_SHORT).show();
+                }
             }
 
             //make button darker.
@@ -316,7 +343,7 @@ public class MainActivity extends AppCompatActivity
 
         Context context = getApplicationContext();
 
-        SharedPreferences mPrefs = getSharedPreferences("appsettings", 0);
+        final SharedPreferences mPrefs = getSharedPreferences("appsettings", 0);
 
         final SharedPreferences.Editor mPrefsEditor = mPrefs.edit();
 
@@ -326,7 +353,12 @@ public class MainActivity extends AppCompatActivity
 
             mPrefsEditor.putBoolean("isDelayed", false).apply();
 
-            Snackbar.make(view, getString(R.string.dialog_Delay_Disable), Snackbar.LENGTH_SHORT).show();
+            if (mPrefs.getBoolean("alt_notifications", false)) {
+                Toast.makeText(this, getString(R.string.dialog_Delay_Disable), Toast.LENGTH_SHORT)
+                        .show();
+            } else {
+                Snackbar.make(view, getString(R.string.dialog_Delay_Disable), Snackbar.LENGTH_SHORT).show();
+            }
 
             //make button darker.
             button.setBackgroundColor(Color.TRANSPARENT);
@@ -334,8 +366,13 @@ public class MainActivity extends AppCompatActivity
         } else {
 
             //show delay warning.
-            Snackbar.make(view, "Delay is still WIP, probably won't work with your device.",
+            if (mPrefs.getBoolean("alt_notifications", false)) {
+                Toast.makeText(this, "Delay is still WIP, probably won't work with your device.",
+                        Toast.LENGTH_LONG).show();
+            } else {
+                Snackbar.make(view, "Delay is still WIP, probably won't work with your device.",
                         Snackbar.LENGTH_LONG).show();
+            }
 
             //start action to show dialog.
             LayoutInflater layoutInflater = LayoutInflater.from(context);
@@ -364,8 +401,15 @@ public class MainActivity extends AppCompatActivity
                             //make button darker.
                             button.setBackgroundColor(getResources().getColor(R.color.button_Pressed));
                             //make snack.
-                            Snackbar.make(view, getString(R.string.action_SetDelay_Success) + " " + delay
-                                    + " " + getString(R.string.action_SetDelay_Success_Postfix), Snackbar.LENGTH_SHORT).show();
+                            if (mPrefs.getBoolean("alt_notifications", false)) {
+                                Toast.makeText(getApplicationContext(),
+                                        getString(R.string.action_SetDelay_Success) + " " + delay
+                                        + " " + getString(R.string.action_SetDelay_Success_Postfix),
+                                        Toast.LENGTH_SHORT).show();
+                            } else {
+                                Snackbar.make(view, getString(R.string.action_SetDelay_Success) + " " + delay
+                                        + " " + getString(R.string.action_SetDelay_Success_Postfix), Snackbar.LENGTH_SHORT).show();
+                            }
                         }
                     });
 
