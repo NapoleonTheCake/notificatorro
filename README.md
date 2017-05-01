@@ -25,6 +25,7 @@ Simple and easy quick-note notification app.
 - add welcome page.
 - try to implement everything as fragments, that will allow you to see drawer everywhere.
 - timestaps according to user's locale.
+- alt notifications: ?? change gravity ??
 
 
 Source code: https://github.com/NapoleonTheCake/notificatorro
