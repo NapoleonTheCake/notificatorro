@@ -57,7 +57,7 @@ public class QuickNote extends Activity {
         }
 
         builder.setTitle(getString(R.string.prompt_Quicknote_Title))
-                .setCancelable(true)
+                .setCancelable(false)
                 .setNegativeButton(getString(R.string.dialog_Negative_No),
                         new DialogInterface.OnClickListener() {
                             @Override
