@@ -17,7 +17,6 @@ Simple and easy quick-note notification app.
 - history go to top button?
 - widget?
 - add best experience warning.
-- new icons (how they are so smooth in other apps?).
 - add regular notes (serialisation).
 - color notification title + setting.
 - add help page.
@@ -27,7 +26,13 @@ Simple and easy quick-note notification app.
 - try to implement everything as fragments, that will allow you to see drawer everywhere.
 - timestaps according to user's locale.
 - alt notifications: ?? change gravity ??
-- add shortcuts for: persistent activity(disable/enable), history(view/clear?).
+- add shortcuts for: persistent activity(disable/enable), history(clear?).
+- add white circle background for shortcut icons.
+- add shortcut to clear all notifications (and find place to put into <25 api).
+- add setting to keep title after creating note.
+- add square-ish icon.
+- add pic notes (add capture with camera + tabs on top).
+- format text in history? (title, date).
 
 
 Source code: https://github.com/NapoleonTheCake/notificatorro
@@ -38,3 +43,6 @@ Translations are welcomed.
 
 I accept donations to my student's debit card: 4061492051715222  
 **Thank you for any support!**
+
++ vibration disabled by default.
++ minor fixes.

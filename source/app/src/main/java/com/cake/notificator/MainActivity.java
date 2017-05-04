@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity
     implements NavigationView.OnNavigationItemSelectedListener {
 
     //maximum amount of notifications at the same time set here.
-    public static final short NOTIFY_LIMIT = 20;
+    public static final short NOTIFY_LIMIT = 50;
 
     @Override
     protected void onCreate (Bundle savedInstanceState){
@@ -255,7 +255,7 @@ public class MainActivity extends AppCompatActivity
 
 
             //check vibration.
-            if (mPrefs.getBoolean("vibration", true)) {
+            if (mPrefs.getBoolean("vibration", false)) {
                 builder.setVibrate(new long[]{0, 50});
             }
 

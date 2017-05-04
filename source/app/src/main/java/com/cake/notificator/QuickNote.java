@@ -114,7 +114,7 @@ public class QuickNote extends Activity {
                 .setContentText(bigText);
 
         //check vibration.
-        if (mPrefs.getBoolean("vibration", true)) {
+        if (mPrefs.getBoolean("vibration", false)) {
             builder.setVibrate(new long[]{0, 50});
         }
 
