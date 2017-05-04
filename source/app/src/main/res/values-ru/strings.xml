@@ -48,4 +48,8 @@
     <string name="notification_Title_Quicknote">Быстрая заметка:</string>
     <string name="prompt_Quicknote_Title">Проверьте текст:</string>
     <string name="prompt_Quicknote_Text_Empty">Нет текста в буффере обмена.</string>
+    <string name="settings_Separator_Creation">Создание заметок:</string>
+    <string name="settings_Separator_Quicknote">Быстрые заметки (удерживайте кнопку \'создать\'):</string>
+    <string name="settings_Quicknote_Silent">Отключить историю</string>
+    <string name="settings_Quicknote_Prompt">Запрашивать подтверждение</string>
 </resources>

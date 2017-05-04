@@ -130,7 +130,7 @@ public class QuickNote extends Activity {
         notificationManager.notify(NOTIFY_ID, notification);
 
         //append history.
-        if (! mPrefs.getBoolean("isSilent", false)) {
+        if (! mPrefs.getBoolean("isSilentQuick", false)) {
             history_Append(bigText);
         }
 

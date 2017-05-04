@@ -12,12 +12,25 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
+        <TextView
+            android:minHeight="50dp"
+            android:gravity="center_vertical"
+
+            android:id="@+id/text_Settings_Creation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/switch_Vibration"
+            android:layout_alignParentTop="true"
+            android:layout_alignStart="@+id/switch_Vibration"
+            android:text="@string/settings_Separator_Creation" />
+
     <Switch
         android:minHeight="50dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
 
         android:id="@+id/switch_Vibration"
+        android:layout_below="@id/text_Settings_Creation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -70,6 +83,40 @@
         android:text="@string/settings_Ignore_Title"
         android:layout_below="@+id/switch_Alt_Notifications" />
 
+        <TextView
+            android:minHeight="50dp"
+            android:gravity="center_vertical"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/switch_Ignore_Title"
+
+            android:id="@+id/text_Settings_Quicknotes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/switch_Vibration"
+            android:layout_alignStart="@+id/switch_Vibration"
+            android:text="@string/settings_Separator_Quicknote" />
+
+        <Switch
+            android:minHeight="50dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+
+            android:id="@+id/switch_Quicknote_Prompt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/settings_Quicknote_Prompt"
+            android:layout_below="@+id/text_Settings_Quicknotes" />
+
+        <Switch
+            android:minHeight="50dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+
+            android:id="@+id/switch_Quicknote_Silent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/settings_Quicknote_Silent"
+            android:layout_below="@+id/switch_Quicknote_Prompt" />
 
     </RelativeLayout>
 

@@ -54,4 +54,8 @@
     <string name="notification_Title_Quicknote">Quicknote:</string>
     <string name="prompt_Quicknote_Title">Check text:</string>
     <string name="prompt_Quicknote_Text_Empty">No text in clipboard.</string>
+    <string name="settings_Separator_Creation">Creating notes:</string>
+    <string name="settings_Separator_Quicknote">Quicknotes (hold \'Create\' button):</string>
+    <string name="settings_Quicknote_Prompt">Prompt for confirmation</string>
+    <string name="settings_Quicknote_Silent">Disable history</string>
 </resources>

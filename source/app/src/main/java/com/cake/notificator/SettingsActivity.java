@@ -41,13 +41,21 @@ public class SettingsActivity extends AppCompatActivity {
         //set ignore title.
         ((Switch) findViewById(R.id.switch_Ignore_Title))
                 .setChecked(mPrefAppSettings.getBoolean("ignore_title", false));
+
+        //set quicknote prompt.
+        ((Switch) findViewById(R.id.switch_Quicknote_Prompt))
+                .setChecked(mPrefAppSettings.getBoolean("quicknoteprompt", false));
+
+        //set quicknote silent.
+        ((Switch) findViewById(R.id.switch_Quicknote_Silent))
+                .setChecked(mPrefAppSettings.getBoolean("isSilentQuick", false));
     }
 
     //====================================
 
+    //set all settings here.
     @Override
     public void onBackPressed() {
-        //set all settings here.
         SharedPreferences.Editor mPrefAppSettingsEdit = getSharedPreferences("appsettings",
                 0).edit();
 
@@ -85,6 +93,22 @@ public class SettingsActivity extends AppCompatActivity {
         } else {
             mPrefAppSettingsEdit.putBoolean("ignore_title", false).apply();
         }
+
+        //set quicknote prompt.
+        if (((Switch) findViewById(R.id.switch_Quicknote_Prompt)).isChecked()) {
+            mPrefAppSettingsEdit.putBoolean("quicknoteprompt", true).apply();
+        } else {
+            mPrefAppSettingsEdit.putBoolean("quicknoteprompt", false).apply();
+        }
+
+        //set quicknote silent.
+        if (((Switch) findViewById(R.id.switch_Quicknote_Silent)).isChecked()) {
+            mPrefAppSettingsEdit.putBoolean("isSilentQuick", true).apply();
+        } else {
+            mPrefAppSettingsEdit.putBoolean("isSilentQuick", false).apply();
+        }
+
+        ////
 
         //echo done.
         Toast.makeText(this, getString(R.string.settings_Apply_Success), Toast.LENGTH_SHORT).show();

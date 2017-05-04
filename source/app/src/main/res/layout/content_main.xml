@@ -86,11 +86,4 @@
         android:layout_alignTop="@+id/button_Create"
         android:text="@string/action_SetSilent" />
 
-    <!--<FrameLayout-->
-        <!--android:layout_centerInParent="true"-->
-        <!--android:id="@+id/fragment_Delay"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content">-->
-    <!--</FrameLayout>-->
-
 </RelativeLayout>
