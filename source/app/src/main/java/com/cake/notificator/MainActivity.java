@@ -20,8 +20,10 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.GestureDetector;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
@@ -51,21 +53,12 @@ public class MainActivity extends AppCompatActivity
 
                 @Override
                 public void onDrawerOpened(View drawerView) {
-                    InputMethodManager inputMethodManager = (InputMethodManager)  getSystemService(Activity.INPUT_METHOD_SERVICE);
-                    inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+                    keyboardHide();
                 }
 
                 @Override
                 public void onDrawerClosed(View drawerView) {
-                    SharedPreferences mPrefs = getSharedPreferences("appsettings", 0);
-
-                    if (mPrefs.getBoolean("ignore_title", false)) {
-                        (findViewById(R.id.editText)).requestFocus();
-                    } else {
-                        (findViewById(R.id.editText_Title)).requestFocus();
-                    }
-                    InputMethodManager inputMethodManager = (InputMethodManager)  getSystemService(Activity.INPUT_METHOD_SERVICE);
-                    inputMethodManager.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
+                    keyboardShow();
                 }
         };
         drawer.setDrawerListener(toggle);
@@ -93,6 +86,16 @@ public class MainActivity extends AppCompatActivity
         } else {
             (findViewById(R.id.editText_Title)).requestFocus();
         }
+
+        //set on create button quicknote.
+        findViewById(R.id.button_Create).setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                onClick_Quicknote(null);
+//                keyboardShow(); //todo: find out why keyboard won't show here.
+                return true;
+            }
+        });
     }
 
     ////
@@ -500,11 +503,27 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-
-
-    public void onClick_Debug(View view) {
+    //quick note from ui.
+    public void onClick_Quicknote(@Nullable View view) {
         Intent intent = new Intent(MainActivity.this, QuickNote.class);
         startActivity(intent);
+    }
+
+    private void keyboardShow() {
+        SharedPreferences mPrefs = getSharedPreferences("appsettings", 0);
+
+        if (mPrefs.getBoolean("ignore_title", false)) {
+            (findViewById(R.id.editText)).requestFocus();
+        } else {
+            (findViewById(R.id.editText_Title)).requestFocus();
+        }
+        InputMethodManager inputMethodManager = (InputMethodManager)  getSystemService(Activity.INPUT_METHOD_SERVICE);
+        inputMethodManager.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
+    }
+
+    private void keyboardHide() {
+        InputMethodManager inputMethodManager = (InputMethodManager)  getSystemService(Activity.INPUT_METHOD_SERVICE);
+        inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
     }
 }
 

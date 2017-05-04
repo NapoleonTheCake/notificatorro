@@ -29,7 +29,7 @@ public class QuickNote extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
 
         SharedPreferences mPrefs = getSharedPreferences("appsettings", 0);
-        if (mPrefs.getBoolean("quicknotedialog", false)) {
+        if (mPrefs.getBoolean("quicknoteprompt", false)) {
             showDialog();
         } else {
             quicknoteAccept();
@@ -38,6 +38,9 @@ public class QuickNote extends Activity {
         super.onCreate(savedInstanceState);
     }
 
+    //======================================
+
+    //show confirmation dialog when set.
     void showDialog() {
 
         //get text.
@@ -74,6 +77,7 @@ public class QuickNote extends Activity {
         dialog.show();
     }
 
+    //create notification.
     void quicknoteAccept() {
 
         Context context = getApplicationContext();
