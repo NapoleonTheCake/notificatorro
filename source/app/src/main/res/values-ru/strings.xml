@@ -44,5 +44,8 @@
     <string name="settings_Apply_Success">Настройки сохранены.</string>
     <string name="settings_Ignore_Title">Создание новых заметок сразу с текста</string>
     <string name="ui_Toggle_Persistent">Вкл/выкл закреп</string>
-    <string name="ui_Toggle_Persistent_Disabled">Закреп. выключен</string>
+    <string name="ui_Note_Quick">Быстрая заметка</string>
+    <string name="notification_Title_Quicknote">Быстрая заметка:</string>
+    <string name="prompt_Quicknote_Title">Проверьте текст:</string>
+    <string name="prompt_Quicknote_Text_Empty">Нет текста в буффере обмена.</string>
 </resources>

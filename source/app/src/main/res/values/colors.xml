@@ -8,4 +8,5 @@
     <color name="button_Pressed">#FFD6D8D7</color>
     <color name="color_About_TitleBar">#FF19AFBB</color>
     <color name="color_About_Background">#FF1CC4D1</color>
+    <color name="color_Quicknote_Dialog_Background">#FFEBF07D</color>
 </resources>

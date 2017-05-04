@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.graphics.Color;
+import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
@@ -35,7 +36,7 @@ public class MainActivity extends AppCompatActivity
     implements NavigationView.OnNavigationItemSelectedListener {
 
     //maximum amount of notifications at the same time set here.
-    private final short NOTIFY_LIMIT = 20;
+    public static final short NOTIFY_LIMIT = 20;
 
     @Override
     protected void onCreate (Bundle savedInstanceState){
@@ -497,6 +498,13 @@ public class MainActivity extends AppCompatActivity
             mPrefsEdit.putString("bigText", "").apply();
             mPrefsEdit.putString("titleText", "").apply();
         }
+    }
+
+
+
+    public void onClick_Debug(View view) {
+        Intent intent = new Intent(MainActivity.this, QuickNote.class);
+        startActivity(intent);
     }
 }
 

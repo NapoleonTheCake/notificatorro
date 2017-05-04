@@ -50,5 +50,8 @@
     <string name="settings_Apply_Success">Settings saved.</string>
     <string name="settings_Ignore_Title">Create new note directly from text</string>
     <string name="ui_Toggle_Persistent">Toggle persistent</string>
-    <string name="ui_Toggle_Persistent_Disabled">Persistent disabled</string>
+    <string name="ui_Note_Quick">Quick Note</string>
+    <string name="notification_Title_Quicknote">Quicknote:</string>
+    <string name="prompt_Quicknote_Title">Check text:</string>
+    <string name="prompt_Quicknote_Text_Empty">No text in clipboard.</string>
 </resources>

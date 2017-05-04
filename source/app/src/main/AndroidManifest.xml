@@ -26,7 +26,9 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            <meta-data android:name="android.app.shortcuts"
+
+            <meta-data
+                android:name="android.app.shortcuts"
                 android:resource="@xml/shortcuts" />
         </activity>
         <activity
@@ -48,14 +50,15 @@
                 android:value="com.cake.notificator.MainActivity" />
         </activity>
         <activity
-            android:parentActivityName=".MainActivity"
             android:name=".AboutActivity"
             android:label="@string/title_activity_about"
+            android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.cake.notificator.MainActivity" />
         </activity>
+        <activity android:name=".QuickNote"></activity>
     </application>
 
 </manifest>

@@ -20,11 +20,25 @@
         android:icon="@drawable/about"
         android:shortcutShortLabel="@string/ui_Toggle_Persistent"
         android:shortcutLongLabel="@string/ui_Toggle_Persistent"
-        android:shortcutDisabledMessage="@string/ui_Toggle_Persistent_Disabled">
+        android:shortcutDisabledMessage="@string/ui_Toggle_Persistent">
         <intent
             android:action="android.intent.action.VIEW"
             android:targetPackage="com.cake.notificator"
             android:targetClass="com.cake.notificator.MainActivity" />
+        <categories android:name="android.shortcut.conversation" />
+    </shortcut>
+
+    <shortcut
+        android:shortcutId="quicknote"
+        android:enabled="true"
+        android:icon="@drawable/quicknote"
+        android:shortcutShortLabel="@string/ui_Note_Quick"
+        android:shortcutLongLabel="@string/ui_Note_Quick"
+        android:shortcutDisabledMessage="@string/ui_Note_Quick">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="com.cake.notificator"
+            android:targetClass="com.cake.notificator.QuickNote" />
         <categories android:name="android.shortcut.conversation" />
     </shortcut>
 

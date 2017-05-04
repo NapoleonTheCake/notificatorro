@@ -107,4 +107,15 @@
         android:layout_height="wrap_content">
     </FrameLayout>
 
+    <Button
+        android:onClick="onClick_Debug"
+
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/editText_Title"
+        android:layout_toLeftOf="@+id/button_Create"
+        android:layout_toStartOf="@+id/button_Create"
+        android:text="Button" />
+
 </RelativeLayout>
