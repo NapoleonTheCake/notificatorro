@@ -11,7 +11,7 @@
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="dev_Version" translatable="false">1.4-hotfix</string>
+    <string name="dev_Version" translatable="false">1.5</string>
     <string name="dev_Email" translatable="false">contactwithdmitry@gmail.com</string>
     <string name="ui_AdditionalSettings">More</string>
     <string name="action_New_Note">Create note</string>
