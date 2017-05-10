@@ -11,7 +11,7 @@
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="dev_Version" translatable="false">1.5</string>
+    <string name="dev_Version" translatable="false">1.6</string>
     <string name="dev_Email" translatable="false">contactwithdmitry@gmail.com</string>
     <string name="ui_AdditionalSettings">More</string>
     <string name="action_New_Note">Create note</string>
@@ -58,4 +58,5 @@
     <string name="settings_Separator_Quicknote">Quicknotes (hold \'Create\' button):</string>
     <string name="settings_Quicknote_Prompt">Prompt for confirmation</string>
     <string name="settings_Quicknote_Silent">Disable history</string>
+    <string name="ui_Button_ClearFields">Fields cleared</string>
 </resources>

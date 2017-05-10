@@ -52,4 +52,5 @@
     <string name="settings_Separator_Quicknote">Быстрые заметки (удерживайте кнопку \'создать\'):</string>
     <string name="settings_Quicknote_Silent">Отключить историю</string>
     <string name="settings_Quicknote_Prompt">Запрашивать подтверждение</string>
+    <string name="ui_Button_ClearFields">Поля очищены</string>
 </resources>

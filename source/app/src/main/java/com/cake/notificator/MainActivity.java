@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.graphics.Color;
+import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
@@ -253,7 +254,6 @@ public class MainActivity extends AppCompatActivity
                     .setContentTitle(titleText)
                     .setContentText(bigText);
 
-
             //check vibration.
             if (mPrefs.getBoolean("vibration", false)) {
                 builder.setVibrate(new long[]{0, 50});
@@ -299,8 +299,7 @@ public class MainActivity extends AppCompatActivity
         }
 
         //clear text field.
-        text.setText("");
-        textTitleEdit.setText("");
+        clearFields(null);
 
         //reset silent.
         if (mPrefs.getBoolean("reset_delay", false)) {
@@ -509,6 +508,7 @@ public class MainActivity extends AppCompatActivity
         startActivity(intent);
     }
 
+    //show keyboard.
     private void keyboardShow() {
         SharedPreferences mPrefs = getSharedPreferences("appsettings", 0);
 
@@ -521,9 +521,29 @@ public class MainActivity extends AppCompatActivity
         inputMethodManager.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
     }
 
+    //hide keyboard.
     private void keyboardHide() {
         InputMethodManager inputMethodManager = (InputMethodManager)  getSystemService(Activity.INPUT_METHOD_SERVICE);
         inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+    }
+
+    //clear fields.
+    public void clearFields(@Nullable View view) {
+
+        ((EditText) findViewById(R.id.editText)).setText("");
+        ((EditText) findViewById(R.id.editText_Title)).setText("");
+
+        //echo
+        SharedPreferences mPrefs = getSharedPreferences("appsettings", 0);
+
+        if (view != null) {
+            if (mPrefs.getBoolean("alt_notifications", false)) {
+                Toast.makeText(this, getString(R.string.ui_Button_ClearFields), Toast.LENGTH_SHORT)
+                        .show();
+            } else {
+                Snackbar.make(view, getString(R.string.ui_Button_ClearFields), Snackbar.LENGTH_SHORT).show();
+            }
+        }
     }
 }
 

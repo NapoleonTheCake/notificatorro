@@ -9,7 +9,8 @@ Simple and easy quick-note notification app.
 
 #### Future plans:
 - !!! fix delayed notifications feature.
-- Add clear field and notifications button.
+- ! fix app crash when creating quicknote without text in clipboard (see todo flag in code).
+- Add clear notifications button.
 - Add persistent notification feature:
 	- Add switcher to show/hide notification.
 	- Configure shortcut to toggle it.
@@ -29,7 +30,7 @@ Simple and easy quick-note notification app.
 - add shortcuts for: persistent activity(disable/enable), history(clear?).
 - add white circle background for shortcut icons.
 - add shortcut to clear all notifications (and find place to put into <25 api).
-- add setting to keep title after creating note.
+- add setting to keep title after creating note (pin against clear button?).
 - add square-ish icon.
 - add pic notes (add capture with camera + tabs on top).
 - format text in history? (title, date).
@@ -44,5 +45,9 @@ Translations are welcomed.
 I accept donations to my student's debit card: 4061492051715222  
 **Thank you for any support!**
 
++ clear button.
++ shortcut buttons now have background.
 + vibration disabled by default.
-+ minor fixes.
++ bug fixes.
+
+* will hold off for a while (till end of session ~end of June).

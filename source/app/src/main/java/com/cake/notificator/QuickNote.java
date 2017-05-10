@@ -49,7 +49,7 @@ public class QuickNote extends Activity {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(QuickNote.this);
 
-        //set default text if empty.
+        //set default text if empty. //todo: fix crashing app if no text in clipboard.
         if (bigText.length() == 0) {
             builder.setMessage(getString(R.string.prompt_Quicknote_Text_Empty));
         } else {

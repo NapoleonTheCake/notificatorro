@@ -86,4 +86,18 @@
         android:layout_alignTop="@+id/button_Create"
         android:text="@string/action_SetSilent" />
 
+    <ImageButton
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        android:onClick="clearFields"
+
+        android:id="@+id/imageButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignTop="@+id/editText_Title"
+        android:layout_toEndOf="@+id/editText_Title"
+        android:layout_toRightOf="@+id/editText_Title"
+        app:srcCompat="@drawable/clearhistory"
+        android:layout_above="@+id/editText" />
+
 </RelativeLayout>
