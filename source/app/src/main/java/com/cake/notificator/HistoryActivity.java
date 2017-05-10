@@ -28,7 +28,13 @@ public class HistoryActivity extends AppCompatActivity {
 
         //find view and set text.
         TextView textView = (TextView) findViewById(R.id.text_History_Everything);
-        textView.setText(allHistory);
+
+        if (allHistory.length() == 0) {
+            textView.setText(getString(R.string.history_Empty));
+        }
+        else {
+            textView.setText(allHistory);
+        }
     }
 
     //================================

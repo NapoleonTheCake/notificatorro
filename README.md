@@ -26,10 +26,8 @@ Simple and easy quick-note notification app.
 - add welcome page.
 - try to implement everything as fragments, that will allow you to see drawer everywhere.
 - timestaps according to user's locale.
-- alt notifications: ?? change gravity ??
 - add shortcuts for: persistent activity(disable/enable), history(clear?).
-- add white circle background for shortcut icons.
-- add shortcut to clear all notifications (and find place to put into <25 api).
+- add shortcut to clear all notifications (and find place to put into <25 api) // create field in settings which is visible only for api>=25.
 - add setting to keep title after creating note (pin against clear button?).
 - add square-ish icon.
 - add pic notes (add capture with camera + tabs on top).

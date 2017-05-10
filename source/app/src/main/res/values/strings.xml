@@ -6,7 +6,6 @@
     <string name="text_Count_Default">Create notification first.</string>
     <string name="notification_Created">Done!</string>
     <string name="title_activity_history">History</string>
-    <string name="history_everything">Empty history.</string>
     <string name="text_History_Cleared">History cleared</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -31,10 +30,10 @@
     <string name="dialog_Negative_No">No</string>
     <string name="notification_Title_Default">Note:</string>
     <string name="settings_Vibration">Enable vibration</string>
-    <string name="dialog_Delay_Disable">Delay disabled.</string>
+    <string name="dialog_Delay_Disable">Delay disabled</string>
     <string name="action_SetDelay_Success">Notification delayed for</string>
     <string name="prompt_Delay_Title">Delay in minutes:</string>
-    <string name="action_New_Note_Empty">Won\'t create empty note.</string>
+    <string name="action_New_Note_Empty">Won\'t create empty note</string>
     <string name="title_activity_about" translatable="false">About</string>
     <string name="text_About_Title">Thank you!</string>
     <string name="text_About_Text">I made this app with love. This is my first app I\'ve ever created for Android. This means I learn on this app. If you want to donate, please check credentials on project\'s GitHub main page by tapping on coffee cup above. You can also find todo list and source code for this app. App is shared under GNU GPLv3 license, which means that you can modify and share your version of app with your sources attached. Also you have to reffer to an author (me) by including link to project\'s GitHub page. To find out more please read LICENSE file inside project\'s page.\n\nStay awesome!\n</string>
@@ -45,7 +44,7 @@
     <string name="settings_Reset_Silent">Silent only one note</string>
     <string name="silent_Enable_Once">This one won\'t be listed in history.</string>
     <string name="settings_Reset_Delay">Delay only one note</string>
-    <string name="action_SetDelay_Success_Postfix">minutes.</string>
+    <string name="action_SetDelay_Success_Postfix">minutes</string>
     <string name="settings_Alt_Notifications">Use alternative in-app notifications</string>
     <string name="settings_Apply_Success">Settings saved.</string>
     <string name="settings_Ignore_Title">Create new note directly from text</string>
@@ -59,4 +58,5 @@
     <string name="settings_Quicknote_Prompt">Prompt for confirmation</string>
     <string name="settings_Quicknote_Silent">Disable history</string>
     <string name="ui_Button_ClearFields">Fields cleared</string>
+    <string name="history_Empty">Empty history</string>
 </resources>

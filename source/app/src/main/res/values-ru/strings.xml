@@ -21,15 +21,14 @@
     <string name="silent_Enable">История выключена.</string>
     <string name="dialog_History_Clear_Title">Подтверждение действия</string>
     <string name="dialog_History_Clear_Message">Вы уверены, что хотите очистить вашу историю?</string>
-    <string name="history_everything">Истории нет.</string>
     <string name="dialog_Positive_Yes">Да</string>
     <string name="dialog_Negative_No">Нет</string>
     <string name="notification_Title_Default">Заметка:</string>
     <string name="settings_Vibration">Включить вибрацию</string>
-    <string name="dialog_Delay_Disable">Без задержки.</string>
+    <string name="dialog_Delay_Disable">Без задержки</string>
     <string name="action_SetDelay_Success">Уведомление отложено на</string>
     <string name="prompt_Delay_Title">Задержка в минутах:</string>
-    <string name="action_New_Note_Empty">Пустые заметки не создаю.</string>
+    <string name="action_New_Note_Empty">Пустые заметки не создаю</string>
     <string name="text_About_Title">Спасибо!</string>
     <string name="text_About_Coffee_GitHubPage">Страница GitHub</string>
     <string name="text_About_Coffee_Mailme">Письмо автору</string>
@@ -39,7 +38,7 @@
     <string name="text_About_Text">Приложение сделано с любовью. Это моё первое приложение для Андроид. Это означает, что я обучаюсь на этом приложении. Если Вы хотите поддержать проект, Вы можете найти данные для пожертвований на главной странице проекта, нажав на кружку кофе наверху. Так же вы можете там найти список планов и исходный код приложения. Приложение распространяется под лицензией GNU GPLv3, а это означает, что Вы можете изменять и распространять Вашу версию приложения вместе с её исходным кодом. Так же Вы должны указывать автора приложения (меня), приложив ссылку на сайт моего проекта. Чтобы узнать больше, пожалуйста, прочтите файл LICENSE на странице проекта.\n\nУдачи!\n</string>
     <string name="silent_Enable_Once">Эта заметка не войдет в историю.</string>
     <string name="settings_Reset_Delay">Откладывать по одной заметке</string>
-    <string name="action_SetDelay_Success_Postfix">минут.</string>
+    <string name="action_SetDelay_Success_Postfix">минут</string>
     <string name="settings_Alt_Notifications">Альтернативные уведомления в приложении</string>
     <string name="settings_Apply_Success">Настройки сохранены.</string>
     <string name="settings_Ignore_Title">Создание новых заметок сразу с текста</string>
@@ -53,4 +52,5 @@
     <string name="settings_Quicknote_Silent">Отключить историю</string>
     <string name="settings_Quicknote_Prompt">Запрашивать подтверждение</string>
     <string name="ui_Button_ClearFields">Поля очищены</string>
+    <string name="history_Empty">Истории нет</string>
 </resources>
