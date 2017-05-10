@@ -32,6 +32,7 @@ Simple and easy quick-note notification app.
 - add square-ish icon.
 - add pic notes (add capture with camera + tabs on top).
 - format text in history? (title, date).
+- add colored shortcuts instead of bw.
 
 
 Source code: https://github.com/NapoleonTheCake/notificatorro
