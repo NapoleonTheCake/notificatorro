@@ -28,8 +28,8 @@ public class QuickNote extends Activity {
 
         SharedPreferences mPrefs = getSharedPreferences("appsettings", 0);
 
+        //if called from text selection.
         String textSelection = null;
-
         if (savedInstanceState == null) {
             Bundle bundle = getIntent().getExtras();
 
@@ -38,6 +38,7 @@ public class QuickNote extends Activity {
             }
         }
 
+        //main body.
         if (textSelection != null) {
             quicknoteAccept(textSelection);
         } else if (mPrefs.getBoolean("quicknoteprompt", false)) {

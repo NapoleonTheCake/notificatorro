@@ -531,23 +531,20 @@ public class MainActivity extends AppCompatActivity
     //clear fields.
     public void clearFields(@Nullable View view) {
 
-        // DEBUG //
-        startActivity(new Intent(MainActivity.this, QuickNote.class));
+        ((EditText) findViewById(R.id.editText)).setText("");
+        ((EditText) findViewById(R.id.editText_Title)).setText("");
 
-//        ((EditText) findViewById(R.id.editText)).setText("");
-//        ((EditText) findViewById(R.id.editText_Title)).setText("");
-//
-//        //echo
-//        SharedPreferences mPrefs = getSharedPreferences("appsettings", 0);
-//
-//        if (view != null) {
-//            if (mPrefs.getBoolean("alt_notifications", false)) {
-//                Toast.makeText(this, getString(R.string.ui_Button_ClearFields), Toast.LENGTH_SHORT)
-//                        .show();
-//            } else {
-//                Snackbar.make(view, getString(R.string.ui_Button_ClearFields), Snackbar.LENGTH_SHORT).show();
-//            }
-//        }
+        //echo
+        SharedPreferences mPrefs = getSharedPreferences("appsettings", 0);
+
+        if (view != null) {
+            if (mPrefs.getBoolean("alt_notifications", false)) {
+                Toast.makeText(this, getString(R.string.ui_Button_ClearFields), Toast.LENGTH_SHORT)
+                        .show();
+            } else {
+                Snackbar.make(view, getString(R.string.ui_Button_ClearFields), Snackbar.LENGTH_SHORT).show();
+            }
+        }
     }
 }
 
