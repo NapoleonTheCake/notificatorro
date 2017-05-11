@@ -196,6 +196,7 @@ public class MainActivity extends AppCompatActivity
 
     //creating notification.
     public void onClick_Notify(View view) {
+
         Context context = getApplicationContext();
         EditText text = (EditText) findViewById(R.id.editText);
         EditText textTitleEdit = (EditText) findViewById(R.id.editText_Title);
@@ -530,20 +531,23 @@ public class MainActivity extends AppCompatActivity
     //clear fields.
     public void clearFields(@Nullable View view) {
 
-        ((EditText) findViewById(R.id.editText)).setText("");
-        ((EditText) findViewById(R.id.editText_Title)).setText("");
+        // DEBUG //
+        startActivity(new Intent(MainActivity.this, QuickNote.class));
 
-        //echo
-        SharedPreferences mPrefs = getSharedPreferences("appsettings", 0);
-
-        if (view != null) {
-            if (mPrefs.getBoolean("alt_notifications", false)) {
-                Toast.makeText(this, getString(R.string.ui_Button_ClearFields), Toast.LENGTH_SHORT)
-                        .show();
-            } else {
-                Snackbar.make(view, getString(R.string.ui_Button_ClearFields), Snackbar.LENGTH_SHORT).show();
-            }
-        }
+//        ((EditText) findViewById(R.id.editText)).setText("");
+//        ((EditText) findViewById(R.id.editText_Title)).setText("");
+//
+//        //echo
+//        SharedPreferences mPrefs = getSharedPreferences("appsettings", 0);
+//
+//        if (view != null) {
+//            if (mPrefs.getBoolean("alt_notifications", false)) {
+//                Toast.makeText(this, getString(R.string.ui_Button_ClearFields), Toast.LENGTH_SHORT)
+//                        .show();
+//            } else {
+//                Snackbar.make(view, getString(R.string.ui_Button_ClearFields), Snackbar.LENGTH_SHORT).show();
+//            }
+//        }
     }
 }
 

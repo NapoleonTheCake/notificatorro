@@ -59,6 +59,15 @@
                 android:value="com.cake.notificator.MainActivity" />
         </activity>
         <activity android:name=".QuickNote"></activity>
+        <activity android:name=".QuickNote_FromTextSelection">
+            <intent-filter>
+                <action android:name="android.intent.action.PROCESS_TEXT" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

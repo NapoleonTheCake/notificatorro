@@ -53,9 +53,39 @@ public class SettingsActivity extends AppCompatActivity {
 
     //====================================
 
-    //set all settings here.
+//    //set all settings here.
+//    @Override
+//    public void onBackPressed() {
+//
+//        append();
+//
+//        super.onBackPressed();
+//    }
+//
+//    //handle taskbar back click here.
+//    @Override
+//    public boolean onOptionsItemSelected(MenuItem item) {
+//        switch (item.getItemId()) {
+//            case android.R.id.home:
+//                this.onBackPressed();
+//                break;
+//        }
+//
+//        return true;
+//    }
+
     @Override
-    public void onBackPressed() {
+    protected void onStop() {
+
+        append();
+
+        super.onStop();
+    }
+
+    //=========================================================
+
+    private void append() {
+
         SharedPreferences.Editor mPrefAppSettingsEdit = getSharedPreferences("appsettings",
                 0).edit();
 
@@ -112,19 +142,5 @@ public class SettingsActivity extends AppCompatActivity {
 
         //echo done.
         Toast.makeText(this, getString(R.string.settings_Apply_Success), Toast.LENGTH_SHORT).show();
-
-        super.onBackPressed();
-    }
-
-    //handle taskbar back click here.
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                this.onBackPressed();
-                break;
-        }
-
-        return true;
     }
 }

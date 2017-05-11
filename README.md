@@ -33,6 +33,8 @@ Simple and easy quick-note notification app.
 - add pic notes (add capture with camera + tabs on top).
 - format text in history? (title, date).
 - add colored shortcuts instead of bw.
+- quicknote: make alertdialog with transparent activity.
+- add rotated layout.
 
 
 Source code: https://github.com/NapoleonTheCake/notificatorro

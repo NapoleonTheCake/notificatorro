@@ -9,13 +9,11 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.res.Resources;
+import android.os.Build;
 import android.os.Bundle;
-import android.support.design.widget.Snackbar;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
-import android.view.View;
-import android.widget.EditText;
-import android.widget.Toast;
+import android.widget.Button;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -29,10 +27,23 @@ public class QuickNote extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
 
         SharedPreferences mPrefs = getSharedPreferences("appsettings", 0);
-        if (mPrefs.getBoolean("quicknoteprompt", false)) {
+
+        String textSelection = null;
+
+        if (savedInstanceState == null) {
+            Bundle bundle = getIntent().getExtras();
+
+            if (bundle != null) {
+                textSelection = bundle.getString("from_selection");
+            }
+        }
+
+        if (textSelection != null) {
+            quicknoteAccept(textSelection);
+        } else if (mPrefs.getBoolean("quicknoteprompt", false)) {
             showDialog();
         } else {
-            quicknoteAccept();
+            quicknoteAccept(null);
         }
 
         super.onCreate(savedInstanceState);
@@ -69,7 +80,7 @@ public class QuickNote extends Activity {
                         new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                quicknoteAccept();
+                                quicknoteAccept(null);
                             }
                         });
 
@@ -78,21 +89,22 @@ public class QuickNote extends Activity {
     }
 
     //create notification.
-    void quicknoteAccept() {
+    void quicknoteAccept(@Nullable String quickText) {
 
         Context context = getApplicationContext();
         SharedPreferences mPrefs = getSharedPreferences("appsettings", 0);
         SharedPreferences.Editor mPrefsEditor = mPrefs.edit();
 
         //get text.
-        ClipboardManager clipboard = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
-        String bigText = clipboard.getText().toString();
-
-        if (bigText.length() == 0) {
-            bigText = getString(R.string.prompt_Quicknote_Text_Empty);
+        String bigText;
+        if (quickText != null) {
+            bigText = quickText;
+        } else {
+            ClipboardManager clipboard = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
+            bigText = clipboard.getText().toString();
         }
 
-        //abort creating empty notification.
+        //todo: fix, not works as it crashes above if no text in clipboard.
         if (bigText.length() == 0) {
             return;
         }
