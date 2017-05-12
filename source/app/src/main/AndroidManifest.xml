@@ -78,6 +78,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.cake.notificator.MainActivity" />
         </activity>
+        <activity android:name=".PersistToggle"></activity>
     </application>
 
 </manifest>
