@@ -39,6 +39,7 @@ Simple and easy quick-note notification app.
 - quicknote: make alertdialog with transparent activity.
 - allow selecting text in history.
 - add screenshots for shortcuts and context menu.
+- add repeated notifications.
 
 
 Source code: https://github.com/NapoleonTheCake/notificatorro
