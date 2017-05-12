@@ -37,6 +37,11 @@ Simple and easy quick-note notification app.
 - format text in history? (title, date).
 - add colored shortcuts instead of bw.
 - quicknote: make alertdialog with transparent activity.
+- allow selecting text in history.
+- redice space between buttons in settings.
+- add screenshots for shortcuts and context menu.
+- remove settings saved echo.
+- in "mail to me" make my email as a string resource.
 
 
 Source code: https://github.com/NapoleonTheCake/notificatorro
