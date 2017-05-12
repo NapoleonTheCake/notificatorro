@@ -7,7 +7,7 @@ android {
         applicationId "com.cake.notificator"
         minSdkVersion 16
         targetSdkVersion 25
-        versionCode 21
+        versionCode 22
         versionName "1.8-hotfix"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }

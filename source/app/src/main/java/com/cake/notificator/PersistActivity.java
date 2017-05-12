@@ -145,7 +145,7 @@ public class PersistActivity extends AppCompatActivity {
         //create intent.
         Intent notificationIntent = new Intent(context, MainActivity.class);
         PendingIntent contentIntent = PendingIntent.getActivity(context,
-                0, notificationIntent, PendingIntent.FLAG_CANCEL_CURRENT);
+                0, notificationIntent, 0);
 
         //build notification.
         Notification.Builder builder = new Notification.Builder(context)

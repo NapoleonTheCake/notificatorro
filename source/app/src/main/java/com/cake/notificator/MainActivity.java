@@ -184,8 +184,6 @@ public class MainActivity extends AppCompatActivity
     //creating notification.
     public void onClick_Notify(View view) {
 
-        startActivity(new Intent(this, PersistToggle.class));
-
         Context context = getApplicationContext();
         EditText text = (EditText) findViewById(R.id.editText);
         EditText textTitleEdit = (EditText) findViewById(R.id.editText_Title);
