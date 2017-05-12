@@ -72,6 +72,7 @@ public class PersistActivity extends AppCompatActivity {
         super.onStop();
 
         SharedPreferences.Editor mPrefsTextEditor = getSharedPreferences("notifications", 0).edit();
+        SharedPreferences mPrefs = getSharedPreferences("appsettings", 0);
 
         //store texts.
         mPrefsTextEditor.putString("persist_title",
@@ -80,7 +81,11 @@ public class PersistActivity extends AppCompatActivity {
                 ((EditText) findViewById(R.id.editText_Persist)).getText().toString()).apply();
 
         //update notification.
-        update();
+        if (mPrefs.getBoolean("persist", false)) {
+
+            //update text.
+            update();
+        }
     }
 
     //==============================================
@@ -95,10 +100,10 @@ public class PersistActivity extends AppCompatActivity {
         SharedPreferences mPrefs = getSharedPreferences("appsettings", 0);
         SharedPreferences.Editor mPrefsEditor = mPrefs.edit();
 
-        if (mPrefs.getBoolean("persist", true)) {
+        if (mPrefs.getBoolean("persist", false)) {
 
-            //update text.
-            update();
+            //cancel persistent notification.
+            ((NotificationManager) context.getSystemService(NOTIFICATION_SERVICE)).cancel(NOTIFY_ID_PERSIST);
 
             ////
 
@@ -106,8 +111,8 @@ public class PersistActivity extends AppCompatActivity {
 
         } else {
 
-            //cancel persistent notification.
-            ((NotificationManager) context.getSystemService(NOTIFICATION_SERVICE)).cancel(NOTIFY_ID_PERSIST);
+            //update text.
+            update();
 
             ////
 
@@ -145,17 +150,11 @@ public class PersistActivity extends AppCompatActivity {
         //build notification.
         Notification.Builder builder = new Notification.Builder(context)
                 .setContentIntent(contentIntent)
+                .setSmallIcon(R.drawable.statusbaricon)
                 .setOngoing(true)
                 .setAutoCancel(false)
                 .setContentTitle(titleText)
                 .setContentText(bigText);
-
-        //check if show
-        if (mPrefs.getBoolean("persist_showicon", false)) {
-            builder.setSmallIcon(R.drawable.statusbaricon);
-        } else {
-            builder.setSmallIcon(android.R.color.transparent);
-        }
 
         //check if in priority.
         if (mPrefs.getBoolean("persist_prior", false)) {
@@ -165,11 +164,6 @@ public class PersistActivity extends AppCompatActivity {
         //colorize notification for 21+ api.
         if (Build.VERSION.SDK_INT >= 21) {
             builder.setColor(getResources().getColor(R.color.color_Persist));
-        }
-
-        //check vibration.
-        if (mPrefs.getBoolean("vibration", false)) {
-            builder.setVibrate(new long[]{0, 50});
         }
 
         //show notification.

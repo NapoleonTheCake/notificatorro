@@ -27,22 +27,19 @@ public class PersistToggle extends Activity {
         SharedPreferences mPrefs = getSharedPreferences("appsettings", 0);
         SharedPreferences.Editor mPrefsEditor = mPrefs.edit();
 
-        if (mPrefs.getBoolean("persist", true)) {
+        if (mPrefs.getBoolean("persist", false)) {
 
-            //update text.
-            update();
+            //cancel persistent notification.
+            ((NotificationManager) context.getSystemService(NOTIFICATION_SERVICE)).cancel(NOTIFY_ID_PERSIST);
 
             ////
 
             mPrefsEditor.putBoolean("persist", false).apply();
 
-            //echo done (only in PersistToggle).
-            Toast.makeText(this, getString(R.string.notification_Created), Toast.LENGTH_SHORT).show();
-
         } else {
 
-            //cancel persistent notification.
-            ((NotificationManager) context.getSystemService(NOTIFICATION_SERVICE)).cancel(NOTIFY_ID_PERSIST);
+            //update text.
+            update();
 
             ////
 
@@ -85,13 +82,6 @@ public class PersistToggle extends Activity {
                 .setContentTitle(titleText)
                 .setContentText(bigText);
 
-        //check if show
-        if (mPrefs.getBoolean("persist_showicon", false)) {
-            builder.setSmallIcon(R.drawable.statusbaricon);
-        } else {
-            builder.setSmallIcon(android.R.color.transparent);
-        }
-
         //check if in priority.
         if (mPrefs.getBoolean("persist_prior", false)) {
             builder.setPriority(Notification.PRIORITY_MAX);
@@ -100,11 +90,6 @@ public class PersistToggle extends Activity {
         //colorize notification for 21+ api.
         if (Build.VERSION.SDK_INT >= 21) {
             builder.setColor(getResources().getColor(R.color.color_Persist));
-        }
-
-        //check vibration.
-        if (mPrefs.getBoolean("vibration", false)) {
-            builder.setVibrate(new long[]{0, 50});
         }
 
         //show notification.

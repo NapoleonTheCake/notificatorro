@@ -48,10 +48,6 @@ public class SettingsActivity extends AppCompatActivity {
         ((Switch) findViewById(R.id.switch_Quicknote_Silent))
                 .setChecked(mPrefAppSettings.getBoolean("isSilentQuick", false));
 
-        //set pinned show icon.
-        ((Switch) findViewById(R.id.switch_Persist_Showicon))
-                .setChecked(mPrefAppSettings.getBoolean("persist_showicon", false));
-
         //set pinned priority.
         ((Switch) findViewById(R.id.switch_Persist_Prior))
                 .setChecked(mPrefAppSettings.getBoolean("persist_prior", false));
@@ -142,13 +138,6 @@ public class SettingsActivity extends AppCompatActivity {
             mPrefAppSettingsEdit.putBoolean("isSilentQuick", true).apply();
         } else {
             mPrefAppSettingsEdit.putBoolean("isSilentQuick", false).apply();
-        }
-
-        //set pinned show icon.
-        if (((Switch) findViewById(R.id.switch_Persist_Showicon)).isChecked()) {
-            mPrefAppSettingsEdit.putBoolean("persist_showicon", true).apply();
-        } else {
-            mPrefAppSettingsEdit.putBoolean("persist_showicon", false).apply();
         }
 
         //set pinned priority.
