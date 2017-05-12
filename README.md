@@ -5,6 +5,7 @@ Simple and easy quick-note notification app.
 - Create notifications with your own text!
 - Track history of your notes and clear anytime!
 - Create delayed notifications! (Currently broken).
+- Create pinned notification to keep stuff in mind!
 - Android N+ can use app's shortcuts.
 - Android M+ can create quicknotes from selected text.
 - English and Russian languages are supported for now.
@@ -13,7 +14,6 @@ Simple and easy quick-note notification app.
 #### Future plans:
 - !!! fix delayed notifications feature.
 - ! fix app crash when creating quicknote without text in clipboard (see todo flag in code).
-- Add clear notifications button.
 - Add persistent notification feature:
 	- Add switcher to show/hide notification.
 	- Configure shortcut to toggle it.
@@ -22,7 +22,7 @@ Simple and easy quick-note notification app.
 - widget?
 - add best experience warning.
 - add regular notes (serialisation).
-- color notification title + setting.
+- color notification setting.
 - add help page.
 	- tell about custom roms that cuts big notifications (like MIUI).
 - search in history.
@@ -37,6 +37,8 @@ Simple and easy quick-note notification app.
 - format text in history? (title, date).
 - add colored shortcuts instead of bw.
 - quicknote: make alertdialog with transparent activity.
+- allow selecting text in history.
+- add screenshots for shortcuts and context menu.
 
 
 Source code: https://github.com/NapoleonTheCake/notificatorro
@@ -46,4 +48,7 @@ Feel free to contact me via email: contactwithdmitry@gmail.com
 I accept donations to my student's debit card: 4061492051715222  
 **Thank you for any support!**
 
++ pinned notification.
++ colorized notifications.
++ minor improvements.
 + bug fixes.

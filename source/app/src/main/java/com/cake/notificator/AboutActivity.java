@@ -2,12 +2,14 @@ package com.cake.notificator;
 
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.Window;
 
 public class AboutActivity extends AppCompatActivity {
 
@@ -18,17 +20,13 @@ public class AboutActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        //set statusbar color.
+        if (Build.VERSION.SDK_INT >= 21) {
+            Window window = getWindow();
+            window.setStatusBarColor(getResources().getColor(R.color.color_About_StatusBar));
+        }
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-
-//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-//            }
-//        });
     }
 
     @Override
@@ -62,7 +60,7 @@ public class AboutActivity extends AppCompatActivity {
     public void onClick_CoffeeCup_Mailme(View view) {
         Intent mailIntent = new Intent(Intent.ACTION_SEND);
         mailIntent.setType("message/rfc822")
-                .putExtra(Intent.EXTRA_EMAIL, new String[] { "contactwithdmitry@gmail.com" })
+                .putExtra(Intent.EXTRA_EMAIL, getString(R.string.dev_Email))
                 .putExtra(Intent.EXTRA_SUBJECT, "Notificatorro: ");
         startActivity(Intent.createChooser(mailIntent, getString(R.string.ui_SendEmail)));
     }

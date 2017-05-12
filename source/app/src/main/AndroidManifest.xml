@@ -20,8 +20,8 @@
 
         <activity
             android:name=".MainActivity"
-            android:windowSoftInputMode="stateVisible|adjustResize"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible|adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -59,7 +59,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.cake.notificator.MainActivity" />
         </activity>
-        <activity android:name=".QuickNote"></activity>
+        <activity android:name=".QuickNote" />
         <activity android:name=".QuickNote_FromTextSelection">
             <intent-filter>
                 <action android:name="android.intent.action.PROCESS_TEXT" />
@@ -69,6 +69,16 @@
                 <data android:mimeType="text/plain" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".PersistActivity"
+            android:label="@string/action_Persist"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.cake.notificator.MainActivity" />
+        </activity>
+        <activity android:name=".PersistToggle"></activity>
     </application>
 
 </manifest>

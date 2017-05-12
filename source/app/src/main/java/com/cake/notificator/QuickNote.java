@@ -9,6 +9,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
@@ -123,6 +124,11 @@ public class QuickNote extends Activity {
                 .setAutoCancel(true)
                 .setWhen(System.currentTimeMillis())
                 .setContentText(bigText);
+
+        //colorize notification for 21+ api.
+        if (Build.VERSION.SDK_INT >= 21) {
+            builder.setColor(getResources().getColor(R.color.color_Quicknote));
+        }
 
         //check vibration.
         if (mPrefs.getBoolean("vibration", false)) {

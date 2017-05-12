@@ -8,6 +8,11 @@
             <!--android:title="@string/action_New_Note" />-->
 
         <item
+            android:id="@+id/nav_Persist"
+            android:icon="@drawable/persist"
+            android:title="@string/action_Persist" />
+
+        <item
             android:id="@+id/nav_History"
             android:icon="@drawable/history"
             android:title="@string/action_History" />

@@ -31,15 +31,15 @@
 
     <shortcut
         android:shortcutId="persist"
-        android:enabled="false"
-        android:icon="@drawable/about"
+        android:enabled="true"
+        android:icon="@drawable/visibilityshortcut"
         android:shortcutShortLabel="@string/ui_Toggle_Persistent"
         android:shortcutLongLabel="@string/ui_Toggle_Persistent"
         android:shortcutDisabledMessage="@string/ui_Toggle_Persistent">
         <intent
             android:action="android.intent.action.VIEW"
             android:targetPackage="com.cake.notificator"
-            android:targetClass="com.cake.notificator.MainActivity" />
+            android:targetClass="com.cake.notificator.PersistToggle" />
         <categories android:name="android.shortcut.conversation" />
     </shortcut>
 

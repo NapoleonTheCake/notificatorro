@@ -8,5 +8,12 @@
     <color name="button_Pressed">#FFD6D8D7</color>
     <color name="color_About_TitleBar">#FF19AFBB</color>
     <color name="color_About_Background">#FF1CC4D1</color>
+    <color name="color_About_StatusBar">#ff169aa5</color>
     <color name="color_Quicknote_Dialog_Background">#FFEBF07D</color>
+    <color name="color_Note">#ff66ff00</color>
+    <color name="color_Quicknote">#ffcc0000</color>
+    <color name="color_Persist">#ff0033cc</color>
+    <!--<color name="color_Persist_Body"></color>-->
+    <!--<color name="color_Persist_Titlebar"></color>-->
+    <!--<color name="color_Persist_Statusbar"></color>-->
 </resources>
