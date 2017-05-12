@@ -61,8 +61,11 @@
     <string name="action_Persist">Pinned</string>
     <string name="persist_Toggle_Short">Toggle</string>
     <string name="persist_Toggle">Toggle pinned</string>
-    <string name="persist_Toggle_Toggled">Done</string>
+    <string name="persist_Toggle_Toggled">Toggled visibility</string>
     <string name="persist_Title_Default">Pinned:</string>
     <string name="persist_Text_Default">No text</string>
     <string name="text_Persist_Title">Keep in mind...</string>
+    <string name="settings_Separator_Pinned">Pinned notification:</string>
+    <string name="settings_Pinned_Showicon">Show icon in statusbar</string>
+    <string name="settings_Pinned_Prior">Make notification highest priority</string>
 </resources>

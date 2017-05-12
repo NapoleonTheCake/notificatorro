@@ -6,7 +6,6 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.res.Resources;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -16,7 +15,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 public class PersistActivity extends AppCompatActivity {
@@ -139,11 +137,22 @@ public class PersistActivity extends AppCompatActivity {
         //build notification.
         Notification.Builder builder = new Notification.Builder(context)
                 .setContentIntent(contentIntent)
-                .setSmallIcon(R.drawable.statusbaricon)
                 .setOngoing(true)
                 .setAutoCancel(false)
                 .setContentTitle(titleText)
                 .setContentText(bigText);
+
+        //check if show
+        if (mPrefs.getBoolean("persist_showicon", false)) {
+            builder.setSmallIcon(R.drawable.statusbaricon);
+        } else {
+            builder.setSmallIcon(android.R.color.transparent);
+        }
+
+        //check if in priority.
+        if (mPrefs.getBoolean("persist_prior", false)) {
+            builder.setPriority(Notification.PRIORITY_MAX);
+        }
 
         //colorize notification for 21+ api.
         if (Build.VERSION.SDK_INT >= 21) {

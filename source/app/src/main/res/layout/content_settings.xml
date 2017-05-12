@@ -118,6 +118,41 @@
             android:text="@string/settings_Quicknote_Silent"
             android:layout_below="@+id/switch_Quicknote_Prompt" />
 
+        <TextView
+            android:minHeight="40dp"
+            android:gravity="center_vertical"
+            android:layout_marginTop="0dp"
+            android:layout_below="@id/switch_Quicknote_Silent"
+
+            android:id="@+id/text_Settings_Pinned"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/switch_Vibration"
+            android:layout_alignStart="@+id/switch_Vibration"
+            android:text="@string/settings_Separator_Pinned" />
+
+        <Switch
+            android:minHeight="35dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+
+            android:id="@+id/switch_Persist_Showicon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/settings_Pinned_Showicon"
+            android:layout_below="@+id/text_Settings_Pinned" />
+
+        <Switch
+            android:minHeight="35dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+
+            android:id="@+id/switch_Persist_Prior"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/settings_Pinned_Prior"
+            android:layout_below="@+id/switch_Persist_Showicon" />
+
     </RelativeLayout>
 
 </ScrollView>

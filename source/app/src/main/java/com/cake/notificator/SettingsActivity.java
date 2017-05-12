@@ -4,9 +4,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.MenuItem;
 import android.widget.Switch;
-import android.widget.Toast;
 
 public class SettingsActivity extends AppCompatActivity {
 
@@ -49,6 +47,14 @@ public class SettingsActivity extends AppCompatActivity {
         //set quicknote silent.
         ((Switch) findViewById(R.id.switch_Quicknote_Silent))
                 .setChecked(mPrefAppSettings.getBoolean("isSilentQuick", false));
+
+        //set pinned show icon.
+        ((Switch) findViewById(R.id.switch_Persist_Showicon))
+                .setChecked(mPrefAppSettings.getBoolean("persist_showicon", false));
+
+        //set pinned priority.
+        ((Switch) findViewById(R.id.switch_Persist_Prior))
+                .setChecked(mPrefAppSettings.getBoolean("persist_prior", false));
     }
 
     //====================================
@@ -136,6 +142,20 @@ public class SettingsActivity extends AppCompatActivity {
             mPrefAppSettingsEdit.putBoolean("isSilentQuick", true).apply();
         } else {
             mPrefAppSettingsEdit.putBoolean("isSilentQuick", false).apply();
+        }
+
+        //set pinned show icon.
+        if (((Switch) findViewById(R.id.switch_Persist_Showicon)).isChecked()) {
+            mPrefAppSettingsEdit.putBoolean("persist_showicon", true).apply();
+        } else {
+            mPrefAppSettingsEdit.putBoolean("persist_showicon", false).apply();
+        }
+
+        //set pinned priority.
+        if (((Switch) findViewById(R.id.switch_Persist_Prior)).isChecked()) {
+            mPrefAppSettingsEdit.putBoolean("persist_prior", true).apply();
+        } else {
+            mPrefAppSettingsEdit.putBoolean("persist_prior", false).apply();
         }
 
         ////

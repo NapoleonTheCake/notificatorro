@@ -55,8 +55,11 @@
     <string name="action_Persist">Закрепить</string>
     <string name="persist_Toggle">Переключить закреп</string>
     <string name="persist_Toggle_Short">Переключить</string>
-    <string name="persist_Toggle_Toggled">Готово</string>
+    <string name="persist_Toggle_Toggled">Переключена видимость</string>
     <string name="persist_Title_Default">Закреп:</string>
     <string name="persist_Text_Default">Нет текста</string>
     <string name="text_Persist_Title">Помни о...</string>
+    <string name="settings_Separator_Pinned">Закреп. уведомление:</string>
+    <string name="settings_Pinned_Showicon">Показывать иконку в уведомлениях</string>
+    <string name="settings_Pinned_Prior">Максимальная важность уведомления</string>
 </resources>
