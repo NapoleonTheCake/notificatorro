@@ -40,6 +40,8 @@ Simple and easy quick-note notification app.
 - allow selecting text in history.
 - add screenshots for shortcuts and context menu.
 - add repeated notifications.
+- add calendar.
+- hand click on coffee cup.
 
 
 Source code: https://github.com/NapoleonTheCake/notificatorro
