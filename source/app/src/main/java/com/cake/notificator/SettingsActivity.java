@@ -141,6 +141,6 @@ public class SettingsActivity extends AppCompatActivity {
         ////
 
         //echo done.
-        Toast.makeText(this, getString(R.string.settings_Apply_Success), Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, getString(R.string.settings_Apply_Success), Toast.LENGTH_SHORT).show();
     }
 }

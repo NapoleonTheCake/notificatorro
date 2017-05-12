@@ -13,7 +13,7 @@
         android:layout_height="wrap_content">
 
         <TextView
-            android:minHeight="50dp"
+            android:minHeight="40dp"
             android:gravity="center_vertical"
 
             android:id="@+id/text_Settings_Creation"
@@ -25,7 +25,7 @@
             android:text="@string/settings_Separator_Creation" />
 
     <Switch
-        android:minHeight="50dp"
+        android:minHeight="35dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
 
@@ -38,7 +38,7 @@
         android:text="@string/settings_Vibration" />
 
     <Switch
-        android:minHeight="50dp"
+        android:minHeight="35dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
 
@@ -51,7 +51,7 @@
         android:text="@string/settings_Reset_Silent"/>
 
     <Switch
-        android:minHeight="50dp"
+        android:minHeight="35dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
 
@@ -62,7 +62,7 @@
         android:layout_below="@+id/switch_Reset_Silent" />
 
     <Switch
-        android:minHeight="50dp"
+        android:minHeight="35dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
 
@@ -73,7 +73,7 @@
         android:layout_below="@+id/switch_Reset_Delay" />
 
     <Switch
-        android:minHeight="50dp"
+        android:minHeight="35dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
 
@@ -84,9 +84,9 @@
         android:layout_below="@+id/switch_Alt_Notifications" />
 
         <TextView
-            android:minHeight="50dp"
+            android:minHeight="40dp"
             android:gravity="center_vertical"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="0dp"
             android:layout_below="@id/switch_Ignore_Title"
 
             android:id="@+id/text_Settings_Quicknotes"
@@ -97,7 +97,7 @@
             android:text="@string/settings_Separator_Quicknote" />
 
         <Switch
-            android:minHeight="50dp"
+            android:minHeight="35dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
 
@@ -108,7 +108,7 @@
             android:layout_below="@+id/text_Settings_Quicknotes" />
 
         <Switch
-            android:minHeight="50dp"
+            android:minHeight="35dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
 

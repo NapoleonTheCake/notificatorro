@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.graphics.Color;
+import android.os.Build;
 import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
@@ -251,6 +252,11 @@ public class MainActivity extends AppCompatActivity
                     .setAutoCancel(true)
                     .setContentTitle(titleText)
                     .setContentText(bigText);
+
+            //colorize notification for 21+ api.
+            if (Build.VERSION.SDK_INT >= 21) {
+                builder.setColor(getResources().getColor(R.color.color_Note));
+            }
 
             //check vibration.
             if (mPrefs.getBoolean("vibration", false)) {
