@@ -5,6 +5,7 @@ Simple and easy quick-note notification app.
 - Create notifications with your own text!
 - Track history of your notes and clear anytime!
 - Create delayed notifications! (Currently broken).
+- Create pinned notification to keep stuff in mind!
 - Android N+ can use app's shortcuts.
 - Android M+ can create quicknotes from selected text.
 - English and Russian languages are supported for now.
@@ -47,6 +48,7 @@ Feel free to contact me via email: contactwithdmitry@gmail.com
 I accept donations to my student's debit card: 4061492051715222  
 **Thank you for any support!**
 
++ pinned notification.
 + colorized notifications.
 + minor improvements.
 + bug fixes.

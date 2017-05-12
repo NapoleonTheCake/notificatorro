@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.cake.notificator.PersistActivity"
+    tools:showIn="@layout/activity_persist" >
+
+
+    <TextView
+        style="@style/text_Header_Style"
+
+        android:id="@+id/text_Persist_Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="@string/text_Persist_Title" />
+
+    <EditText
+        android:id="@+id/editText_Persist_Title"
+        android:maxLength="18"
+
+        style="@style/text_Input_Style.Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_Persist_Title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:hint="@string/notification_Title"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/editText_Persist"
+        style="@style/text_Input_Style"
+        android:layout_width="match_parent"
+        android:hint="@string/notification_Text"
+
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editText_Persist_Title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="20sp"
+        android:layout_marginStart="20sp"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:inputType="textMultiLine"
+        android:maxLines="3" />
+
+    <ImageButton
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        android:onClick="clearFieldsPersist"
+
+        android:id="@+id/imageButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:srcCompat="@drawable/clearhistory"
+        android:layout_alignTop="@+id/editText_Persist_Title"
+        android:layout_toRightOf="@+id/editText_Persist_Title"
+        android:layout_toEndOf="@+id/editText_Persist_Title"
+        android:layout_above="@+id/editText_Persist" />
+
+</RelativeLayout>

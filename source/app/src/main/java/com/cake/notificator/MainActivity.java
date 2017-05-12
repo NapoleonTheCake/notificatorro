@@ -97,23 +97,6 @@ public class MainActivity extends AppCompatActivity
         });
     }
 
-    ////
-
-//    @Override
-//    protected void onRestart() {
-//        SharedPreferences mPrefs = getSharedPreferences("appsettings", 0);
-//
-//        //handle ignore title.
-//        if (mPrefs.getBoolean("ignore_title", false)) {
-//            ((EditText) findViewById(R.id.editText)).requestFocus();
-//        }
-//
-//        super.onRestart();
-//    }
-
-
-    ////
-
     @Override
     protected void onPause() {
         //close keyboard.
@@ -173,16 +156,23 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_Settings) {
+
             Intent intent = new Intent(MainActivity.this, SettingsActivity.class);
             startActivity(intent);
 
         } else if (id == R.id.nav_About) {
+
             Intent intent = new Intent(MainActivity.this, AboutActivity.class);
             startActivity(intent);
 
         } else if (id == R.id.nav_History) {
+
             Intent intent = new Intent(MainActivity.this, HistoryActivity.class);
             startActivity(intent);
+
+        } else if (id == R.id.nav_Persist) {
+
+            startActivity(new Intent(this, PersistActivity.class));
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -242,9 +232,6 @@ public class MainActivity extends AppCompatActivity
             PendingIntent contentIntent = PendingIntent.getActivity(context,
                     0, notificationIntent, PendingIntent.FLAG_CANCEL_CURRENT);
 
-            //get res.
-            Resources res = context.getResources();
-
             //build notification.
             Notification.Builder builder = new Notification.Builder(context)
                     .setContentIntent(contentIntent)
@@ -268,7 +255,7 @@ public class MainActivity extends AppCompatActivity
                 builder.setContentTitle(getString(R.string.notification_Title_Default));
             }
 
-            //show notification. check for delay.
+            //show notification.
             builder.setWhen(System.currentTimeMillis());
 
             Notification notification = new Notification.BigTextStyle(builder)
@@ -536,18 +523,6 @@ public class MainActivity extends AppCompatActivity
 
         ((EditText) findViewById(R.id.editText)).setText("");
         ((EditText) findViewById(R.id.editText_Title)).setText("");
-
-        //echo
-        SharedPreferences mPrefs = getSharedPreferences("appsettings", 0);
-
-        if (view != null) {
-            if (mPrefs.getBoolean("alt_notifications", false)) {
-                Toast.makeText(this, getString(R.string.ui_Button_ClearFields), Toast.LENGTH_SHORT)
-                        .show();
-            } else {
-                Snackbar.make(view, getString(R.string.ui_Button_ClearFields), Snackbar.LENGTH_SHORT).show();
-            }
-        }
     }
 }
 

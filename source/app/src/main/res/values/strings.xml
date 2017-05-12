@@ -57,6 +57,12 @@
     <string name="settings_Separator_Quicknote">Quicknotes (hold \'Create\' button):</string>
     <string name="settings_Quicknote_Prompt">Prompt for confirmation</string>
     <string name="settings_Quicknote_Silent">Disable history</string>
-    <string name="ui_Button_ClearFields">Fields cleared</string>
     <string name="history_Empty">Empty history</string>
+    <string name="action_Persist">Pinned</string>
+    <string name="persist_Toggle_Short">Toggle</string>
+    <string name="persist_Toggle">Toggle pinned</string>
+    <string name="persist_Toggle_Toggled">Done</string>
+    <string name="persist_Title_Default">Pinned:</string>
+    <string name="persist_Text_Default">No text</string>
+    <string name="text_Persist_Title">Keep in mind...</string>
 </resources>
