@@ -36,6 +36,9 @@ public class PersistToggle extends Activity {
 
             mPrefsEditor.putBoolean("persist", false).apply();
 
+            //echo done (only in PersistToggle).
+            Toast.makeText(this, getString(R.string.notification_Created), Toast.LENGTH_SHORT).show();
+
         } else {
 
             //update text.
@@ -77,6 +80,7 @@ public class PersistToggle extends Activity {
         //build notification.
         Notification.Builder builder = new Notification.Builder(context)
                 .setContentIntent(contentIntent)
+                .setSmallIcon(R.drawable.statusbaricon)
                 .setOngoing(true)
                 .setAutoCancel(false)
                 .setContentTitle(titleText)
