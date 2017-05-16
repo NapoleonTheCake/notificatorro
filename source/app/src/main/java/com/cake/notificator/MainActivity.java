@@ -309,8 +309,6 @@ public class MainActivity extends AppCompatActivity
     public void onClick_Notify_Silent(View view) {
         Button button = (Button) findViewById(R.id.button_SetSilent);
 
-        Context context = getApplicationContext();
-
         SharedPreferences mPrefs = getSharedPreferences("appsettings", 0);
         SharedPreferences.Editor mPrefsEditor = mPrefs.edit();
 
@@ -320,10 +318,13 @@ public class MainActivity extends AppCompatActivity
 
             mPrefsEditor.putBoolean("isSilent", false).apply();
 
-            if (mPrefs.getBoolean("alt_notifications", false)) {
-                Toast.makeText(this, getString(R.string.silent_Disable), Toast.LENGTH_SHORT).show();
-            } else {
-                Snackbar.make(view, getString(R.string.silent_Disable), Snackbar.LENGTH_SHORT).show();
+            //echo if only manually disabled.
+            if (! mPrefs.getBoolean("reset_silent", false)) {
+                if (mPrefs.getBoolean("alt_notifications", false)) {
+                    Toast.makeText(this, getString(R.string.silent_Disable), Toast.LENGTH_SHORT).show();
+                } else {
+                    Snackbar.make(view, getString(R.string.silent_Disable), Snackbar.LENGTH_SHORT).show();
+                }
             }
 
             //make button great again.
@@ -371,11 +372,14 @@ public class MainActivity extends AppCompatActivity
 
             mPrefsEditor.putBoolean("isDelayed", false).apply();
 
-            if (mPrefs.getBoolean("alt_notifications", false)) {
-                Toast.makeText(this, getString(R.string.dialog_Delay_Disable), Toast.LENGTH_SHORT)
-                        .show();
-            } else {
-                Snackbar.make(view, getString(R.string.dialog_Delay_Disable), Snackbar.LENGTH_SHORT).show();
+            //echo if only manually disabled.
+            if (! mPrefs.getBoolean("reset_delay", false)) {
+                if (mPrefs.getBoolean("alt_notifications", false)) {
+                    Toast.makeText(this, getString(R.string.dialog_Delay_Disable), Toast.LENGTH_SHORT)
+                            .show();
+                } else {
+                    Snackbar.make(view, getString(R.string.dialog_Delay_Disable), Snackbar.LENGTH_SHORT).show();
+                }
             }
 
             //make button darker.
