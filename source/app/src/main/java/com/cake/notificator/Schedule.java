@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.media.RingtoneManager;
+import android.os.Build;
 import android.os.PowerManager;
 import android.preference.PreferenceManager;
 
@@ -29,11 +30,10 @@ public class Schedule extends BroadcastReceiver {
         //next is notification code. //
 
         //get res.
-        SharedPreferences mPrefs = context.getSharedPreferences("notifications", 0);
-
         String titleText = intent.getStringExtra("TITLE_TEXT");
         String bigText = intent.getStringExtra("BIG_TEXT");
         int NOTIFY_ID = intent.getIntExtra("NOTIFICATION_ID", 0);
+        int DELAY = intent.getIntExtra("DELAY", 0);
 
         //create intent.
         Intent notificationIntent = new Intent(context, MainActivity.class);
@@ -52,9 +52,15 @@ public class Schedule extends BroadcastReceiver {
                 .setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION))
                 .setContentText(bigText);
 
+        //for api 21+
+        if (Build.VERSION.SDK_INT >= 21) {
+            builder.setColor(context.getResources().getColor(R.color.color_Delayed));
+        }
+
         //create default title if empty.
         if (titleText.length() == 0) {
-            builder.setContentTitle(context.getString(R.string.notification_Title_Default));
+            builder.setContentTitle(DELAY + " " + context
+                    .getString(R.string.notification_Delayed_Title_Default));
         }
 
         //show notification. check for delay.
@@ -83,11 +89,12 @@ public class Schedule extends BroadcastReceiver {
         AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
 
         Intent intent = new Intent(context, Schedule.class);
+        intent.putExtra("DELAY", delay);
         intent.putExtra("NOTIFICATION_ID", id);
         intent.putExtra("TITLE_TEXT", titleText);
         intent.putExtra("BIG_TEXT", bigText);
 
         PendingIntent pendingIntent = PendingIntent.getBroadcast(context, id, intent, PendingIntent.FLAG_UPDATE_CURRENT);
-        alarmManager.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() /* + 1000 * 60 * delay */, pendingIntent);
+        alarmManager.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + 1000 * 60 * delay, pendingIntent);
     }
 }

@@ -68,4 +68,5 @@
     <string name="settings_Separator_Pinned">Pinned notification:</string>
     <string name="settings_Pinned_Showicon">Show icon in statusbar</string>
     <string name="settings_Pinned_Prior">Make notification highest priority</string>
+    <string name="notification_Delayed_Title_Default">min delayed:</string>
 </resources>

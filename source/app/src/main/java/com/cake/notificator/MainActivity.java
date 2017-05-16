@@ -214,6 +214,7 @@ public class MainActivity extends AppCompatActivity
 
             Schedule schedule = new Schedule();
             schedule.setAlarm(context);
+
         } else {
 
             //create intent.
@@ -381,15 +382,6 @@ public class MainActivity extends AppCompatActivity
             button.setBackgroundColor(Color.TRANSPARENT);
 
         } else {
-
-            //show delay warning.
-            if (mPrefs.getBoolean("alt_notifications", false)) {
-                Toast.makeText(this, "Delay is still WIP, probably won't work with your device.",
-                        Toast.LENGTH_LONG).show();
-            } else {
-                Snackbar.make(view, "Delay is still WIP, probably won't work with your device.",
-                        Snackbar.LENGTH_LONG).show();
-            }
 
             //start action to show dialog.
             LayoutInflater layoutInflater = LayoutInflater.from(context);

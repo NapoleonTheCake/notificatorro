@@ -13,7 +13,5 @@
     <color name="color_Note">#ff66ff00</color>
     <color name="color_Quicknote">#ffcc0000</color>
     <color name="color_Persist">#ff0033cc</color>
-    <!--<color name="color_Persist_Body"></color>-->
-    <!--<color name="color_Persist_Titlebar"></color>-->
-    <!--<color name="color_Persist_Statusbar"></color>-->
+    <color name="color_Delayed">#ff6600ff</color>
 </resources>
