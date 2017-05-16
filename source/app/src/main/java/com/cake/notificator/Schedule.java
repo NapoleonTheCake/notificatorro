@@ -21,6 +21,7 @@ public class Schedule extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
+
         PowerManager powerManager = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
         PowerManager.WakeLock wakeLock = powerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "");
         wakeLock.acquire();
@@ -30,17 +31,16 @@ public class Schedule extends BroadcastReceiver {
         //get res.
         SharedPreferences mPrefs = context.getSharedPreferences("notifications", 0);
 
-        String titleText = mPrefs.getString("titleText", "");
-        String bigText = mPrefs.getString("bigText", "");
-        int NOTIFY_ID = mPrefs.getInt("id", 0);
+        String titleText = intent.getStringExtra("TITLE_TEXT");
+        String bigText = intent.getStringExtra("BIG_TEXT");
+        int NOTIFY_ID = intent.getIntExtra("NOTIFICATION_ID", 0);
 
         //create intent.
         Intent notificationIntent = new Intent(context, MainActivity.class);
-        PendingIntent contentIntent = PendingIntent.getActivity(context,
-                0, notificationIntent, PendingIntent.FLAG_CANCEL_CURRENT);
 
-        //get res.
-        Resources res = context.getResources();
+        //use NOTIFY_ID as requestCode.
+        PendingIntent contentIntent = PendingIntent.getActivity(context,
+                NOTIFY_ID, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
         //build notification.
         Notification.Builder builder = new Notification.Builder(context)
@@ -73,13 +73,21 @@ public class Schedule extends BroadcastReceiver {
 
     public void setAlarm(Context context) {
 
-        SharedPreferences mPrefs = PreferenceManager.getDefaultSharedPreferences(context);
+        SharedPreferences mPrefs = context.getSharedPreferences("appsettings", 0);
+        SharedPreferences mPrefsText = context.getSharedPreferences("notifications", 0);
         int delay = mPrefs.getInt("delay", 0);
         int id = mPrefs.getInt("id", 0);
+        String titleText = mPrefsText.getString("titleText", "");
+        String bigText = mPrefsText.getString("bigText", "");
 
         AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
+
         Intent intent = new Intent(context, Schedule.class);
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(context, id, intent, PendingIntent.FLAG_CANCEL_CURRENT);
+        intent.putExtra("NOTIFICATION_ID", id);
+        intent.putExtra("TITLE_TEXT", titleText);
+        intent.putExtra("BIG_TEXT", bigText);
+
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(context, id, intent, PendingIntent.FLAG_UPDATE_CURRENT);
         alarmManager.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() /* + 1000 * 60 * delay */, pendingIntent);
     }
 }
