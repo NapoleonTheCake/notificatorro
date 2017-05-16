@@ -44,11 +44,13 @@ Simple and easy quick-note notification app.
 - hand click on coffee cup.
 
 
+Google Play page: https://play.google.com/store/apps/details?id=com.cake.notificator
+
+Topic on 4pda: http://4pda.ru/forum/index.php?showtopic=824749
+
 Source code: https://github.com/NapoleonTheCake/notificatorro
 
 Feel free to contact me via email: contactwithdmitry@gmail.com
 
 I accept donations to my student's debit card: 4061492051715222  
 **Thank you for any support!**
-
-+ bug fixes.

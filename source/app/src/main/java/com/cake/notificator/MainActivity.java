@@ -514,4 +514,3 @@ public class MainActivity extends AppCompatActivity
         ((EditText) findViewById(R.id.editText_Title)).setText("");
     }
 }
-
