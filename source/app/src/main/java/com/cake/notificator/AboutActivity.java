@@ -60,7 +60,7 @@ public class AboutActivity extends AppCompatActivity {
     public void onClick_CoffeeCup_Mailme(View view) {
         Intent mailIntent = new Intent(Intent.ACTION_SEND);
         mailIntent.setType("message/rfc822")
-                .putExtra(Intent.EXTRA_EMAIL, getString(R.string.dev_Email).toCharArray())
+                .putExtra(Intent.EXTRA_EMAIL, "contactwithdmitry@gmail.com")
                 .putExtra(Intent.EXTRA_SUBJECT, "Notificatorro: ");
         startActivity(Intent.createChooser(mailIntent, getString(R.string.ui_SendEmail)));
     }
