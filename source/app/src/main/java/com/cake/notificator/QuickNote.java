@@ -56,18 +56,21 @@ public class QuickNote extends Activity {
 
         //get text.
         ClipboardManager clipboard = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
-        String bigText = clipboard.getText().toString();
+        String bigText;
+
+        if (clipboard.hasPrimaryClip()) {
+            bigText = clipboard.getText().toString();
+        } else bigText = "";
 
         AlertDialog.Builder builder = new AlertDialog.Builder(QuickNote.this);
 
-        //set default text if empty. //todo: fix crashing app if no text in clipboard.
+        //set default text if empty.
         if (bigText.length() == 0) {
-            builder.setMessage(getString(R.string.prompt_Quicknote_Text_Empty));
-        } else {
-            builder.setMessage(bigText);
+            bigText = getString(R.string.prompt_Quicknote_Text_Empty);
         }
 
         builder.setTitle(getString(R.string.prompt_Quicknote_Title))
+                .setMessage(bigText)
                 .setCancelable(false)
                 .setNegativeButton(getString(R.string.dialog_Negative_No),
                         new DialogInterface.OnClickListener() {
@@ -98,15 +101,21 @@ public class QuickNote extends Activity {
         //get text.
         String bigText;
         if (quickText != null) {
-            bigText = quickText;
-        } else {
-            ClipboardManager clipboard = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
-            bigText = clipboard.getText().toString();
-        }
 
-        //todo: fix, not works as it crashes above if no text in clipboard.
-        if (bigText.length() == 0) {
-            return;
+            bigText = quickText;
+
+        } else {
+
+            //set default text if empty.
+            ClipboardManager clipboard = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
+
+            if (clipboard.hasPrimaryClip()) {
+                bigText = clipboard.getText().toString();
+            } else {
+//                bigText = getString(R.string.prompt_Quicknote_Text_Empty);
+                finish();
+                return;
+            }
         }
 
         //store id locally.

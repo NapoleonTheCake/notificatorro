@@ -12,21 +12,16 @@ Simple and easy quick-note notification app.
 - This app is minimalistic. It does what it does, nothing more like sending stats in background.
 
 #### Future plans:
-- ! fix app crash when creating quicknote without text in clipboard (see todo flag in code).
-- Add persistent notification feature:
-	- Add switcher to show/hide notification.
-	- Configure shortcut to toggle it.
 - dark and light themes.
 - history go to top button?
 - widget?
 - add best experience warning.
 - add regular notes (serialisation).
-- color notification setting.
 - add help page.
 	- tell about custom roms that cuts big notifications (like MIUI).
 - search in history.
 - add welcome page.
-- try to implement everything as fragments, that will allow you to see drawer everywhere.
+- try to show drawer in every activity.
 - timestaps according to user's locale.
 - add shortcuts for: persistent activity(disable/enable), history(clear?).
 - add shortcut to clear all notifications (and find place to put into <25 api) // create field in settings which is visible only for api>=25.
