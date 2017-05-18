@@ -8,11 +8,9 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.res.Resources;
 import android.media.RingtoneManager;
 import android.os.Build;
 import android.os.PowerManager;
-import android.preference.PreferenceManager;
 
 /**
  * Created by cake on 20.04.17.
