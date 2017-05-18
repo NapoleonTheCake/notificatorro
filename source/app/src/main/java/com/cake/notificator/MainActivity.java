@@ -25,6 +25,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -396,23 +397,34 @@ public class MainActivity extends AppCompatActivity
 
             final EditText userInput = (EditText) promptDelay
                     .findViewById(R.id.editText_Delay);
+            final CheckBox checkBox = (CheckBox) promptDelay
+                    .findViewById(R.id.checkBox_Repeating);
 
             alertDialogBuilder
                     .setCancelable(true)
                     .setNeutralButton("OK", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
+
                             //check for empty field.
                             if (userInput.getText().toString().length() == 0) {
                                 return;
                             }
+
                             //put delay.
                             int delay = Integer.parseInt(userInput.getText().toString());
-                            mPrefsEditor.putInt("delay", delay);
+                            mPrefsEditor.putInt("delay", delay).apply();
+
                             //put delayed.
                             mPrefsEditor.putBoolean("isDelayed", true).apply();
+
+                            //put repeating.
+                            if (checkBox.isChecked()) mPrefsEditor.putBoolean("repeating", true).apply();
+                            else mPrefsEditor.putBoolean("repeating", false).apply();
+
                             //make button darker.
                             button.setBackgroundColor(getResources().getColor(R.color.button_Pressed));
+
                             //make snack.
                             if (mPrefs.getBoolean("alt_notifications", false)) {
                                 Toast.makeText(getApplicationContext(),

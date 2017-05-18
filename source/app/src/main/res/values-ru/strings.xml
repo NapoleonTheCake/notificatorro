@@ -63,4 +63,6 @@
     <string name="settings_Pinned_Showicon">Показывать иконку в уведомлениях</string>
     <string name="settings_Pinned_Prior">Максимальная важность уведомления</string>
     <string name="notification_Delayed_Title_Default">мин отложено:</string>
+    <string name="prompt_Repeating">Повторять до нажатия</string>
+    <string name="notification_Title_Repeating">мин повторяет:</string>
 </resources>

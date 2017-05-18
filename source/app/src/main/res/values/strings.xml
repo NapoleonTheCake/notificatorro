@@ -69,4 +69,6 @@
     <string name="settings_Pinned_Showicon">Show icon in statusbar</string>
     <string name="settings_Pinned_Prior">Make notification highest priority</string>
     <string name="notification_Delayed_Title_Default">min delayed:</string>
+    <string name="prompt_Repeating">Repeat until clicked</string>
+    <string name="notification_Title_Repeating">min repeating:</string>
 </resources>

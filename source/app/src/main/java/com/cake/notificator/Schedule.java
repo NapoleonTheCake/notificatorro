@@ -85,6 +85,7 @@ public class Schedule extends BroadcastReceiver {
         int id = mPrefs.getInt("id", 0);
         String titleText = mPrefsText.getString("titleText", "");
         String bigText = mPrefsText.getString("bigText", "");
+        boolean isRepeating = mPrefs.getBoolean("repeating", false);
 
         AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
 
@@ -93,6 +94,7 @@ public class Schedule extends BroadcastReceiver {
         intent.putExtra("NOTIFICATION_ID", id);
         intent.putExtra("TITLE_TEXT", titleText);
         intent.putExtra("BIG_TEXT", bigText);
+        intent.putExtra("REPEATING", )
 
         PendingIntent pendingIntent = PendingIntent.getBroadcast(context, id, intent, PendingIntent.FLAG_UPDATE_CURRENT);
         alarmManager.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + 1000 * 60 * delay, pendingIntent);
