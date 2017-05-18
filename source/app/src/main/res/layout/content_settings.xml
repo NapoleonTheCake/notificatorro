@@ -143,6 +143,29 @@
             android:text="@string/settings_Pinned_Prior"
             android:layout_below="@+id/text_Settings_Pinned" />
 
+        <TextView
+            android:minHeight="30dp"
+            android:gravity="center_vertical"
+            android:layout_marginTop="10dp"
+
+            android:id="@+id/text_Settings_Delayed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/switch_Persist_Prior"
+            android:layout_below="@+id/switch_Persist_Prior"
+            android:text="@string/settings_Separator_Delayed" />
+
+        <Switch
+            android:minHeight="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+
+            android:id="@+id/switch_Delayed_Crazyvibration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_Settings_Delayed"
+            android:text="@string/settings_Delayed_Crazyvibration" />
+
     </RelativeLayout>
 
 </ScrollView>

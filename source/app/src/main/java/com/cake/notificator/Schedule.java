@@ -54,9 +54,12 @@ public class Schedule extends BroadcastReceiver {
                 .setSmallIcon(R.drawable.statusbaricon)
                 .setAutoCancel(true)
                 .setContentTitle(titleText)
-                .setVibrate(new long[] { 0, 50 })
                 .setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION))
                 .setContentText(bigText);
+
+        //check crazy vibration!
+        if (intent.getBooleanExtra("CRAZYVIB", false)) builder.setVibrate(new long[] { 0, 1000, 10, 1000, 10, 1000, 10, 1000});
+        else builder.setVibrate(new long[] { 0, 100, 10, 100 });
 
         //for api 21+
         if (Build.VERSION.SDK_INT >= 21) {
@@ -93,6 +96,7 @@ public class Schedule extends BroadcastReceiver {
         String titleText = mPrefsText.getString("titleText", "");
         String bigText = mPrefsText.getString("bigText", "");
         boolean isRepeating = mPrefs.getBoolean("repeating", false);
+        boolean isCrazyvib = mPrefs.getBoolean("crazyvib", false);
 
         AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
 
@@ -102,6 +106,7 @@ public class Schedule extends BroadcastReceiver {
         intent.putExtra("TITLE_TEXT", titleText);
         intent.putExtra("BIG_TEXT", bigText);
         intent.putExtra("REPEATING", isRepeating);
+        intent.putExtra("CRAZYVIB", isCrazyvib);
 
         PendingIntent pendingIntent = PendingIntent.getBroadcast(context, id, intent, PendingIntent.FLAG_UPDATE_CURRENT);
 

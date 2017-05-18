@@ -65,4 +65,6 @@
     <string name="notification_Delayed_Title_Default">мин отложено:</string>
     <string name="prompt_Repeating">Повторять до нажатия</string>
     <string name="notification_Title_Repeating">мин повторяет:</string>
+    <string name="settings_Separator_Delayed">Отложенные уведомления:</string>
+    <string name="settings_Delayed_Crazyvibration">Безумная вибрация!</string>
 </resources>

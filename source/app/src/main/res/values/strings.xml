@@ -10,7 +10,7 @@
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="dev_Version" translatable="false">2.0</string>
+    <string name="dev_Version" translatable="false">2.1</string>
     <string name="dev_Email" translatable="false">contactwithdmitry@gmail.com</string>
     <string name="ui_AdditionalSettings">More</string>
     <string name="action_New_Note">Create note</string>
@@ -71,4 +71,6 @@
     <string name="notification_Delayed_Title_Default">min delayed:</string>
     <string name="prompt_Repeating">Repeat until clicked</string>
     <string name="notification_Title_Repeating">min repeating:</string>
+    <string name="settings_Separator_Delayed">Delayed notifications</string>
+    <string name="settings_Delayed_Crazyvibration">Crazy vibration!</string>
 </resources>

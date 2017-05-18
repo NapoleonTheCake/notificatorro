@@ -51,6 +51,10 @@ public class SettingsActivity extends AppCompatActivity {
         //set pinned priority.
         ((Switch) findViewById(R.id.switch_Persist_Prior))
                 .setChecked(mPrefAppSettings.getBoolean("persist_prior", false));
+
+        //set crazy vibration!
+        ((Switch) findViewById(R.id.switch_Delayed_Crazyvibration))
+                .setChecked(mPrefAppSettings.getBoolean("crazyvib", false));
     }
 
     //====================================
@@ -146,6 +150,11 @@ public class SettingsActivity extends AppCompatActivity {
         } else {
             mPrefAppSettingsEdit.putBoolean("persist_prior", false).apply();
         }
+
+        //set crazy vibration!
+        if (((Switch) findViewById(R.id.switch_Delayed_Crazyvibration)).isChecked())
+            mPrefAppSettingsEdit.putBoolean("crazyvib", true).apply();
+        else mPrefAppSettingsEdit.putBoolean("crazyvib", false).apply();
 
         ////
 
