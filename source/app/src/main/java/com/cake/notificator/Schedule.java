@@ -34,9 +34,15 @@ public class Schedule extends BroadcastReceiver {
         String bigText = intent.getStringExtra("BIG_TEXT");
         int NOTIFY_ID = intent.getIntExtra("NOTIFICATION_ID", 0);
         int DELAY = intent.getIntExtra("DELAY", 0);
+        boolean isRepeating = intent.getBooleanExtra("REPEATING", false);
 
         //create intent.
-        Intent notificationIntent = new Intent(context, MainActivity.class);
+        Intent notificationIntent;
+
+        if (isRepeating) {
+            notificationIntent = new Intent(context, RepeatingCancel.class);
+            notificationIntent.putExtra("NOTIFY_ID", NOTIFY_ID);
+        } else notificationIntent = new Intent(context, MainActivity.class);
 
         //use NOTIFY_ID as requestCode.
         PendingIntent contentIntent = PendingIntent.getActivity(context,
@@ -59,7 +65,8 @@ public class Schedule extends BroadcastReceiver {
 
         //create default title if empty.
         if (titleText.length() == 0) {
-            builder.setContentTitle(DELAY + " " + context
+            if (isRepeating) builder.setContentTitle(DELAY + " " + context.getString(R.string.notification_Title_Repeating));
+            else builder.setContentTitle(DELAY + " " + context
                     .getString(R.string.notification_Delayed_Title_Default));
         }
 
@@ -94,9 +101,12 @@ public class Schedule extends BroadcastReceiver {
         intent.putExtra("NOTIFICATION_ID", id);
         intent.putExtra("TITLE_TEXT", titleText);
         intent.putExtra("BIG_TEXT", bigText);
-        intent.putExtra("REPEATING", )
+        intent.putExtra("REPEATING", isRepeating);
 
         PendingIntent pendingIntent = PendingIntent.getBroadcast(context, id, intent, PendingIntent.FLAG_UPDATE_CURRENT);
-        alarmManager.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + 1000 * 60 * delay, pendingIntent);
+
+        if (isRepeating) alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + 1000 * 60 * delay,
+                1000 * 60 * delay, pendingIntent);
+        else alarmManager.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + 1000 * 60 * delay, pendingIntent);
     }
 }
