@@ -56,8 +56,8 @@ public class Schedule extends BroadcastReceiver {
                 .setContentText(bigText);
 
         //check crazy vibration!
-        if (intent.getBooleanExtra("CRAZYVIB", false)) builder.setVibrate(new long[] { 0, 1000, 10, 1000, 10, 1000, 10, 1000});
-        else builder.setVibrate(new long[] { 0, 100, 10, 100 });
+        if (intent.getBooleanExtra("CRAZYVIB", false)) builder.setVibrate(new long[] { 0, 1000, 500, 1000, 500, 1000, 500, 1000});
+        else builder.setVibrate(new long[] { 0, 350, 35, 350 });
 
         //for api 21+
         if (Build.VERSION.SDK_INT >= 21) {

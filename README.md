@@ -21,21 +21,14 @@ Simple and easy quick-note notification app.
 	- tell about custom roms that cuts big notifications (like MIUI).
 - search in history.
 - add welcome page.
-- try to show drawer in every activity.
 - timestaps according to user's locale.
-- add shortcuts for: persistent activity(disable/enable), history(clear?).
-- add shortcut to clear all notifications (and find place to put into <25 api) // create field in settings which is visible only for api>=25.
+- add shortcut to clear all notifications.
 - add setting to keep title after creating note (pin against clear button?).
 - add square-ish icon.
 - add pic notes (add capture with camera + tabs on top).
 - format text in history? (title, date).
-- add colored shortcuts instead of bw.
-- quicknote: make alertdialog with transparent activity.
-- allow selecting text in history.
-- add screenshots for shortcuts and context menu.
-- add repeated notifications.
-- add calendar.
-- hand click on coffee cup.
+- track persistent changes and write them to history.
+- add setting to revoke last n notifications from history after reboot??
 
 
 Google Play page: https://play.google.com/store/apps/details?id=com.cake.notificator
