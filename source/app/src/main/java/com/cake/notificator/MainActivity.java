@@ -451,7 +451,7 @@ public class MainActivity extends AppCompatActivity
         SharedPreferences mPrefs = getSharedPreferences("appsettings", 0);
 
         //get timestamp. //so ugly.
-        DateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy HH:mm");
+        DateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy HH:mm"); //todo: locale format.
         Calendar calendar = Calendar.getInstance();
         String strDate = dateFormat.format(calendar.getTime());
 

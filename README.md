@@ -14,7 +14,7 @@ Simple and easy quick-note notification app.
 #### Future plans:
 - dark and light themes.
 - history go to top button?
-- widget?
+- widget? One: regular note sheet. Two: create new note action.
 - add best experience warning.
 - add regular notes (serialisation).
 - add help page.
