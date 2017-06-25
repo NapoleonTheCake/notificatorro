@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#FF000033</color>
-    <color name="colorPrimaryDark">#FF00001a</color>
-    <color name="colorAccent">#FF000000</color>
-    <color name="colorBackground">#FFeeeeff</color>
-    <color name="text_Header_Color">#FF000000</color>
-    <color name="text_Input_Color">#FF000000</color>
-    <color name="button_Pressed">#FFD6D8D7</color>
-    <color name="color_About_TitleBar">#FF19AFBB</color>
-    <color name="color_About_Background">#FF1CC4D1</color>
-    <color name="color_About_StatusBar">#ff169aa5</color>
-    <color name="color_Quicknote_Dialog_Background">#FFEBF07D</color>
-    <color name="color_Note">#ff66ff00</color>
-    <color name="color_Quicknote">#ffcc0000</color>
-    <color name="color_Persist">#ff0033cc</color>
-    <color name="color_Delayed">#ffcc6600</color>
+    <color name="colorPrimary">#000033</color>
+    <color name="colorPrimaryDark">#00001a</color>
+    <color name="colorAccent">#000000</color>
+    <color name="colorBackground">#eeeeff</color>
+    <color name="text_Header_Color">#000000</color>
+    <color name="text_Input_Color">#000000</color>
+    <color name="button_Pressed">#D6D8D7</color>
+    <color name="color_About_TitleBar">#19AFBB</color>
+    <color name="color_About_Background">#1CC4D1</color>
+    <color name="color_About_StatusBar">#169aa5</color>
+    <color name="color_Quicknote_Dialog_Background">#EBF07D</color>
+    <color name="color_Note">#66ff00</color>
+    <color name="color_Quicknote">#cc0000</color>
+    <color name="color_Persist">#0033cc</color>
+    <color name="color_Delayed">#cc6600</color>
 </resources>

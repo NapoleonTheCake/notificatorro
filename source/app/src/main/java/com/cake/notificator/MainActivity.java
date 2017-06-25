@@ -500,11 +500,11 @@ public class MainActivity extends AppCompatActivity
     private void keyboardShow() {
         SharedPreferences mPrefs = getSharedPreferences("appsettings", 0);
 
-        if (mPrefs.getBoolean("ignore_title", false)) {
-            (findViewById(R.id.editText)).requestFocus();
-        } else {
-            (findViewById(R.id.editText_Title)).requestFocus();
-        }
+//        if (mPrefs.getBoolean("ignore_title", false)) {
+//            (findViewById(R.id.editText)).requestFocus();
+//        } else {
+//            (findViewById(R.id.editText_Title)).requestFocus();
+//        }
         InputMethodManager inputMethodManager = (InputMethodManager)  getSystemService(Activity.INPUT_METHOD_SERVICE);
         inputMethodManager.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
     }
